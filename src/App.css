@@ -26,8 +26,14 @@ html {
   color: black;
   width: 100vw;
   height: 30px;
-  font-size: 2em;
-  padding: 20px 10px 30px 10px;
+  font-size: 36px;
+  padding: 30px 10px 30px 10px;
+}
+.HeaderControls {
+  position: relative;
+  right: -95px;
+  display: flex;
+  gap: 30px;
 }
 #Header svg {
   transform: scale(1.5);
@@ -132,10 +138,4 @@ h1 {
 }
 .PageIcon svg {
   transform: scale(2); 
-}
-.HeaderControls {
-  position: relative;
-  right: -110px;
-  display: flex;
-  gap: 20px;
 }

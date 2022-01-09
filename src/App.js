@@ -8,6 +8,9 @@ import React, {useState} from 'react';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
@@ -31,11 +34,17 @@ function Header (props) {
   return (
     <div id="Header">
       My Health
-      <div class="HeaderControls">
+      <div className="HeaderControls">
         <SettingsOutlinedIcon/>
         <AccountCircleOutlinedIcon/>
       </div>
     </div>
+  )
+}
+
+function Heading1 (props) {
+  return (
+    <div className="Heading1">{props.text}</div>
   )
 }
 
@@ -45,8 +54,9 @@ function getColor(value){
   return ["hsl(",hue,",100%,43%)"].join("");
 }
 
-
-
+/////////////////////////////////////////
+//          CATEGORY CARD
+/////////////////////////////////////////
 function CategoryCard (props) {
   var bgColor = {backgroundColor: getColor(props.score/5)};
 
@@ -67,9 +77,9 @@ function CategoryCard (props) {
     Exercise: <HikingOutlinedIcon/>,
   }
   const handleClick = () => {
-    //setName("name2");
     {document.getElementById(props.name).style.top = '5vh'};
   }
+  
 
   return (
     <>
@@ -79,17 +89,15 @@ function CategoryCard (props) {
       <div className="CategoryCardNum">{props.score}</div>
     </div>
     <PageCard content={FinancialContent} name={props.name} />
+    <PageCardAssessment name={props.name + "Assessment"} />
     </>
   )
 }
 
-function Heading1 (props) {
-  return (
-    <div className="Heading1">{props.text}</div>
-  )
-}
 
-
+/////////////////////////////////////////
+//          CATEGORY PAGE
+/////////////////////////////////////////
 function PageCard (props) {
 
   const minimisePage = () => {
@@ -111,6 +119,10 @@ function PageCard (props) {
     Exercise: <HikingOutlinedIcon/>,
   }
 
+  const handleClickAssessment = () => {
+    {document.getElementById(props.name + 'Assessment').style.top = '10vh'};
+  }
+
   return (
     <div className="PageCardContainer" id={props.name}>
       <div className="PageCloseBg" onClick={minimisePage}/>
@@ -118,7 +130,7 @@ function PageCard (props) {
         <div className="PageClose" onClick={minimisePage}><CloseOutlinedIcon/></div>
         
         <h1><span className="PageIcon">{IconList[props.name]}</span>{props.name}</h1>
-        <div style={{textAlign: "center"}}><Button variant="outlined">Complete Assessment</Button></div>
+        <div style={{textAlign: "center"}}><Button variant="outlined" onClick={handleClickAssessment}>Complete Assessment</Button></div>
         <h2>Recommended for you</h2>
           <Checkbox />Recommendation 1 goes here.<br/>
           <Checkbox />Recommendation 2 goes here.<br/>
@@ -128,9 +140,84 @@ function PageCard (props) {
     </div>
   )
 }
+/////////////////////////////////////////
+//          ASSESSMENT PAGE
+/////////////////////////////////////////
+function PageCardAssessment (props) {
+  
+  const minimisePage = () => {
+    {document.getElementById(props.name).style.top = '120vh'};
+  }
+  return (
+    <div className="PageCardContainer" id={props.name}>
+      <div className="PageCloseBg" onClick={minimisePage}/>
+      <div className="PageCard" >
+        <div className="PageClose" onClick={minimisePage}><CloseOutlinedIcon/></div>
+        
+        <h1>Assessment</h1>
+        <AssessmentQuestion 
+          question="Question 1" 
+          choice1="Never"
+          choice2="Rarely"
+          choice3="Sometimes"
+          choice4="Often"
+          choice5="Always"
+        />
+        <AssessmentQuestion 
+          question="Question 2" 
+          choice1="Never"
+          choice2="Rarely"
+          choice3="Sometimes"
+          choice4="Often"
+          choice5="Always"
+        />
+        <AssessmentQuestion 
+          question="Question 3" 
+          choice1="Never"
+          choice2="Rarely"
+          choice3="Sometimes"
+          choice4="Often"
+          choice5="Always"
+        />
+      </div>
+    </div>
+  )
+}
 
+/////////////////////////////////////////
+//       ASSESSMENT QUESTIONS
+/////////////////////////////////////////
 
+function AssessmentQuestion (props) {
 
+  const [alignment, setAlignment] = React.useState('web');
+
+  const handleChange = (event, newAlignment) => {
+    setAlignment(newAlignment);
+  };
+
+  return(
+    <>
+    <h3>{props.question}</h3>
+    <ToggleButtonGroup
+      color="primary"
+      value={alignment}
+      exclusive
+      onChange={handleChange}
+    >
+    <ToggleButton value="1">{props.choice1}</ToggleButton>
+    <ToggleButton value="2">{props.choice2}</ToggleButton>
+    <ToggleButton value="3">{props.choice3}</ToggleButton>
+    <ToggleButton value="4">{props.choice4}</ToggleButton>
+    <ToggleButton value="5">{props.choice5}</ToggleButton>
+  </ToggleButtonGroup>
+  </>
+  )
+}
+
+/////////////////////////////////////////
+//                 APP
+/////////////////////////////////////////
 function App() {
   return (
     <>
