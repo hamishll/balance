@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/maslow/static/css/main.ae25fb42.css",
+    "main.js": "/maslow/static/js/main.f3b4a4ca.js",
+    "static/js/787.be9d7966.chunk.js": "/maslow/static/js/787.be9d7966.chunk.js",
+    "index.html": "/maslow/index.html",
+    "static/media/sleep.md": "/maslow/static/media/sleep.af10b7795ee8a16be0a0.md",
+    "main.ae25fb42.css.map": "/maslow/static/css/main.ae25fb42.css.map",
+    "main.f3b4a4ca.js.map": "/maslow/static/js/main.f3b4a4ca.js.map",
+    "787.be9d7966.chunk.js.map": "/maslow/static/js/787.be9d7966.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae25fb42.css",
+    "static/js/main.f3b4a4ca.js"
+  ]
+}
