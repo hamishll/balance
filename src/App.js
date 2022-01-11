@@ -3,14 +3,21 @@ import './App.css';
 import ReactMarkdown from 'react-markdown'
 import React, {useState} from 'react';
 
-// material icons
 
+// mui elements
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
+// Sections
+import MyBalance from './components/MyBalance'
+import Dimensions from './components/Dimensions'
+import Coach from './components/Coach'
+import SimpleBottomNavigation from './components/BottomNavigation'
+
+// material icons
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
@@ -28,12 +35,11 @@ import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 // end material icons
 
-
 function Header (props) {
 
   return (
     <div id="Header">
-      My Health
+      {props.name}
       <div className="HeaderControls">
         <SettingsOutlinedIcon/>
         <AccountCircleOutlinedIcon/>
@@ -120,7 +126,7 @@ function PageCard (props) {
   }
 
   const handleClickAssessment = () => {
-    {document.getElementById(props.name + 'Assessment').style.top = '10vh'};
+    {document.getElementById(props.name + 'Assessment').style.top = '7vh'};
   }
 
   return (
@@ -150,7 +156,7 @@ function PageCardAssessment (props) {
   }
   return (
     <div className="PageCardContainer" id={props.name}>
-      <div className="PageCloseBg" onClick={minimisePage}/>
+      {/* <div className="PageCloseBg" onClick={minimisePage}/> */}
       <div className="PageCard" >
         <div className="PageClose" onClick={minimisePage}><CloseOutlinedIcon/></div>
         
@@ -222,8 +228,8 @@ function App() {
   return (
     <>
     
-    <div id="Container">
-    <Header name="Hamish" />
+    <div className="Container" id="Dimensions">
+    <Header name="Dimensions" />
       <Heading1 text="Self-Actualisation Needs"/>
       <CategoryCard name="Creating" score="2.5"/>
       <CategoryCard name="Consuming" score="3.1"/>
@@ -245,8 +251,18 @@ function App() {
       <CategoryCard name="Nutrition" score="4.1"/>
       <CategoryCard name="Physical" score="4.7"/>
       <CategoryCard name="Exercise" score="2.3"/>
-
     </div>
+
+    <div className="Container" id="MyBalance">
+      <Header name="My Balance" />
+    </div>
+
+    <div className="Container" id="Coach">
+      <Header name="AIdra" />
+    </div>
+    
+
+    <SimpleBottomNavigation/>
     </>
   );
 }

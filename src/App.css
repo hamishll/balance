@@ -5,13 +5,13 @@ html {
 }
 
 
-#Container {
+.Container {
   justify-content: center;
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  max-width: 375px;
+  max-width: 414px;
   margin: 0 auto;
   height: 100vh;
   overflow: scroll;
@@ -40,7 +40,7 @@ html {
 }
 
 .Heading1 {
-  width: 375px;
+  width: 100%;
   margin-top: 10px;
   padding: 10px;
   font-size: 1.5em;
@@ -94,6 +94,7 @@ html {
 .PageCard {
   background: rgb(249, 249, 255);
   border-radius: 20px 20px 0 0;
+  border: 1px solid #CCC;
   padding: 20px;
   color: rgb(40,40,40);
   height: 100vh;
@@ -116,7 +117,7 @@ html {
 .PageCloseBg {
   width: 100%;
   height: 10vh;
-  background: rgba(0,0,0,0.3);
+  background: rgba(255,255,255,0.3);
   position: absolute;
   top: -5vh;
   left: 0px;
@@ -138,4 +139,19 @@ h1 {
 }
 .PageIcon svg {
   transform: scale(2); 
+}
+
+.BottomNavigation {
+  position: fixed;
+  bottom: 0px;
+}
+
+#Dimensions {
+  background: white;
+}
+#MyBalance {
+  background: green;
+}
+#Coach {
+  background: blue;
 }
