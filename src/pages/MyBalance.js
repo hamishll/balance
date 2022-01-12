@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 
-export default function MyBalance() {
+export default function MyBalance(props) {
   const [value, setValue] = React.useState(0);
 
 
