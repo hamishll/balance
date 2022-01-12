@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/maslow/static/css/main.af2e2fe8.css",
-    "main.js": "/maslow/static/js/main.f3b4a4ca.js",
+    "main.css": "/maslow/static/css/main.5b16dc4b.css",
+    "main.js": "/maslow/static/js/main.42ef4a35.js",
     "static/js/787.be9d7966.chunk.js": "/maslow/static/js/787.be9d7966.chunk.js",
     "index.html": "/maslow/index.html",
-    "static/media/sleep.md": "/maslow/static/media/sleep.af10b7795ee8a16be0a0.md",
-    "main.af2e2fe8.css.map": "/maslow/static/css/main.af2e2fe8.css.map",
-    "main.f3b4a4ca.js.map": "/maslow/static/js/main.f3b4a4ca.js.map",
+    "main.5b16dc4b.css.map": "/maslow/static/css/main.5b16dc4b.css.map",
+    "main.42ef4a35.js.map": "/maslow/static/js/main.42ef4a35.js.map",
     "787.be9d7966.chunk.js.map": "/maslow/static/js/787.be9d7966.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.af2e2fe8.css",
-    "static/js/main.f3b4a4ca.js"
+    "static/css/main.5b16dc4b.css",
+    "static/js/main.42ef4a35.js"
   ]
 }
