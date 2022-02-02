@@ -1,6 +1,8 @@
 import * as React from 'react';
 
 import Button from '@mui/material/Button';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import ReactMarkdown from 'react-markdown';
 
@@ -18,6 +20,8 @@ import HealthAndSafetyOutlinedIcon from '@mui/icons-material/HealthAndSafetyOutl
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
+import styles from './../css/Post.css';
+
 export default function DimensionPage(props) {
   const [value, setValue] = React.useState(0);
 
@@ -28,8 +32,8 @@ export default function DimensionPage(props) {
   const IconList = {
     Creating: <ColorLensOutlinedIcon/>,
     Consuming: <HeadphonesOutlinedIcon/>,
-    Personal: <SelfImprovementOutlinedIcon/>,
-    Professional: <WorkOutlineOutlinedIcon/>,
+    'Self-Esteem': <SelfImprovementOutlinedIcon/>,
+    Career: <WorkOutlineOutlinedIcon/>,
     Friends: <EmojiPeopleOutlinedIcon/>,
     Relationship: <FavoriteBorderOutlinedIcon/>,
     Financial: <LocalAtmOutlinedIcon/>,
@@ -41,7 +45,7 @@ export default function DimensionPage(props) {
   }
 
   const handleClickAssessment = () => {
-    {document.getElementById(props.name + 'Assessment').style.top = '7vh'};
+    {document.getElementById(props.name + 'Assessment').style.top = '6vh'};
   }
 
   return (
@@ -53,10 +57,14 @@ export default function DimensionPage(props) {
         <h1><span className="PageIcon">{IconList[props.name]}</span>{props.name}</h1>
         <div style={{textAlign: "center"}}><Button variant="outlined" onClick={handleClickAssessment}>Complete Assessment</Button></div>
         <h2>Recommended for you</h2>
-          <Checkbox />Recommendation 1 goes here.<br/>
-          <Checkbox />Recommendation 2 goes here.<br/>
-          <Checkbox />Recommendation 3 goes here.<br/>
-        <ReactMarkdown>{props.content}</ReactMarkdown>
+        {props.questions.map((q,index) => { 
+          return <FormGroup key={index}>
+            <FormControlLabel control={<Checkbox label={q.response} />} label={q.response} /> 
+          </FormGroup>
+        })}
+        <div className="post">
+          <ReactMarkdown children={props.content}/>
+        </div>
       </div>
     </div>
   )

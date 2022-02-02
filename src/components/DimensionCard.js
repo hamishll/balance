@@ -25,15 +25,15 @@ const getColor = (value) => {
     return ["hsl(",hue,",100%,43%)"].join("");
   }
 
-  var bgColor = {backgroundColor: getColor(props.score/5)};
+  var bgColor = {color: getColor(props.score/5)};
 
   //const [name, setName] = useState("name1");
 
   const IconList = {
     Creating: <ColorLensOutlinedIcon/>,
     Consuming: <HeadphonesOutlinedIcon/>,
-    Personal: <SelfImprovementOutlinedIcon/>,
-    Professional: <WorkOutlineOutlinedIcon/>,
+    'Self-Esteem': <SelfImprovementOutlinedIcon/>,
+    Career: <WorkOutlineOutlinedIcon/>,
     Friends: <EmojiPeopleOutlinedIcon/>,
     Relationship: <FavoriteBorderOutlinedIcon/>,
     Financial: <LocalAtmOutlinedIcon/>,
@@ -46,16 +46,9 @@ const getColor = (value) => {
   const handleClick = () => {
     {document.getElementById(props.name).style.top = '5vh'};
   }
-  
-  const pageContent = `
-    ## Key tips
-    * Tip 1 goes here.
-    * Tip 2 goes here.
-    * Tip 3 goes here.
 
-    ## Reading List
-  `
-
+  // console.log("DimensionCard:");
+  // console.log(props.questions);
   return (
     <>
     <div className="CategoryCard" style={bgColor} onClick={handleClick}>
@@ -63,8 +56,8 @@ const getColor = (value) => {
       <div className="CategoryCardText">{props.name}</div>
       <div className="CategoryCardNum">{props.score}</div>
     </div>
-    <DimensionPage content={pageContent} name={props.name} />
-    <DimensionPageAssessment name={props.name + "Assessment"} />
+    <DimensionPage questions={props.questions} content={props.content} name={props.name} />
+    <DimensionPageAssessment questions={props.questions} name={props.name + "Assessment"} />
     </>
   )
 }

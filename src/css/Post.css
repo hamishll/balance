@@ -1,0 +1,176 @@
+:root {
+  --LightYellow: rgb(245, 243, 238);
+  --DarkBlue: rgb(90, 97, 117);
+  --Orange: rgb(244, 125, 49);
+  --Blue: #118ab2;
+  --Pink: rgb(255, 143, 152);
+  --Turquoise: rgb(123, 205, 200);
+  --Navy: rgb(33, 39, 69);
+  --Yellow: rgb(255, 222, 166);
+  --DarkGreen: #06d6a0;
+  --Green: rgb(180, 229, 148);
+  --LightGreen: rgb(236, 251, 228);
+  --Grey: rgb(32, 69, 151);
+  --Red: rgb(220, 60, 130);
+  --DarkYellow: rgb(242, 185, 89);
+  --CardOpacity: 1;
+
+}
+.post {
+  padding-top: 24px;
+}
+ol {
+  padding-left: 0;
+}
+.posts a {
+  color: #444;
+}
+
+.posts a:hover {
+  color: #777;
+}
+
+.posts-list {
+  list-style-type: none;
+}
+
+.posts-list li {
+  text-align: left;
+}
+
+.post h2 {
+  margin-top: 1.25em;
+  /*margin-left: -0.5em;*/
+  margin-bottom: 1.25em;
+}
+
+.post h3 {
+  font-size: 1.2em;
+  background: var(--Navy);
+  padding: 0.5em;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+.post a,
+#about a {
+  border-bottom: 1px solid #8085c1;
+}
+
+.post a:hover {
+  border: none;
+}
+
+/* standard */
+.post pre {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 0.4em;
+}
+
+.post p {
+  font-size: 1em;
+  margin-bottom: 1.45em;
+  text-align: left;
+  line-height: 1.25em;
+}
+
+.post ul,
+.post ol {
+  margin-left: 2.35em;
+  margin-bottom: 1.25em;
+}
+
+.post code {
+  border: 1px solid #ddd;
+  background-color: #eef;
+  padding: 0 0.2em;
+}
+
+.post pre code {
+  border: none;
+}
+
+/* terminal */
+.post pre.terminal {
+  border: 1px solid #000;
+  background-color: #333;
+  color: #fff;
+}
+
+.post pre.terminal code {
+  background-color: #333;
+}
+.post ol {
+  margin-left: 0;
+}
+
+.post ul {
+  background: var(--LightGreen);
+  list-style-position: inside;
+  padding: 0.5em 0.5em 0.5em 1em;
+  margin: 0;
+}
+
+.post ol li {
+  font-weight: bold;
+  list-style-position: inside;
+  background: var(--LightGreen);
+  margin: 1em 0 0 0;
+  line-height: 1.5em;
+  font-size: 1.125rem;
+  padding: 0.5em;
+}
+
+.post ol li ul {
+  background: var(--LightGreen);
+  list-style-position: outside;
+  margin: 0;
+  padding-left: 0.35em;
+  color: #000;
+}
+.post ol li ul li {
+  font-weight: normal;
+  list-style-position: outside;
+  background: var(--LightGreen);
+  padding: 0.25em;
+  margin: 0 0 0em 1.25em;
+  line-height: 1.5em;
+  font-size: 0.95rem;
+}
+
+.post ul li {
+  /*background: rgb(80, 144, 197);*/
+  list-style-type: disc;
+}
+
+
+
+#in-a-nutshell {
+  font-size: 1.2em;
+  background: var(--Navy);
+  padding: 0.5em;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+ul.nutshell,
+ol.nutshell {
+  background: #EEE;
+  padding: 1em;
+  color: var(--Navy);
+}
+ol.nutshell li {
+  font-size: 1rem;
+  background: #EEE;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+p.nutshell {
+  line-height: 1.5em;
+  background: #EEE;
+  padding: 1em;
+  color: var(--Navy);
+}
