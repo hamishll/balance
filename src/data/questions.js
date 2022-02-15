@@ -30,7 +30,7 @@ export const FinancialQuestions = [
         question: "How much of your paycheck do you save per month?",
         options: ["<0%","<5%","<15%","<30%","30%+"],
         significance: 0.3,
-        response: "",
+        response: "Put money into your savings as soon as you get paid, and try to increase this over time",
         reasoning:""
     },
     {
@@ -38,7 +38,7 @@ export const FinancialQuestions = [
         question: "Are you paying interest on personal loans or credit cards each month?",
         options: ["Lots","Some","A lot","",""],
         significance: 0.3,
-        response: "",
+        response: "Before attempting to save, clear outstanding debts. Consider balance transferring to lower rate credit cards",
         reasoning:""
     },
     {
@@ -47,6 +47,33 @@ export const FinancialQuestions = [
         options: ["No","Somewhat","Yes","",""],
         significance: 0.9,
         response: "",
+        reasoning:""
+    },
+]
+
+export const DummyQuestions = [
+    {
+        key: "Z1",
+        question: "Question 1",
+        options: ["<0%","<5%","<15%","<30%","30%+"],
+        significance: 0.3,
+        response: "Tip 1",
+        reasoning:""
+    },
+    {
+        key: "Z2",
+        question: "Question 2",
+        options: ["Lots","Some","A lot","",""],
+        significance: 0.3,
+        response: "Tip 2",
+        reasoning:""
+    },
+    {
+        key: "Z3",
+        question: "Question 3",
+        options: ["No","Somewhat","Yes","",""],
+        significance: 0.9,
+        response: "Tip 3",
         reasoning:""
     },
 ]

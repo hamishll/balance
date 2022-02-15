@@ -3,7 +3,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 import ReactMarkdown from 'react-markdown';
-
+import SignInScreen from './SignInScreen';
 
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
@@ -15,18 +15,19 @@ export default function AccountPage(props) {
   }
 
 
-  const handleClickAssessment = () => {
-    {document.getElementById(props.name + 'Assessment').style.top = '7vh'};
-  }
+  // const handleClickAssessment = () => {
+  //   {document.getElementById(props.name + 'Assessment').style.top = '2.5vh'};
+  // }
 
   return (
     <div className="PageCardContainer" id={props.name}>
       <div className="PageCloseBg" onClick={minimisePage}/>
       <div className="PageCard" >
         <div className="PageClose" onClick={minimisePage}><CloseOutlinedIcon/></div>
-        
-        <h1>{props.name}</h1>
-
+        <div className="PageCardContent">
+          <h1>{props.name}</h1>
+          <SignInScreen/>
+        </div>
       </div>
     </div>
   )

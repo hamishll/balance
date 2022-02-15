@@ -11,10 +11,10 @@ export default function Header(props) {
   const pageContent = "";
   
   const handleClickSettings = () => {
-    {document.getElementById('Settings').style.top = '5vh'};
+    {document.getElementById('Settings').style.top = '2.5vh'};
   }
   const handleClickAccount = () => {
-    {document.getElementById('Account').style.top = '5vh'};
+    {document.getElementById('Account').style.top = '2.5vh'};
   }
   return (
     <>

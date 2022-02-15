@@ -45,26 +45,30 @@ export default function DimensionPage(props) {
   }
 
   const handleClickAssessment = () => {
-    {document.getElementById(props.name + 'Assessment').style.top = '6vh'};
+    {document.getElementById(props.name + 'Assessment').style.top = '5vh'};
   }
 
   return (
     <div className="PageCardContainer" id={props.name}>
       <div className="PageCloseBg" onClick={minimisePage}/>
-      <div className="PageCard" >
+      <div className="PageCard">
         <div className="PageClose" onClick={minimisePage}><CloseOutlinedIcon/></div>
         
-        <h1><span className="PageIcon">{IconList[props.name]}</span>{props.name}</h1>
-        <div style={{textAlign: "center"}}><Button variant="outlined" onClick={handleClickAssessment}>Complete Assessment</Button></div>
-        <h2>Recommended for you</h2>
-        {props.questions.map((q,index) => { 
-          return <FormGroup key={index}>
-            <FormControlLabel control={<Checkbox label={q.response} />} label={q.response} /> 
-          </FormGroup>
-        })}
-        <div className="post">
-          <ReactMarkdown children={props.content}/>
+        <div className="Heading" style={props.themes}><span className="PageIcon">{IconList[props.name]}</span>{props.name}</div>
+        
+        <div className="PageCardContent">
+          <div style={{textAlign: "center"}}><Button variant="outlined" onClick={handleClickAssessment}>Complete Assessment</Button></div>
+          <h2>Recommended for you</h2>
+          {props.questions.map((q,index) => { 
+            return <FormGroup key={index}>
+              <FormControlLabel control={<Checkbox label={q.response} />} label={q.response} /> 
+            </FormGroup>
+          })}
+          <div className="post">
+            <ReactMarkdown children={props.content}/>
+          </div>
         </div>
+
       </div>
     </div>
   )

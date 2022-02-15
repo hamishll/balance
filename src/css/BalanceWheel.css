@@ -7,7 +7,7 @@
   .pie {
     --p:83;
     --b:22px;
-    --c:green;
+    --c:rgb(52,199,89);
     --w:150px;
     
     width:var(--w);

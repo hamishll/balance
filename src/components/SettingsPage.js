@@ -13,9 +13,9 @@ export default function SettingsPage(props) {
     {document.getElementById(props.name).style.top = '120vh'};
   }
 
-  const handleClickAssessment = () => {
-    {document.getElementById(props.name + 'Assessment').style.top = '7vh'};
-  }
+  // const handleClickAssessment = () => {
+  //   {document.getElementById(props.name + 'Assessment').style.top = '2.5vh'};
+  // }
 
   return (
     <div className="PageCardContainer" id={props.name}>
@@ -23,7 +23,9 @@ export default function SettingsPage(props) {
       <div className="PageCard" >
         <div className="PageClose" onClick={minimisePage}><CloseOutlinedIcon/></div>
         
-        <h1>{props.name}</h1>
+        <div className="PageCardContent">
+          <h1>{props.name}</h1>
+        </div>
       </div>
     </div>
   )
