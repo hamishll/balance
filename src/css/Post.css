@@ -14,10 +14,8 @@
   --Red: rgb(220, 60, 130);
   --DarkYellow: rgb(242, 185, 89);
   --CardOpacity: 1;
-
 }
 .post {
-  padding-top: 24px;
 }
 ol {
   padding-left: 0;
@@ -30,26 +28,13 @@ ol {
   color: #777;
 }
 
-.posts-list {
-  list-style-type: none;
-}
-
 .posts-list li {
   text-align: left;
 }
 
 .post h2 {
   margin-top: 1.25em;
-  /*margin-left: -0.5em;*/
   margin-bottom: 1.25em;
-}
-
-.post h3 {
-  font-size: 1.2em;
-  background: var(--Navy);
-  padding: 0.5em;
-  margin-bottom: 0;
-  color: #fff;
 }
 
 .post a,
@@ -62,11 +47,6 @@ ol {
 }
 
 /* standard */
-.post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 0.4em;
-}
 
 .post p {
   font-size: 1em;
@@ -81,26 +61,6 @@ ol {
   margin-bottom: 1.25em;
 }
 
-.post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 0.2em;
-}
-
-.post pre code {
-  border: none;
-}
-
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #fff;
-}
-
-.post pre.terminal code {
-  background-color: #333;
-}
 .post ol {
   margin-left: 0;
 }
@@ -142,35 +102,4 @@ ol {
 .post ul li {
   /*background: rgb(80, 144, 197);*/
   list-style-type: disc;
-}
-
-
-
-#in-a-nutshell {
-  font-size: 1.2em;
-  background: var(--Navy);
-  padding: 0.5em;
-  margin-bottom: 0;
-  color: #fff;
-}
-
-ul.nutshell,
-ol.nutshell {
-  background: #EEE;
-  padding: 1em;
-  color: var(--Navy);
-}
-ol.nutshell li {
-  font-size: 1rem;
-  background: #EEE;
-  font-weight: normal;
-  margin: 0;
-  padding: 0;
-}
-
-p.nutshell {
-  line-height: 1.5em;
-  background: #EEE;
-  padding: 1em;
-  color: var(--Navy);
 }

@@ -1,7 +1,7 @@
-import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 
 import { doc, getDoc } from "firebase/firestore";
 // Follow this pattern to import other Firebase services
@@ -15,7 +15,7 @@ const firebaseConfig = {
   storageBucket: "balance-70204.appspot.com",
   messagingSenderId: "422888482271",
   appId: "1:422888482271:web:b8fb8bc5eede79fda9d06a",
-  measurementId: "G-938VWJC81S"
+  measurementId: "G-938VWJC81S",
 };
 
 const app = initializeApp(firebaseConfig);
@@ -26,9 +26,9 @@ const user = firebase.auth().currentUser;
 async function getUserData(user) {
   // console.log(user);
   //const docRef = doc(db, "users");
-  const userCol = collection(db, 'users');
+  const userCol = collection(db, "users");
   const userSnapshot = await getDocs(userCol);
-  const userList = userSnapshot.docs.map(doc => doc.data());
+  const userList = userSnapshot.docs.map((doc) => doc.data());
   return userList;
 
   // if (docSnap.exists()) {
@@ -48,7 +48,6 @@ const valueStyle = {
 };
 
 export default function Firestore(props) {
-  
   return (
     <div>
       <span>Values</span>

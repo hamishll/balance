@@ -1,12 +1,16 @@
 import React from "react";
-import { useGetData, useGetUserData } from "../hooks/useGetData";
-import firebase from 'firebase/compat/app';
+import { useGetUserData } from "../hooks/useGetData";
+import firebase from "firebase/compat/app";
 import Update from "./Update";
 import Delete from "./Delete";
 
 const FireStoreData = () => {
+  // const getUser = () => {
+  //   return firebase.auth().currentUser;
+  // };
   const uid = firebase.auth().currentUser.uid;
-  const [documents] = useGetUserData(uid);
+
+  const [documents] = useGetUserData(uid || "");
 
   const valueStyle = {
     width: "full",
@@ -20,7 +24,7 @@ const FireStoreData = () => {
       {documents.map((documents) => (
         <div key={documents.id}>
           <div style={valueStyle}>
-            Document: {documents.id} Value: {documents.value.finance1}
+            Document: {documents.id} Value: {documents.value.f1}
           </div>
           <Delete doc={documents.id} />
           <Update doc={documents.id} />

@@ -1,7 +1,5 @@
 export const MindsetContent = `
 
-# In a nutshell
-
 Worry is a psychological effect which we can control. Cultivate a mental
 attitude of peace and happiness, be yourself and don’t stress the little
 things. Think ‘what is the worst thing that could happen?’ and accept
@@ -69,4 +67,4 @@ drive you.
     -   Learn to organise, deputise and supervise
 4.  Prevent worry and fatigue by putting enthusiasm into your work
 
-`
+`;

@@ -1,7 +1,5 @@
 export const SleepContent = `
 
-# Summary
-
 1. Sleeping for less than 8 hours a night can have serious implications for many different aspects of health. Having good quality, efficient sleep:
     - improves memory
     - increases creativity
@@ -32,4 +30,4 @@ If sleep were a new prescription drug, people would pay thousands for it, but sl
 10. Dark bedroom, cool bedroom, gadget-free bedroom.
 11. Daylight is key to regulating sleep patterns.
 12. Don't lie in bed awake - if sleep doesn't reach you within 20 minutes, get up and do something relaxing for a while.
-`
+`;

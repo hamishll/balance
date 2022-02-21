@@ -1,8 +1,8 @@
 import React from "react";
 // import firebase from "firebase";
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 
 const Add = () => {
   const [value, setValue] = React.useState("");
@@ -33,8 +33,8 @@ const Add = () => {
 
   return (
     <div style={valueStyle}>
-      <input onBlur={getValue} type='text' />
-      <button type='button' onClick={addValue}>
+      <input onBlur={getValue} type="text" />
+      <button type="button" onClick={addValue}>
         Add
       </button>
     </div>

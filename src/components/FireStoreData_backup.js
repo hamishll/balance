@@ -2,10 +2,9 @@ import React from "react";
 import { useGetData } from "../hooks/useGetData";
 import Update from "./Update";
 import Delete from "./Delete";
-import 'firebase/compat/auth';
+import "firebase/compat/auth";
 
 const FireStoreData = () => {
-  
   const [documents] = useGetData();
 
   const valueStyle = {

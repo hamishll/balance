@@ -1,8 +1,8 @@
 import React from "react";
 // import firebase from "firebase";
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 
 const Update = ({ doc }) => {
   const [value, setValue] = React.useState("");
@@ -28,7 +28,7 @@ const Update = ({ doc }) => {
 
   return (
     <>
-      <input onBlur={getValue} type='text' />
+      <input onBlur={getValue} type="text" />
       <button onClick={updateValue}>Update</button>
     </>
   );
