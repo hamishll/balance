@@ -1,9 +1,9 @@
 export const FriendsContent = `
 
-**We're never formally taught how to get on with other people, however our popularity, 
+We're never formally taught how to get on with other people, however our popularity, 
 happiness and sense of worth depend upon almost entirely on our skill in dealing with people. 
 In the notes below, we'll explore how you can increase your 'emotional intelligence' by learning 
-how to listen and understand other people better.**
+how to listen and understand other people better.
 
 # Fundamental techniques in handling people:
 
@@ -45,20 +45,17 @@ how to listen and understand other people better.**
     already happy. Feeling follows action more than we realise
     - “Most folks are about as happy as they make up their minds to be” –
     Lincoln
-    - The Value of a Smile at Christmas:
-    - *“It costs nothing, but creates much.*
-    - *It enriches those who receive it, without impoverishing those who
-    give.*
-    - *It happens in a flash and the memory of it sometimes lasts forever*
-    - *None are so rich that they can get along without it*
-    - *And none so poor but are richer for its benefits*
-    - *It creates happiness in the home, fosters good will in business,
-    and is the countersign of friends*
-    - *It is rest to the weary, daylight to the discouraged*
-    - *Sunshine to the sad and, and nature’s best antidote for trouble*
-    - *Yet it cannot be bought, begged, borrowed, or stolen*
-    - *For it is something that is no earthly good to somebody till it is
-    given away”*
+    - The Value of a Smile at Christmas: *“It costs nothing, but creates much.
+    It enriches those who receive it, without impoverishing those who
+    give. It happens in a flash and the memory of it sometimes lasts forever,
+    None are so rich that they can get along without it, 
+    And none so poor but are richer for its benefits.
+    It creates happiness in the home, fosters good will in business,
+    and is the countersign of friends. 
+    It is rest to the weary, daylight to the discouraged,
+    Sunshine to the sad and, and nature’s best antidote for trouble.
+    Yet it cannot be bought, begged, borrowed, or stolen, 
+    for it is something that is no earthly good to somebody till it is given away”*
 1.  A person’s name is to that person the sweetest and most important
     sound in any language
 2.  Be a good listener. Encourage others to talk about themselves
@@ -137,7 +134,6 @@ how to listen and understand other people better.**
 1.  Ask questions instead of giving direct orders
 2.  Let the other person save face
 3.  Praise the slightest improvement and praise every improvement
-    - Be ‘hearty in your approbation and lavish in your praise’
 1.  Give the other person a fine reputation to live up to
 2.  Use encouragement. Make the fault seem easy to correct
 3.  Make the other person happy about doing the thing you suggest

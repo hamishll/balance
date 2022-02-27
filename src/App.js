@@ -1,4 +1,5 @@
-import "./App.css";
+// import "./App.css";
+import "./Output.css";
 import React, { useState, useEffect, useContext, createContext } from "react";
 
 // Sections

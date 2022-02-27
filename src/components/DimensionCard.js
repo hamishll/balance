@@ -76,12 +76,12 @@ export default function DimensionCard(props) {
   return (
     <>
       <div
-        className="CategoryCard"
+        className="CategoryCard basis-1/3 grow"
         style={{ backgroundColor: DimensionColors[props.name] }}
         onClick={handleClick}
       >
         <div className="CategoryCardIcon">{IconList[props.name]}</div>
-        <div className="CategoryCardText">{props.name}</div>
+        <div className="CategoryCardText leading-tight">{props.name}</div>
         <div className="CategoryCardNum">
           <Rating
             name="read-only"

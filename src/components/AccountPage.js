@@ -29,7 +29,6 @@ export default function AccountPage(props) {
         </div>
         <div className="PageCardContent">
           <h1>{props.name}</h1>
-          <SignInScreen />
         </div>
       </div>
     </div>

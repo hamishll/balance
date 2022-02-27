@@ -16,14 +16,14 @@ import Card from "./Card";
 
 export default function Dimensions(props) {
   return (
-    <div className="Container" id="Dimensions">
+    <div className="Container px-4" id="Dimensions">
       <Card
         name="explainerCard"
         backgroundColor="rgb(235, 235, 235)"
         heading="About the Journey"
-        text="Finding happiness requires us to find balance across our life. 
-      Through the journey below, we'll start by looking after our mind, 
-      body, relationships, finances and work to find balance and be happy."
+        text="Finding happiness requires us to find balance across our life.
+        Through the journey below, we'll start by looking after our mind, body,
+        relationships, finances and work to find balance and be happy."
       />
 
       <Heading1 toptext="Level 1" text="Philosophy of Life" />

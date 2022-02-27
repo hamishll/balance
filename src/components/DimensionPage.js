@@ -66,7 +66,7 @@ export default function DimensionPage(props) {
           {props.name}
         </div>
 
-        <div className="PageCardContent">
+        <div className="p-4">
           <div style={{ textAlign: "center" }}>
             <Button
               variant="outlined"
@@ -77,6 +77,11 @@ export default function DimensionPage(props) {
                 "&:active": {
                   borderColor: props.themes,
                   backgroundColor: props.themes,
+                },
+                "&:hover": {
+                  borderColor: props.themes,
+                  backgroundColor: props.themes,
+                  color: "white",
                 },
               }}
               onClick={handleClickAssessment}

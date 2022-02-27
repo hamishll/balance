@@ -7,10 +7,10 @@ export default function MyBalance(props) {
   // const [value, setValue] = React.useState(0);
 
   return (
-    <div className="MyBalance">
+    <div className="px-4">
       <BalanceWheel score={83} />
       <h2>Grateful for</h2>
-      <ul>
+      <ul className="list-disc list-inside">
         <li>Being physically healthy</li>
         <li>Family and friends</li>
         <li>Living in the modern world</li>
