@@ -5,6 +5,8 @@ import {
   SleepQuestions,
   FinancialQuestions,
   DummyQuestions,
+  ValuesQuestions,
+  WorryQuestions,
 } from "./../data/questions";
 import { MindsetContent } from "./../content/MindsetContent";
 import { FinancialContent } from "./../content/FinancialContent";
@@ -30,14 +32,14 @@ export default function Dimensions(props) {
       <DimensionCard
         userdata={props.userdata}
         content={ValuesContent}
-        questions={DummyQuestions}
+        questions={ValuesQuestions}
         name="Values"
         score={3.3}
       />
       <DimensionCard
         userdata={props.userdata}
         content={MindsetContent}
-        questions={DummyQuestions}
+        questions={WorryQuestions}
         name="Handling worry"
         score={4.1}
       />

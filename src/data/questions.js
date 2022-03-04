@@ -1,6 +1,6 @@
 export const SleepQuestions = [
   {
-    k: "S1",
+    k: "Sleep1",
     question: "How many hours of sleep do you get per night?",
     options: ["<5", "6", "7", "8", "9+"],
     significance: 0.9,
@@ -9,7 +9,7 @@ export const SleepQuestions = [
       "Sleep improves our physical health, our immune system, and reduces the chance of injury. It also protects our mental health.",
   },
   {
-    k: "S2",
+    k: "Sleep2",
     question:
       "On average, how many caffeinated beverages do you consume per day?",
     options: ["0", "1", "2", "3", "4+"],
@@ -18,7 +18,7 @@ export const SleepQuestions = [
     reasoning: "",
   },
   {
-    k: "S3",
+    k: "Sleep3",
     question: "Do you often go on your mobile phone just before bed?",
     options: ["Yes", "Sometimes", "No", "", ""],
     significance: 0.3,
@@ -28,7 +28,7 @@ export const SleepQuestions = [
 ];
 export const FinancialQuestions = [
   {
-    k: "F1",
+    k: "Finance1",
     question:
       "Are you paying interest on personal loans or credit cards each month?",
     options: ["Lots", "Some", "A lot", "", ""],
@@ -38,7 +38,7 @@ export const FinancialQuestions = [
     reasoning: "",
   },
   {
-    k: "F2",
+    k: "Finance2",
     question: "How much of your paycheck do you save per month?",
     options: ["<0%", "<5%", "<15%", "<30%", "30%+"],
     significance: 0.3,
@@ -48,7 +48,7 @@ export const FinancialQuestions = [
   },
 
   {
-    k: "F3",
+    k: "Finance3",
     question: "Do you feel able to support yourself financially?",
     options: ["No", "Somewhat", "Yes", "", ""],
     significance: 0.9,
@@ -79,6 +79,59 @@ export const DummyQuestions = [
     question: "Question 3",
     options: ["No", "Somewhat", "Yes", "", ""],
     significance: 0.9,
+    response: "Tip 3",
+    reasoning: "",
+  },
+];
+
+export const ValuesQuestions = [
+  {
+    k: "Values1",
+    question: "Do you know what you want to achieve in life?",
+    options: ["No", "Not much", "Partially", "Lots", "Totally"],
+    significance: 0.3,
+    response: "Tip 1",
+    reasoning: "",
+  },
+  {
+    k: "Values2",
+    question: "Do you understand what makes you happy in life?",
+    options: ["No", "Not much", "Partially", "Lots", "Totally"],
+    significance: 0.4,
+    response: "Tip 2",
+    reasoning: "",
+  },
+  {
+    k: "Values3",
+    question: "Are you able to accept misfortune when it occurs?",
+    options: ["No ", "Not much", "Partially", "Lots", "Totally"],
+    significance: 0.4,
+    response: "Tip 3",
+    reasoning: "",
+  },
+];
+export const WorryQuestions = [
+  {
+    k: "Worry1",
+    question: "Do you find yourself worrying about things which you have control over?",
+    options: ["No", "Not much", "Partially", "Lots", "Totally"],
+    significance: 0.3,
+    response: "Tip 1",
+    reasoning: "",
+  },
+  {
+    k: "Worry2",
+    question: "Do you ever feel anxious?",
+    options: ["Never", "Rarely", "Sometimes", "Often", "All the time"],
+    significance: 0.4,
+    response: "Tip 2",
+    reasoning: "",
+  },
+  {
+    k: "Worry3",
+    question: "Do you have strategies for dealing with worry?",
+    options: ["No ", "", "", "", "Yes"],
+    significance: 0.4,
     response: "Tip 3",
     reasoning: "",
   },
