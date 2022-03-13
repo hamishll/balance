@@ -57,11 +57,31 @@ export default function AssessmentQuestion(props) {
         exclusive
         onChange={handleChange}
       >
-        {props.choice1 == "" ? <ToggleButton value="1">{props.choice1}</ToggleButton> : ""}
-        <ToggleButton value="2">{props.choice2}</ToggleButton>
-        <ToggleButton value="3">{props.choice3}</ToggleButton>
-        <ToggleButton value="4">{props.choice4}</ToggleButton>
-        <ToggleButton value="5">{props.choice5}</ToggleButton>
+        {props.choice1 != "" ? (
+          <ToggleButton value="1">{props.choice1}</ToggleButton>
+        ) : (
+          ""
+        )}
+        {props.choice2 != "" ? (
+          <ToggleButton value="2">{props.choice2}</ToggleButton>
+        ) : (
+          ""
+        )}
+        {props.choice3 != "" ? (
+          <ToggleButton value="3">{props.choice3}</ToggleButton>
+        ) : (
+          ""
+        )}
+        {props.choice4 != "" ? (
+          <ToggleButton value="4">{props.choice4}</ToggleButton>
+        ) : (
+          ""
+        )}
+        {props.choice5 != "" ? (
+          <ToggleButton value="5">{props.choice5}</ToggleButton>
+        ) : (
+          ""
+        )}
       </ToggleButtonGroup>
     </>
   );

@@ -29,6 +29,8 @@ export default function SettingsPage(props) {
 
         <div className="PageCardContent">
           <h1>{props.name}</h1>
+          Balance is an open-source app designed to help you find happiness and
+          meaning in your life.
           <script
             data-name="BMC-Widget"
             data-cfasync="false"

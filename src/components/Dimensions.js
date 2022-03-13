@@ -13,6 +13,7 @@ import { FinancialContent } from "./../content/FinancialContent";
 import { SleepContent } from "./../content/SleepContent";
 import { FriendsContent } from "./../content/FriendsContent";
 import { ValuesContent } from "./../content/ValuesContent";
+import { MeaningContent } from "./../content/MeaningContent";
 import Heading1 from "./Heading1";
 import Card from "./Card";
 
@@ -112,6 +113,7 @@ export default function Dimensions(props) {
       <DimensionCard
         userdata={props.userdata}
         questions={DummyQuestions}
+        content={MeaningContent}
         name="Helping others"
         score={3.1}
       />

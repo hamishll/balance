@@ -105,6 +105,9 @@ li {
   width: 100%;
   line-height: 1.35em;
 }
+#explainerCard {
+  background-image: url("../src/images/journeyhero.png");
+}
 .CardClose {
   width: 35px;
   height: 35px;
@@ -187,7 +190,7 @@ li {
   top: 120vh;
   min-height: 100vh;
   transition: 0.2s ease-in-out;
-  max-width: 985px;
+  max-width: 1000px;
 }
 .PageCardContainer ::-webkit-scrollbar {
   display: none;
