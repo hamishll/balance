@@ -24,6 +24,8 @@ export default function AssessmentQuestion(props) {
   const handleChange = (event, newAlignment) => {
     setAlignment([newAlignment]);
     // console.log(uid);
+    // Set local storage
+    localStorage.setItem(props.k, newAlignment);
     if (uid) {
       updateValue(uid, props.k, newAlignment);
     } else {

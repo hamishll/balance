@@ -24,7 +24,7 @@ export default function Header(props) {
     <>
       <div className="px-4 pt-6 pb-2 text-4xl font-bold relative flex flex-row">
         {props.name}
-        <div className="right-6 absolute flex gap-8 text-2xl top-8 HeaderControls">
+        <div className="right-6 absolute flex gap-8 text-2xl top-8 HeaderControls cursor-pointer">
           <SettingsOutlinedIcon onClick={handleClickSettings} />
           <AccountCircleOutlinedIcon onClick={handleClickAccount} />
         </div>

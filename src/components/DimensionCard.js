@@ -72,11 +72,10 @@ export default function DimensionCard(props) {
   const handleClick = () => {
     document.getElementById(props.name).style.top = "2.5vh";
   };
-
   return (
     <>
       <div
-        className="CategoryCard basis-1/3 grow"
+        className="CategoryCard basis-1/3 grow max-w-sm"
         style={{ backgroundColor: DimensionColors[props.name] }}
         onClick={handleClick}
       >
@@ -85,7 +84,11 @@ export default function DimensionCard(props) {
         <div className="CategoryCardNum">
           <Rating
             name="read-only"
-            value={props.score}
+            value={
+              parseInt(localStorage.getItem(props.name + "1") ?? 0) +
+              parseInt(localStorage.getItem(props.name + "2") ?? 0) +
+              parseInt(localStorage.getItem(props.name + "3") ?? 0)
+            }
             precision={0.1}
             style={{ color: "white", opacity: 0.7 }}
             readOnly

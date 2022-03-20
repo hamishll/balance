@@ -28,7 +28,7 @@ export const SleepQuestions = [
 ];
 export const FinancialQuestions = [
   {
-    k: "Finance1",
+    k: "Financial freedom1",
     question:
       "Are you paying interest on personal loans or credit cards each month?",
     options: ["Lots", "Some", "A lot", "", ""],
@@ -38,7 +38,7 @@ export const FinancialQuestions = [
     reasoning: "",
   },
   {
-    k: "Finance2",
+    k: "Financial freedom2",
     question: "How much of your paycheck do you save per month?",
     options: ["<0%", "<5%", "<15%", "<30%", "30%+"],
     significance: 0.3,
@@ -48,7 +48,7 @@ export const FinancialQuestions = [
   },
 
   {
-    k: "Finance3",
+    k: "Financial freedom3",
     question: "Do you feel able to support yourself financially?",
     options: ["No", "Somewhat", "Yes", "", ""],
     significance: 0.9,
@@ -112,15 +112,16 @@ export const ValuesQuestions = [
 ];
 export const WorryQuestions = [
   {
-    k: "Worry1",
-    question: "Do you find yourself worrying about things which you have control over?",
+    k: "Handling worry1",
+    question:
+      "Do you find yourself worrying about things which you have control over?",
     options: ["No", "Not much", "Partially", "Lots", "Totally"],
     significance: 0.3,
     response: "Tip 1",
     reasoning: "",
   },
   {
-    k: "Worry2",
+    k: "Handling worry2",
     question: "Do you ever feel anxious?",
     options: ["Never", "Rarely", "Sometimes", "Often", "All the time"],
     significance: 0.4,
@@ -128,7 +129,7 @@ export const WorryQuestions = [
     reasoning: "",
   },
   {
-    k: "Worry3",
+    k: "Handling worry3",
     question: "Do you have strategies for dealing with worry?",
     options: ["No ", "", "", "", "Yes"],
     significance: 0.4,

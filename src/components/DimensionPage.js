@@ -3,7 +3,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+import ControlledCheckbox from "./ControlledCheckbox";
 import ReactMarkdown from "react-markdown";
 
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
@@ -22,6 +22,7 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import NavigationOutlinedIcon from "@mui/icons-material/NavigationOutlined";
 
 import styles from "./../css/Post.css";
+import { ConstructionOutlined } from "@mui/icons-material";
 
 export default function DimensionPage(props) {
   //const [value, setValue] = React.useState(0);
@@ -74,10 +75,12 @@ export default function DimensionPage(props) {
                 color: props.themes,
                 border: 1,
                 borderColor: props.themes,
+
                 "&:active": {
                   borderColor: props.themes,
                   backgroundColor: props.themes,
                 },
+
                 "&:hover": {
                   borderColor: props.themes,
                   backgroundColor: props.themes,
@@ -91,16 +94,24 @@ export default function DimensionPage(props) {
           </div>
 
           <h2>Recommended for you</h2>
-          {props.questions.map((q, index) => {
-            return (
-              <FormGroup key={index}>
+          <FormGroup>
+            {props.questions.map((q, index) => {
+              return (
                 <FormControlLabel
-                  control={<Checkbox label={q.response} />}
+                  key={index}
+                  value="end"
+                  control={
+                    <ControlledCheckbox
+                      id={q.k}
+                      checked={localStorage.getItem(q.k) === "1" ? true : false}
+                    />
+                  }
                   label={q.response}
+                  labelPlacement="end"
                 />
-              </FormGroup>
-            );
-          })}
+              );
+            })}
+          </FormGroup>
 
           <h2>Summary</h2>
           <div className="post">
