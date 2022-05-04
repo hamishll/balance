@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import firebase from "firebase/compat/app";
 
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import TextField from "@mui/material/TextField";
+import ControlledChip from "./ControlledChip";
+import Box from "@mui/material/Box";
 
-export default function AssessmentQuestion(props) {
+export default function MultiChoiceQuestion(props) {
   //   const [value, setValue] = React.useState(0);
 
-  const [alignment, setAlignment] = React.useState(props.initValue);
-  //console.log("props.initValue", props.initValue);
+  const [alignment, setAlignment] = React.useState("web");
 
   let uid = "";
   let user = firebase.auth().currentUser;
@@ -19,12 +17,13 @@ export default function AssessmentQuestion(props) {
     // console.log("User is not logged in. ID:", user);
   }
 
-  // useEffect(() => {
-  //   setAlignment("" + props.initValue);
-  // }, [alignment]);
+  useEffect(() => {
+    setAlignment("" + props.initValue);
+  }, []);
 
   const handleChange = (event, newAlignment) => {
     setAlignment([newAlignment]);
+    // console.log(uid);
     // Set local storage
     localStorage.setItem(props.k, newAlignment);
     if (uid) {
@@ -52,21 +51,19 @@ export default function AssessmentQuestion(props) {
   };
 
   return (
-    <>
+    <Box sx={{ flexGrow: 1 }}>
       <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
         {props.question}
       </div>
-
-      <ToggleButtonGroup
-        color="primary"
-        value={alignment}
-        exclusive
-        onChange={handleChange}
-      >
-        {props.choices.map((q, index) => {
-          return <ToggleButton value={index}>{q}</ToggleButton>;
-        })}
-      </ToggleButtonGroup>
-    </>
+      {props.choices.map((q, index) => {
+        return (
+          <ControlledChip
+            sx={{ margin: "6px 6px 0px 0px" }}
+            label={q}
+            k={props.k + "." + index}
+          />
+        );
+      })}
+    </Box>
   );
 }

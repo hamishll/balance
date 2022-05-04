@@ -1,9 +1,4 @@
 import * as React from "react";
-
-import Button from "@mui/material/Button";
-import Checkbox from "@mui/material/Checkbox";
-import ReactMarkdown from "react-markdown";
-
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 export default function SettingsPage(props) {
@@ -31,7 +26,7 @@ export default function SettingsPage(props) {
           <h1>{props.name}</h1>
           Balance is an open-source app designed to help you find happiness and
           meaning in your life.
-          <script
+          {/* <script
             data-name="BMC-Widget"
             data-cfasync="false"
             src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
@@ -42,7 +37,7 @@ export default function SettingsPage(props) {
             data-position="Right"
             data-x_margin="18"
             data-y_margin="18"
-          ></script>
+          ></script> */}
         </div>
       </div>
     </div>

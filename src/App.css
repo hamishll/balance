@@ -25,6 +25,7 @@
 }
 @tailwind components;
 @tailwind utilities;
+
 :root {
   --text: rgb(0, 0, 0);
   --text-light: rgb(110, 110, 110);
@@ -71,7 +72,6 @@ li {
   height: 79vh;
   overflow-x: hidden;
   overflow-y: scroll;
-  gap: 15px;
   align-content: stretch;
   align-items: stretch;
 }
@@ -100,14 +100,14 @@ li {
 }
 .Card {
   padding: 15px;
-  color: #444;
+  /* color: #444; */
   position: relative;
   width: 100%;
   line-height: 1.35em;
 }
-#explainerCard {
+/* #explainerCard {
   background-image: url("../src/images/journeyhero.png");
-}
+} */
 .CardClose {
   width: 35px;
   height: 35px;
@@ -123,29 +123,6 @@ li {
   cursor: pointer;
 }
 
-.CategoryCard {
-  color: white;
-  border-radius: 10px;
-  position: relative;
-  height: 100px;
-  cursor: pointer;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.CategoryCardText {
-  font-size: 1.25em;
-  font-weight: bold;
-  color: white;
-}
-.CategoryCardTextOld {
-  width: 100px;
-  text-align: center;
-  font-size: 1em;
-  height: 32px;
-  font-weight: bold;
-  color: var(--text);
-}
 .CategoryCardNum {
   font-size: 30px;
 }
@@ -158,24 +135,15 @@ li {
   justify-content: center;
   margin-bottom: 7px;
   position: absolute;
-  top: 50px;
-  right: -30px;
+  top: 30px;
+  right: -25px;
 }
-.CategoryCardIconOld {
-  background: blue;
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  opacity: 1;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 7px;
-}
+
 .CategoryCardIcon svg {
-  transform: scale(7) rotate(-10deg);
+  transform: scale(3.5) rotate(0deg);
   opacity: 0.1;
-  mix-blend-mode: screen;
+  mix-blend-mode: overlay;
+  color: black;
 }
 .CategoryCardIconOld svg {
   transform: scale(2.5) translate(51%, 51%);
@@ -199,7 +167,7 @@ li {
   background: rgb(249, 249, 255);
   border-radius: 20px 20px 0 0;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 0px 40px 1px rgba(0, 0, 0, 0.3); */
   color: rgb(40, 40, 40);
   height: 100vh;
   overflow: scroll;

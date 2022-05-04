@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import firebase from "firebase/compat/app";
 
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import TextField from "@mui/material/TextField";
 
-export default function AssessmentQuestion(props) {
+export default function FreeTextQuestion(props) {
   //   const [value, setValue] = React.useState(0);
 
-  const [alignment, setAlignment] = React.useState(props.initValue);
-  //console.log("props.initValue", props.initValue);
+  const [alignment, setAlignment] = React.useState(props.initValue ?? "");
 
   let uid = "";
   let user = firebase.auth().currentUser;
@@ -19,18 +16,21 @@ export default function AssessmentQuestion(props) {
     // console.log("User is not logged in. ID:", user);
   }
 
-  // useEffect(() => {
-  //   setAlignment("" + props.initValue);
-  // }, [alignment]);
+  useEffect(() => {
+    setAlignment("" + alignment);
+  }, []);
 
-  const handleChange = (event, newAlignment) => {
-    setAlignment([newAlignment]);
+  const handleChange = (event) => {
+    setAlignment(event.target.value);
+    localStorage.setItem(props.k, event.target.value);
+    // console.log(uid);
     // Set local storage
-    localStorage.setItem(props.k, newAlignment);
     if (uid) {
-      updateValue(uid, props.k, newAlignment);
+      // TO DO: Disabling write to firebase now until I can get around to making it not write on every keypress!
+      // updateValue(uid, props.k, alignment);
     } else {
-      console.log("User is not logged in, so can't update document");
+      // Disabling write to firebase now
+      // console.log("User is not logged in, so can't update document");
     }
   };
 
@@ -56,17 +56,14 @@ export default function AssessmentQuestion(props) {
       <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
         {props.question}
       </div>
-
-      <ToggleButtonGroup
-        color="primary"
-        value={alignment}
-        exclusive
+      <TextField
+        className="w-full"
+        id="outlined-multiline-static"
+        multiline
+        rows={4}
+        value={"" + alignment}
         onChange={handleChange}
-      >
-        {props.choices.map((q, index) => {
-          return <ToggleButton value={index}>{q}</ToggleButton>;
-        })}
-      </ToggleButtonGroup>
+      />
     </>
   );
 }

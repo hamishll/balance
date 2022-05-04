@@ -12,12 +12,12 @@ export default function Header(props) {
 
   const handleClickSettings = () => {
     {
-      document.getElementById("Settings").style.top = "2.5vh";
+      document.getElementById("Settings").style.top = "0vh";
     }
   };
   const handleClickAccount = () => {
     {
-      document.getElementById("Account").style.top = "2.5vh";
+      document.getElementById("Account").style.top = "0vh";
     }
   };
   return (

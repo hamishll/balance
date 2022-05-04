@@ -10,7 +10,7 @@ export default function MainContainer(props) {
       return <MyBalance value={props.value} />;
       break;
     case 1:
-      return <Dimensions value={props.value} userdata={props.userdata} />;
+      return <Dimensions value={props.value} appData={props.appData} />;
       break;
     case 2:
       return <Coach value={props.value} />;

@@ -9,16 +9,6 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 export default function SimpleBottomNavigation(props) {
   const [value, setValue] = React.useState(0);
 
-  //   function loadpage(pageName) {
-  //     try {
-  //       document.querySelectorAll('.Container').forEach(item => {item.style.zIndex = -3});
-  //       document.getElementById(pageName).style.zIndex = 1;
-  //     }
-  //     catch {
-  //     }
-  //     console.log("Ran")
-  //   }
-
   return (
     <div className="BottomNavigation">
       <Box sx={{ width: 390 }}>

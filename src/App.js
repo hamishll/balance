@@ -15,17 +15,21 @@ import FaceIcon from "@mui/icons-material/Face";
 import firebase from "firebase/compat/app";
 import { useGetUserData } from "./hooks/useGetData";
 
-function App() {
-  // const userData = {};
-  // console.log(userData);
-  // const UserDataContext = createContext(userData);
+import { appdata } from "./data/appdata";
 
-  const [user, setUser] = React.useState("");
+const App = () => {
+  const [appData, setAppData] = useState(appdata);
+  const [userData, setUserData] = useState({});
+  // const updatedValues = {};
+  // setUserData((prevState) => {
+  //   // Object.assign would also work
+  //   return { ...prevState, ...updatedValues };
+  // });
 
   // const [documents] = useGetUserData(user.uid);
 
   // Page state
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(1);
   const headingDict = {
     0: "My Balance",
     1: "Journey",
@@ -33,15 +37,10 @@ function App() {
   };
 
   return (
-    // <UserDataContext.Provider value={userData}>
     <div className="Screen">
       <Header name={headingDict[value]} />
-      <MainContainer value={value} />
-      {/* <UserDataContext.Consumer>
-          {(userData) => userData.f1}
-        </UserDataContext.Consumer> */}
+      <MainContainer value={value} appData={appData} />
       <div className="BottomNavigation">
-        {/*This was in the box jsx before sx={{ width: 400 }} */}
         <Box>
           <BottomNavigation
             showLabels
@@ -66,8 +65,7 @@ function App() {
         </Box>
       </div>
     </div>
-    // </UserDataContext.Provider>
   );
-}
+};
 
 export default App;

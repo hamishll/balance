@@ -20,7 +20,7 @@ export const SleepQuestions = [
   {
     k: "Sleep3",
     question: "Do you often go on your mobile phone just before bed?",
-    options: ["Yes", "Sometimes", "No", "", ""],
+    options: ["Yes", "Sometimes", "No"],
     significance: 0.3,
     response: "Make the hour before bed a 'no-screens' time",
     reasoning: "",
@@ -31,7 +31,7 @@ export const FinancialQuestions = [
     k: "Financial freedom1",
     question:
       "Are you paying interest on personal loans or credit cards each month?",
-    options: ["Lots", "Some", "A lot", "", ""],
+    options: ["Lots", "Some", "A lot"],
     significance: 0.3,
     response:
       "Before attempting to save, clear outstanding debts. Consider balance transferring to lower rate credit cards",
@@ -50,7 +50,7 @@ export const FinancialQuestions = [
   {
     k: "Financial freedom3",
     question: "Do you feel able to support yourself financially?",
-    options: ["No", "Somewhat", "Yes", "", ""],
+    options: ["No", "Somewhat", "Yes"],
     significance: 0.9,
     response: "",
     reasoning: "",
@@ -69,7 +69,7 @@ export const DummyQuestions = [
   {
     k: "Z2",
     question: "Question 2",
-    options: ["Lots", "Some", "A lot", "", ""],
+    options: ["Lots", "Some", "A lot"],
     significance: 0.3,
     response: "Tip 2",
     reasoning: "",
@@ -77,7 +77,7 @@ export const DummyQuestions = [
   {
     k: "Z3",
     question: "Question 3",
-    options: ["No", "Somewhat", "Yes", "", ""],
+    options: ["No", "Somewhat", "Yes"],
     significance: 0.9,
     response: "Tip 3",
     reasoning: "",
@@ -90,7 +90,7 @@ export const ValuesQuestions = [
     question: "Do you know what you want to achieve in life?",
     options: ["No", "Not much", "Partially", "Lots", "Totally"],
     significance: 0.3,
-    response: "Tip 1",
+    response: "Engage in negative visualisation each night at bedtime",
     reasoning: "",
   },
   {
@@ -98,13 +98,54 @@ export const ValuesQuestions = [
     question: "Do you understand what makes you happy in life?",
     options: ["No", "Not much", "Partially", "Lots", "Totally"],
     significance: 0.4,
-    response: "Tip 2",
+    response: "Do your best to accept the past, and embrace the present",
     reasoning: "",
   },
   {
     k: "Values3",
     question: "Are you able to accept misfortune when it occurs?",
     options: ["No ", "Not much", "Partially", "Lots", "Totally"],
+    significance: 0.4,
+    response: "Refuse to think 'if only' thoughts",
+    reasoning: "",
+  },
+];
+export const ValuesMultiChoiceQuestions = [
+  {
+    k: "ValuesMC1",
+    question: "What gives your life meaning?",
+    options: [
+      "👪 Family",
+      "💻 Work",
+      "🐕 Pets",
+      "🎨 Creating",
+      "💕 Partner",
+      "💸 Charity",
+      "🛐 Faith",
+    ],
+    significance: 0.3,
+    response: "Tip 1",
+    reasoning: "",
+  },
+  {
+    k: "ValuesMC2",
+    question: "What personal values do you want to have?",
+    options: [
+      "💵 Wealthy",
+      "💛 Loyal",
+      "😇 Kind",
+      "🤗 Friendly",
+      "👩‍🏫 Teacher",
+      "🌟 Famous",
+    ],
+    significance: 0.4,
+    response: "Tip 2",
+    reasoning: "",
+  },
+  {
+    k: "ValuesMC3",
+    question: "What do you want to achieve with your [Category]?",
+    options: ["No", "Not much", "Partially", "Lots", "Totally"],
     significance: 0.4,
     response: "Tip 3",
     reasoning: "",
@@ -131,7 +172,7 @@ export const WorryQuestions = [
   {
     k: "Handling worry3",
     question: "Do you have strategies for dealing with worry?",
-    options: ["No ", "", "", "", "Yes"],
+    options: ["No", "Yes"],
     significance: 0.4,
     response: "Tip 3",
     reasoning: "",

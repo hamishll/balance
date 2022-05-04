@@ -1,124 +1,129 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 
+// Components
 import Button from "@mui/material/Button";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import ControlledCheckbox from "./ControlledCheckbox";
 import ReactMarkdown from "react-markdown";
+import KnowledgeCheck from "./KnowledgeCheck";
+import DimensionPageAssessment from "./DimensionPageAssessment";
 
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import BedOutlinedIcon from "@mui/icons-material/BedOutlined";
-import EmojiPeopleOutlinedIcon from "@mui/icons-material/EmojiPeopleOutlined";
-import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
-import HeadphonesOutlinedIcon from "@mui/icons-material/HeadphonesOutlined";
-import SelfImprovementOutlinedIcon from "@mui/icons-material/SelfImprovementOutlined";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import LocalAtmOutlinedIcon from "@mui/icons-material/LocalAtmOutlined";
-import DinnerDiningOutlinedIcon from "@mui/icons-material/DinnerDiningOutlined";
-import HikingOutlinedIcon from "@mui/icons-material/HikingOutlined";
-import HealthAndSafetyOutlinedIcon from "@mui/icons-material/HealthAndSafetyOutlined";
-import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
+// Icons
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import NavigationOutlinedIcon from "@mui/icons-material/NavigationOutlined";
 
 import styles from "./../css/Post.css";
-import { ConstructionOutlined } from "@mui/icons-material";
+import MultiChoiceQuestion from "./MultiChoiceQuestion";
 
 export default function DimensionPage(props) {
-  //const [value, setValue] = React.useState(0);
+  DimensionPage.defaultProps = {
+    goals: [],
+  };
+  const [assessmentSelected, setAssessmentSelected] = useState(false);
+
+  useEffect(() => {
+    // useEffect will trigger on first render, so avoid anything which will fail like a DOM call`x
+    // console.log("useEffect triggered for " + props.name);
+    if (props.selected) {
+      document.getElementById(props.name).style.top = "0vh";
+    } else {
+      try {
+        document.getElementById(props.name).style.top = "120vh";
+      } catch {}
+    }
+    // }
+  }, [props.selected]);
 
   const minimisePage = () => {
-    document.getElementById(props.name).style.top = "120vh";
-  };
-
-  const IconList = {
-    Creating: <ColorLensOutlinedIcon />,
-    "Helping others": <HeadphonesOutlinedIcon />,
-
-    Family: <HeadphonesOutlinedIcon />,
-    Friends: <EmojiPeopleOutlinedIcon />,
-    Love: <FavoriteBorderOutlinedIcon />,
-
-    "Financial freedom": <LocalAtmOutlinedIcon />,
-    "Personal freedom": <HomeOutlinedIcon />,
-
-    "Handling worry": <SelfImprovementOutlinedIcon />,
-    Values: <NavigationOutlinedIcon />,
-
-    Sleep: <BedOutlinedIcon />,
-    Nutrition: <DinnerDiningOutlinedIcon />,
-    Physical: <HealthAndSafetyOutlinedIcon />,
-    Exercise: <HikingOutlinedIcon />,
+    props.setSelected(false);
+    //document.getElementById(props.name).style.top = "120vh";
   };
 
   const handleClickAssessment = () => {
-    document.getElementById(props.name + "Assessment").style.top = "5vh";
+    setAssessmentSelected(true);
   };
 
-  return (
-    <div className="PageCardContainer" id={props.name}>
-      <div className="PageCloseBg" onClick={minimisePage} />
-      <div className="PageCard">
-        <div className="PageClose" onClick={minimisePage}>
-          <CloseOutlinedIcon />
-        </div>
-        <div className="Heading" style={{ backgroundColor: props.themes }}>
-          <span className="PageIcon">{IconList[props.name]}</span>
-          {props.name}
-        </div>
-
-        <div className="p-4">
-          <div style={{ textAlign: "center" }}>
-            <Button
-              variant="outlined"
-              sx={{
-                color: props.themes,
-                border: 1,
-                borderColor: props.themes,
-
-                "&:active": {
-                  borderColor: props.themes,
-                  backgroundColor: props.themes,
-                },
-
-                "&:hover": {
-                  borderColor: props.themes,
-                  backgroundColor: props.themes,
-                  color: "white",
-                },
-              }}
-              onClick={handleClickAssessment}
-            >
-              Complete Assessment
-            </Button>
+  if (!props.selected) {
+    return "";
+  } else {
+    return (
+      <div className="PageCardContainer" id={props.name}>
+        <DimensionPageAssessment
+          questions={props.questions}
+          name={props.name + "Assessment"}
+          assessmentSelected={assessmentSelected}
+          setAssessmentSelected={setAssessmentSelected}
+        />
+        <div className="PageCloseBg" onClick={minimisePage} />
+        <div className="PageCard">
+          <div className="PageClose" onClick={minimisePage}>
+            <CloseOutlinedIcon />
+          </div>
+          <div className="Heading" style={{ backgroundColor: props.color }}>
+            <span className="PageIcon">{props.icon}</span>
+            {props.name}
           </div>
 
-          <h2>Recommended for you</h2>
-          <FormGroup>
-            {props.questions.map((q, index) => {
-              return (
-                <FormControlLabel
-                  key={index}
-                  value="end"
-                  control={
-                    <ControlledCheckbox
-                      id={q.k}
-                      checked={localStorage.getItem(q.k) === "1" ? true : false}
-                    />
-                  }
-                  label={q.response}
-                  labelPlacement="end"
-                />
-              );
-            })}
-          </FormGroup>
+          <div className="p-4">
+            <div style={{ textAlign: "center" }}>
+              <Button
+                variant="outlined"
+                sx={{
+                  color: props.color,
+                  border: 1,
+                  borderColor: props.color,
 
-          <h2>Summary</h2>
-          <div className="post">
-            <ReactMarkdown children={props.content} />
-          </div>
+                  "&:active": {
+                    borderColor: props.color,
+                    backgroundColor: props.color,
+                  },
 
-          {/* <h2>Useful resources</h2>
+                  "&:hover": {
+                    borderColor: props.color,
+                    backgroundColor: props.color,
+                    color: "white",
+                  },
+                }}
+                onClick={handleClickAssessment}
+              >
+                Complete Assessment
+              </Button>
+            </div>
+
+            <h2>My Goals</h2>
+            <FormGroup>
+              {props.goals.map((q, index) => {
+                return (
+                  <FormControlLabel
+                    sx={{ lineHeight: "normal" }}
+                    key={index}
+                    value="end"
+                    control={
+                      <ControlledCheckbox
+                        id={props.name + ".g" + (index + 1)}
+                      />
+                    }
+                    label={q}
+                    labelPlacement="end"
+                  />
+                );
+              })}
+            </FormGroup>
+
+            <h2>Check your knowledge</h2>
+            <KnowledgeCheck
+              question={"What are some good ways to stop worrying?"}
+              correctAnswers={["Take everything day by day", "Keep busy"]}
+              incorrectAnswers={["Focus on things outside of your control"]}
+            />
+
+            <h2>Summary</h2>
+            <div className="post">
+              <ReactMarkdown children={props.content} />
+            </div>
+
+            {/* <h2>Useful resources</h2>
           <ul>
           {props.resources.map((item) => { 
             return <li><ReactMarkdown children={item}/></li>
@@ -126,8 +131,10 @@ export default function DimensionPage(props) {
           </ul>
           
           <h2>Further reading</h2> */}
+          </div>
         </div>
+        ;
       </div>
-    </div>
-  );
+    );
+  }
 }
