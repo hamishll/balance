@@ -165,6 +165,41 @@ export const appdata = {
       },
     ],
   },
+  Sleep: {
+    goals: [
+      "Set a consistent, longer sleep schedule",
+      "Avoid caffeinated beverages after midday",
+      "Make the hour before bed a 'no-screens' time",
+    ],
+    dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
+    questions: [
+      {
+        key: "Sleep.q1",
+        type: "singlechoice",
+        question: "How many hours of sleep do you get per night?",
+        choices: ["<5", "6", "7", "8", "9+"],
+        recommendation: "",
+        threshold: 3,
+      },
+      {
+        key: "Sleep.q2",
+        type: "singlechoice",
+        question:
+          "On average, how many caffeinated beverages do you consume per day?",
+        choices: ["0", "1", "2", "3", "4+"],
+        recommendation: "",
+        threshold: 3,
+      },
+      {
+        key: "Sleep.q3",
+        type: "singlechoice",
+        question: "Do you often go on your mobile phone just before bed?",
+        choices: ["Yes", "Sometimes", "No"],
+        recommendation: "",
+        threshold: 3,
+      },
+    ],
+  },
   Generic: {
     goals: ["Goal 1", "Goal 2", "Goal 3"],
     dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],

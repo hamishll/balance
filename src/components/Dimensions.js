@@ -72,8 +72,8 @@ export default function Dimensions(props) {
       <DimensionCard
         userdata={props.userdata}
         content={SleepContent}
-        goals={props.appData.Generic.goals}
-        questions={props.appData.Generic.questions}
+        goals={props.appData.Sleep.goals}
+        questions={props.appData.Sleep.questions}
         name="Sleep"
         icon={<DarkModeOutlinedIcon />}
         color="rgb(0,122,255)"
