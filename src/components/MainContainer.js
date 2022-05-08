@@ -7,7 +7,7 @@ import Coach from "./Coach";
 export default function MainContainer(props) {
   switch (props.value) {
     case 0:
-      return <MyBalance value={props.value} />;
+      return <MyBalance value={props.value} appData={props.appData} />;
       break;
     case 1:
       return <Dimensions value={props.value} appData={props.appData} />;

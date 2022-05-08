@@ -52,9 +52,6 @@ export default function MultiChoiceQuestion(props) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
-        {props.question}
-      </div>
       {props.choices.map((q, index) => {
         return (
           <ControlledChip

@@ -52,21 +52,15 @@ export default function AssessmentQuestion(props) {
   };
 
   return (
-    <>
-      <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
-        {props.question}
-      </div>
-
-      <ToggleButtonGroup
-        color="primary"
-        value={alignment}
-        exclusive
-        onChange={handleChange}
-      >
-        {props.choices.map((q, index) => {
-          return <ToggleButton value={index}>{q}</ToggleButton>;
-        })}
-      </ToggleButtonGroup>
-    </>
+    <ToggleButtonGroup
+      color="primary"
+      value={alignment}
+      exclusive
+      onChange={handleChange}
+    >
+      {props.choices.map((q, index) => {
+        return <ToggleButton value={index}>{q}</ToggleButton>;
+      })}
+    </ToggleButtonGroup>
   );
 }

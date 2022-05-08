@@ -59,6 +59,15 @@ export default function DimensionCard(props) {
             style={{ color: "white", opacity: 1 }}
             readOnly
           />
+          {/* <Rating
+            name="read-only"
+            // Value to be replaced by state at some point, instead of localstorage
+            value={parseInt(localStorage.getItem(props.name + ".q0") ?? 0)}
+            max={5}
+            precision={1}
+            style={{ color: "white", opacity: 1 }}
+            readOnly
+          /> */}
         </div>
       </div>
       <DimensionPage

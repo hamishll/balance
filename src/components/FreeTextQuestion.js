@@ -52,18 +52,13 @@ export default function FreeTextQuestion(props) {
   };
 
   return (
-    <>
-      <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
-        {props.question}
-      </div>
-      <TextField
-        className="w-full"
-        id="outlined-multiline-static"
-        multiline
-        rows={4}
-        value={"" + alignment}
-        onChange={handleChange}
-      />
-    </>
+    <TextField
+      className="w-full"
+      id="outlined-multiline-static"
+      multiline
+      rows={4}
+      value={"" + alignment}
+      onChange={handleChange}
+    />
   );
 }

@@ -11,6 +11,14 @@ export const appdata = {
     ],
     questions: [
       {
+        key: "Values.q0",
+        type: "slider",
+        question: "Are you finding time for the things you value currently?",
+        choices: ["💳 Answer 1", "🏥 Answer 2", "📈 Answer 3"],
+        recommendation: "",
+        threshold: 0,
+      },
+      {
         key: "Values.q1",
         type: "multichoice",
         question: "What gives your life meaning?",
@@ -204,6 +212,14 @@ export const appdata = {
     goals: ["Goal 1", "Goal 2", "Goal 3"],
     dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
     questions: [
+      {
+        key: "Generic.q0",
+        type: "slider",
+        question: "How do you feel about your [Category] right now?",
+        choices: ["💳 Answer 1", "🏥 Answer 2", "📈 Answer 3"],
+        recommendation: "",
+        threshold: 0,
+      },
       {
         key: "Generic.q1",
         type: "multichoice",

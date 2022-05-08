@@ -1,30 +1,32 @@
 import React, { useState } from "react";
 import Heading1 from "./Heading1";
 import BalanceWheel from "./BalanceWheel";
-import Checkbox from "@mui/material/Checkbox";
+import ControlledCheckbox from "./ControlledCheckbox";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import MyStatus from "./MyStatus";
 
 export default function MyBalance(props) {
   // const [value, setValue] = React.useState(0);
-
   return (
     <div className="px-4">
-      <BalanceWheel score={83} />
-      <h2>Grateful for</h2>
-      <ul className="list-disc list-inside">
-        <li>Being physically healthy</li>
-        <li>Family and friends</li>
-        <li>Living in the modern world</li>
-      </ul>
-      <h2>Recommended for you</h2>
-      <Checkbox />
-      Spend a few minutes messaging your friends
-      <br />
-      <Checkbox />
-      Prepare a monthly budget
-      <br />
-      <Checkbox />
-      Drink a big glass of water when you wake up
-      <br />
+      {/* <BalanceWheel score={75} /> */}
+      <MyStatus dimensions={props.appData} />
+      <h2>My Goals</h2>
+      <FormGroup>
+        <FormControlLabel
+          control={<ControlledCheckbox />}
+          label="Spend a few minutes messaging friends"
+        />
+        <FormControlLabel
+          control={<ControlledCheckbox />}
+          label="Prepare a monthly budget"
+        />
+        <FormControlLabel
+          control={<ControlledCheckbox />}
+          label="Drink a glass of water when I wake up"
+        />
+      </FormGroup>
     </div>
   );
 }

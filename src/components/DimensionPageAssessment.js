@@ -4,6 +4,8 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import AssessmentQuestion from "./AssessmentQuestion";
 import MultiChoiceQuestion from "./MultiChoiceQuestion";
 import FreeTextQuestion from "./FreeTextQuestion";
+import DiscreteSlider from "./DiscreteSlider";
+import Box from "@mui/material/Box";
 
 export default function DimensionPageAssessment(props) {
   DimensionPageAssessment.defaultProps = {
@@ -43,30 +45,60 @@ export default function DimensionPageAssessment(props) {
               switch (question.type) {
                 case "singlechoice": {
                   return (
-                    <AssessmentQuestion
-                      k={question.key}
-                      initValue={parseInt(localStorage.getItem(question.key))}
-                      question={question.question}
-                      choices={question.choices}
-                    />
+                    <Box>
+                      <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
+                        {question.question}
+                      </div>
+                      <AssessmentQuestion
+                        k={question.key}
+                        initValue={parseInt(localStorage.getItem(question.key))}
+                        question={question.question}
+                        choices={question.choices}
+                      />
+                    </Box>
+                  );
+                }
+                case "slider": {
+                  return (
+                    <Box>
+                      <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
+                        {question.question}
+                      </div>
+                      <DiscreteSlider
+                        k={question.key}
+                        initValue={parseInt(localStorage.getItem(question.key))}
+                        question={question.question}
+                        choices={question.choices}
+                      />
+                    </Box>
                   );
                 }
                 case "multichoice": {
                   return (
-                    <MultiChoiceQuestion
-                      k={question.key}
-                      question={question.question}
-                      choices={question.choices}
-                    />
+                    <Box>
+                      <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
+                        {question.question}
+                      </div>
+                      <MultiChoiceQuestion
+                        k={question.key}
+                        question={question.question}
+                        choices={question.choices}
+                      />
+                    </Box>
                   );
                 }
                 case "freetext": {
                   return (
-                    <FreeTextQuestion
-                      k={question.key}
-                      question={question.question}
-                      initValue={localStorage.getItem(question.key)}
-                    />
+                    <Box>
+                      <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
+                        {question.question}
+                      </div>
+                      <FreeTextQuestion
+                        k={question.key}
+                        question={question.question}
+                        initValue={localStorage.getItem(question.key)}
+                      />
+                    </Box>
                   );
                 }
               }
