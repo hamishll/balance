@@ -8,11 +8,8 @@ export default function ControlledChip(props) {
   );
   const handleChange = () => {
     //setDisabled((previousState) => !previousState);
-    console.log("b4", selected);
     setselected(selected == "default" ? "info" : "default");
-    console.log("after", selected);
     localStorage.setItem(props.k, selected == "default" ? "1" : "0");
-    console.log(props.k);
   };
 
   return (

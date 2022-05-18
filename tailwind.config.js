@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["system-ui", "Roboto", "sans-serif"],
-      serif: ["Merriweather", "serif"],
+      serif: ["Ramaraja", "serif"],
     },
     extend: {},
   },

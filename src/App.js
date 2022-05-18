@@ -29,11 +29,11 @@ const App = () => {
   // const [documents] = useGetUserData(user.uid);
 
   // Page state
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(0);
   const headingDict = {
     0: "My Balance",
     1: "Journey",
-    2: "Coach",
+    2: "Today",
   };
 
   return (

@@ -513,12 +513,25 @@ a {
   top: 2rem;
 }
 
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
 .mt-8 {
   margin-top: 2rem;
 }
 
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.ml-\[10px\] {
+  margin-left: 10px;
 }
 
 .block {
@@ -529,8 +542,20 @@ a {
   display: flex;
 }
 
+.h-4\/5 {
+  height: 80%;
+}
+
+.h-\[250px\] {
+  height: 250px;
+}
+
 .w-full {
   width: 100%;
+}
+
+.w-\[37px\] {
+  width: 37px;
 }
 
 .max-w-\[50\%\] {
@@ -547,14 +572,6 @@ a {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.list-inside {
-  list-style-position: inside;
-}
-
-.list-disc {
-  list-style-type: disc;
 }
 
 .flex-row {
@@ -579,6 +596,10 @@ a {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
 }
 
 .rounded-2xl {
@@ -610,14 +631,23 @@ a {
   padding: 1rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .pt-6 {
@@ -632,13 +662,13 @@ a {
   text-align: center;
 }
 
+.text-\[19px\] {
+  font-size: 19px;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-\[19px\] {
-  font-size: 19px;
 }
 
 .text-4xl {
@@ -646,31 +676,26 @@ a {
   line-height: 2.5rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.font-semibold {
+  font-weight: 600;
 }
 
 .font-bold {
   font-weight: 700;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
 .leading-tight {
   line-height: 1.25;
-}
-
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 :root {
@@ -719,7 +744,7 @@ li {
   /* max-width: 414px; */
   padding-top: 5px;
   margin: 0 auto;
-  height: 79vh;
+  height: 85vh;
   overflow-x: hidden;
   overflow-y: scroll;
   align-content: stretch;

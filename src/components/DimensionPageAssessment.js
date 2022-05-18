@@ -45,12 +45,13 @@ export default function DimensionPageAssessment(props) {
               switch (question.type) {
                 case "singlechoice": {
                   return (
-                    <Box>
+                    <Box key={index}>
                       <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
                         {question.question}
                       </div>
                       <AssessmentQuestion
                         k={question.key}
+                        key={question.key}
                         initValue={parseInt(localStorage.getItem(question.key))}
                         question={question.question}
                         choices={question.choices}
@@ -60,7 +61,7 @@ export default function DimensionPageAssessment(props) {
                 }
                 case "slider": {
                   return (
-                    <Box>
+                    <Box key={index}>
                       <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
                         {question.question}
                       </div>
@@ -75,12 +76,13 @@ export default function DimensionPageAssessment(props) {
                 }
                 case "multichoice": {
                   return (
-                    <Box>
+                    <Box key={index}>
                       <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
                         {question.question}
                       </div>
                       <MultiChoiceQuestion
                         k={question.key}
+                        key={question.key}
                         question={question.question}
                         choices={question.choices}
                       />
@@ -89,7 +91,7 @@ export default function DimensionPageAssessment(props) {
                 }
                 case "freetext": {
                   return (
-                    <Box>
+                    <Box key={index}>
                       <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
                         {question.question}
                       </div>

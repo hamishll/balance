@@ -58,6 +58,7 @@ export default function MultiChoiceQuestion(props) {
             sx={{ margin: "6px 6px 0px 0px" }}
             label={q}
             k={props.k + "." + index}
+            key={props.k + "." + index}
           />
         );
       })}

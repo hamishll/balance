@@ -59,7 +59,11 @@ export default function AssessmentQuestion(props) {
       onChange={handleChange}
     >
       {props.choices.map((q, index) => {
-        return <ToggleButton value={index}>{q}</ToggleButton>;
+        return (
+          <ToggleButton value={index} key={index}>
+            {q}
+          </ToggleButton>
+        );
       })}
     </ToggleButtonGroup>
   );

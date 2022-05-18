@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import firebase from "firebase/compat/app";
 
 import TextField from "@mui/material/TextField";
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 
 export default function FreeTextQuestion(props) {
   //   const [value, setValue] = React.useState(0);
@@ -51,14 +52,35 @@ export default function FreeTextQuestion(props) {
       });
   };
 
+  const ThemedTextField = styled(TextField)(({ theme }) => ({
+    backgroundColor: theme.backgroundColor,
+    borderRadius: "10px",
+    border: "0px",
+
+    "& .MuiOutlinedInput-root": {
+      padding: "12px",
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+      border: "0px",
+    },
+  }));
+
+  const theme = createTheme({
+    backgroundColor: "rgb(247,247,247)",
+    borderRadius: "20px",
+    border: "0px",
+  });
+
   return (
-    <TextField
-      className="w-full"
-      id="outlined-multiline-static"
-      multiline
-      rows={4}
-      value={"" + alignment}
-      onChange={handleChange}
-    />
+    <ThemeProvider theme={theme}>
+      <ThemedTextField
+        className="w-full"
+        id="outlined-multiline-static"
+        multiline
+        rows={props.rows ?? 4}
+        value={"" + alignment}
+        onChange={handleChange}
+      />
+    </ThemeProvider>
   );
 }
