@@ -1,11 +1,11 @@
 import * as React from "react";
-import Firestore from "./Firestore";
-import FireStoreData from "./FireStoreData";
+// import Firestore from "./Firestore";
+// import FireStoreData from "./FireStoreData";
 import SignInScreen from "./SignInScreen";
 import FreeTextQuestion from "./FreeTextQuestion";
 
 export default function Today() {
-  const [value, setValue] = React.useState(0);
+  //const [value, setValue] = React.useState(0);
 
   return (
     <div className="px-4">

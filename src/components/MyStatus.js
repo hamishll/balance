@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Box from "@mui/material/Box";
+import React from "react";
 // import DiscreteSlider from "./DiscreteSlider";
 import VerticalSlider from "./VerticalSlider";
 
@@ -7,7 +6,6 @@ import VerticalSlider from "./VerticalSlider";
 // Icons
 import HeadphonesOutlinedIcon from "@mui/icons-material/HeadphonesOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import EmojiPeopleOutlinedIcon from "@mui/icons-material/EmojiPeopleOutlined";
 import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
 import LocalAtmOutlinedIcon from "@mui/icons-material/LocalAtmOutlined";
 import HikingOutlinedIcon from "@mui/icons-material/HikingOutlined";

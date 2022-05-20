@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import Heading1 from "./Heading1";
-import BalanceWheel from "./BalanceWheel";
+import React from "react";
 import ControlledCheckbox from "./ControlledCheckbox";
 import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import MyStatus from "./MyStatus";
 import FreeTextQuestion from "./FreeTextQuestion";
 import EditableGoal from "./EditableGoal";
