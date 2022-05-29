@@ -3,10 +3,17 @@ import ControlledCheckbox from "./ControlledCheckbox";
 import FormGroup from "@mui/material/FormGroup";
 import MyStatus from "./MyStatus";
 import FreeTextQuestion from "./FreeTextQuestion";
-import EditableGoal from "./EditableGoal";
+import EditableGoals from "./EditableGoals";
+import Goal from "./Goal";
+
+// Honestly it would make more sense to just get an example to-do react snippet
+
+const addGoal = () => {};
 
 export default function MyBalance(props) {
-  // const [value, setValue] = React.useState(0);
+  const [[goals], setGoals] = React.useState(
+    JSON.stringify(localStorage.getItem("goals"))
+  );
   return (
     <div className="px-4 h-4/5 overflow-scroll">
       {/* <BalanceWheel score={75} /> */}
@@ -19,20 +26,15 @@ export default function MyBalance(props) {
         initValue={localStorage.getItem("dream")}
       />
       <h2>My Life Goals</h2>
-      <FormGroup>
-        {[1, 2, 3, 4, 5].map((q, index) => {
+
+      {/* <EditableGoals /> */}
+      {[{ title: "Get really good at piano", category: "Creating" }].map(
+        (goal, index) => {
           return (
-            <EditableGoal
-              sx={{ lineHeight: "normal" }}
-              key={index}
-              value="end"
-              control={<ControlledCheckbox id={"goal" + (index + 1)} />}
-              label={localStorage.getItem("goal" + (index + 1))}
-              labelPlacement="end"
-            />
+            <Goal key={index} title={goal.title} category={goal.category} />
           );
-        })}
-      </FormGroup>
+        }
+      )}
     </div>
   );
 }

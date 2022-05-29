@@ -37,7 +37,7 @@ export default function VerticalSlider(props) {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    // localStorage.setItem(props.k, newValue);
+    localStorage.setItem(props.k, newValue);
   };
 
   return (

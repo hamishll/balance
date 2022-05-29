@@ -56,7 +56,7 @@ export default function MyStatus(props) {
             <VerticalSlider
               color={Colors[index]}
               k={dimension + ".q0"}
-              initValue={parseInt(localStorage.getItem(dimension + ".q0"))}
+              initValue={parseInt(localStorage.getItem(dimension + ".q0") ?? 0)}
               // question={question.question}
               // choices={question.choices}
             />
