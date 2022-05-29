@@ -1,5 +1,5 @@
 import * as React from "react";
-import EditableGoals from "./EditableGoals";
+import EditableTasks from "./EditableTasks";
 import ControlledCheckbox from "./ControlledCheckbox";
 
 export default function Goal(props) {
@@ -21,12 +21,12 @@ export default function Goal(props) {
       <span className="text-sm uppercase font-bold text-indigo-600">
         Creating
       </span>
-      <span className="text-2xl font-bold">
+      <span className="text-2xl font-bold ">
         {props.title}
         <ControlledCheckbox size="medium" onClick={() => markTodo(1)} />
       </span>
-      <span className="text-gray-300 my-2">Steps to achieve this goal:</span>
-      <EditableGoals />
+      <span className="text-gray-400 mb-2">Steps to achieve this goal:</span>
+      <EditableTasks />
     </div>
   );
 }

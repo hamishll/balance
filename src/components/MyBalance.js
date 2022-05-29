@@ -3,8 +3,9 @@ import ControlledCheckbox from "./ControlledCheckbox";
 import FormGroup from "@mui/material/FormGroup";
 import MyStatus from "./MyStatus";
 import FreeTextQuestion from "./FreeTextQuestion";
-import EditableGoals from "./EditableGoals";
 import Goal from "./Goal";
+import ComponentTemplate from "./ComponentTemplate";
+import EditableGoals from "./EditableGoals";
 
 // Honestly it would make more sense to just get an example to-do react snippet
 
@@ -25,16 +26,19 @@ export default function MyBalance(props) {
         rows={8}
         initValue={localStorage.getItem("dream")}
       />
-      <h2>My Life Goals</h2>
 
-      {/* <EditableGoals /> */}
-      {[{ title: "Get really good at piano", category: "Creating" }].map(
+      <ComponentTemplate id={0} name="hi" />
+
+      <h2>My Life Goals</h2>
+      <EditableGoals />
+
+      {/* {[{ title: "Get really good at piano", category: "Creating" }].map(
         (goal, index) => {
           return (
             <Goal key={index} title={goal.title} category={goal.category} />
           );
         }
-      )}
+      )} */}
     </div>
   );
 }

@@ -3,9 +3,8 @@ import TextField from "@mui/material/TextField";
 import ControlledCheckbox from "./ControlledCheckbox";
 import Button from "@mui/material/Button";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-import EditableTasks from "./EditableTasks";
 
-const EditableGoal = ({
+const EditableTask = ({
   todo,
   index,
   markTodo,
@@ -14,30 +13,29 @@ const EditableGoal = ({
   checked,
 }) => {
   return (
-    <div className="rounded-xl flex flex-col border-4 mb-4 border-indigo-600 p-4">
-      <span className="text-sm uppercase font-bold text-indigo-600">
-        {todo.text}
-      </span>
-      <span className="text-2xl font-bold ">
-        {todo.text}
-        <ControlledCheckbox
-          checked={checked}
-          size="medium"
-          onClick={() => markTodo(index)}
-        />
-      </span>
+    <div>
+      <ControlledCheckbox
+        checked={checked}
+        size="medium"
+        onClick={() => markTodo(index)}
+      />
+      <TextField
+        key={index}
+        defaultValue={todo.text}
+        variant="standard"
+        sx={{ width: "75%" }}
+        onChange={(event) => handleChange(event, index)}
+      />
       <span className="text-gray-300">
         <DeleteOutlineIcon onClick={() => removeTodo(index)} />
       </span>
-      <span className="text-gray-400 mb-2">Steps to achieve this goal:</span>
-      <EditableTasks goalIndex={index} />
     </div>
   );
 };
 
-export default function EditableGoals(props) {
+export default function EditableTasks({ goalIndex }) {
   const [todos, setTodos] = React.useState(
-    JSON.parse(localStorage.getItem("goals")) ?? [
+    JSON.parse(localStorage.getItem("goal_" + goalIndex)) ?? [
       {
         text: "Write something...",
         isDone: false,
@@ -48,34 +46,33 @@ export default function EditableGoals(props) {
   const addTodo = (text) => {
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
-    localStorage.setItem("goals", JSON.stringify(newTodos));
+    localStorage.setItem("goal_" + goalIndex, JSON.stringify(newTodos));
   };
 
   const markTodo = (index) => {
     const newTodos = [...todos];
     newTodos[index].isDone = newTodos[index].isDone ? false : true;
     setTodos(newTodos);
-    localStorage.setItem("goals", JSON.stringify(newTodos));
+    localStorage.setItem("goal_" + goalIndex, JSON.stringify(newTodos));
   };
 
   const removeTodo = (index) => {
     const newTodos = [...todos];
     newTodos.splice(index, 1);
     setTodos(newTodos);
-    localStorage.setItem("goals", JSON.stringify(newTodos));
-    localStorage.clear("goals_" + index);
+    localStorage.setItem("goal_" + goalIndex, JSON.stringify(newTodos));
   };
 
   const handleChange = (event, index) => {
     todos[index].text = event.target.value;
-    localStorage.setItem("goals", JSON.stringify(todos));
+    localStorage.setItem("goal_" + goalIndex, JSON.stringify(todos));
   };
 
   return (
     <div>
       {todos.map((todo, index) => {
         return (
-          <EditableGoal
+          <EditableTask
             key={index}
             index={index}
             todo={todo}
@@ -86,7 +83,7 @@ export default function EditableGoals(props) {
           />
         );
       })}
-      <Button onClick={() => addTodo("Goal Title")}>Add +</Button>
+      <Button onClick={() => addTodo("Write something...")}>Add +</Button>
     </div>
   );
 }
