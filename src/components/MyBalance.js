@@ -27,7 +27,12 @@ export default function MyBalance(props) {
         initValue={localStorage.getItem("dream")}
       />
 
-      <ComponentTemplate id={0} name="hi" />
+      {/* <ComponentTemplate id={0} name="hi" /> */}
+
+      <details>
+        <summary>Here's a summary</summary>
+        And here are some details
+      </details>
 
       <h2>My Life Goals</h2>
       <EditableGoals />

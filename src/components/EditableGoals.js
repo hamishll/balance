@@ -4,6 +4,7 @@ import ControlledCheckbox from "./ControlledCheckbox";
 import Button from "@mui/material/Button";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditableTasks from "./EditableTasks";
+import Category from "./Category";
 
 const EditableGoal = ({
   todo,
@@ -16,10 +17,21 @@ const EditableGoal = ({
   return (
     <div className="rounded-xl flex flex-col border-4 mb-4 border-indigo-600 p-4">
       <span className="text-sm uppercase font-bold text-indigo-600">
-        {todo.text}
+        CATEGORY
+        <Category
+          category="Health & Fitness"
+          options={["Health & Fitness", "Love", "Friends"]}
+        />
       </span>
-      <span className="text-2xl font-bold ">
-        {todo.text}
+      <span className="text-2xl font-bold">
+        <TextField
+          key={index}
+          defaultValue={todo.text}
+          variant="standard"
+          sx={{ width: "75%" }}
+          onChange={(event) => handleChange(event, index)}
+        />
+
         <ControlledCheckbox
           checked={checked}
           size="medium"
@@ -63,10 +75,11 @@ export default function EditableGoals(props) {
     newTodos.splice(index, 1);
     setTodos(newTodos);
     localStorage.setItem("goals", JSON.stringify(newTodos));
-    localStorage.clear("goals_" + index);
+    localStorage.removeItem("goals_" + index);
   };
 
   const handleChange = (event, index) => {
+    console.log("uh");
     todos[index].text = event.target.value;
     localStorage.setItem("goals", JSON.stringify(todos));
   };
