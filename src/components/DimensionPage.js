@@ -120,6 +120,10 @@ export default function DimensionPage(props) {
 
             <h2>Summary</h2>
             <div className="post">
+              <details>
+                <summary>Here's a summary</summary>
+                And here are some details
+              </details>
               <ReactMarkdown children={props.content} />
             </div>
 

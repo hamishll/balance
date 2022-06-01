@@ -33,39 +33,51 @@ const EditableTask = ({
   );
 };
 
-export default function EditableTasks({ goalIndex }) {
+export default function EditableTasks({ parentIndex }) {
+  // Should this state just be passed down instead?
   const [todos, setTodos] = React.useState(
-    JSON.parse(localStorage.getItem("goal_" + goalIndex)) ?? [
+    JSON.parse(localStorage.getItem("goals")) ?? [
       {
         text: "Write something...",
         isDone: false,
+        tasks: [
+          {
+            text: "Add a first task...",
+            isDone: false,
+          },
+          {
+            text: "Add a second task...",
+            isDone: false,
+          },
+        ],
       },
     ]
   );
 
   const addTodo = (text) => {
-    const newTodos = [...todos, { text }];
+    const newTodos = [...todos];
+    newTodos[parentIndex] = [...newTodos[parentIndex], { text }];
     setTodos(newTodos);
-    localStorage.setItem("goal_" + goalIndex, JSON.stringify(newTodos));
+    localStorage.setItem("goals", JSON.stringify(newTodos));
   };
 
   const markTodo = (index) => {
     const newTodos = [...todos];
-    newTodos[index].isDone = newTodos[index].isDone ? false : true;
+    newTodos[parentIndex][index].isDone = !newTodos[parentIndex][index].isDone;
     setTodos(newTodos);
-    localStorage.setItem("goal_" + goalIndex, JSON.stringify(newTodos));
+    localStorage.setItem("goals", JSON.stringify(newTodos));
   };
 
   const removeTodo = (index) => {
     const newTodos = [...todos];
-    newTodos.splice(index, 1);
+    newTodos[parentIndex].splice(index, 1);
     setTodos(newTodos);
-    localStorage.setItem("goal_" + goalIndex, JSON.stringify(newTodos));
+    localStorage.setItem("goals", JSON.stringify(newTodos));
   };
 
   const handleChange = (event, index) => {
-    todos[index].text = event.target.value;
-    localStorage.setItem("goal_" + goalIndex, JSON.stringify(todos));
+    todos[parentIndex][index].text = event.target.value;
+    localStorage.setItem("goals", JSON.stringify(todos));
   };
 
   return (
@@ -73,6 +85,7 @@ export default function EditableTasks({ goalIndex }) {
       {todos.map((todo, index) => {
         return (
           <EditableTask
+            parentIndex={parentIndex}
             key={index}
             index={index}
             todo={todo}
@@ -83,7 +96,7 @@ export default function EditableTasks({ goalIndex }) {
           />
         );
       })}
-      <Button onClick={() => addTodo("Write something...")}>Add +</Button>
+      <Button onClick={() => addTodo("Write something...")}>Add Task +</Button>
     </div>
   );
 }

@@ -11,12 +11,17 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function DialogSelect({ category, options, ...props }) {
+export default function DialogSelect({
+  category,
+  options,
+  onChange,
+  ...props
+}) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState(category);
 
   const handleChange = (event) => {
-    setValue(Number(event.target.value) || "");
+    setValue(event.target.value || "");
     // Need to add event to bubble up state of
   };
 
@@ -31,58 +36,23 @@ export default function DialogSelect({ category, options, ...props }) {
   };
 
   return (
-    <div>
-      <Button onClick={handleClickOpen}>{value}</Button>
-      <Dialog disableEscapeKeyDown open={open} onClose={handleClose}>
-        <DialogTitle>Choose a category</DialogTitle>
-        <DialogContent>
-          <Box component="form" sx={{ display: "flex", flexWrap: "wrap" }}>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-              <InputLabel htmlFor="demo-dialog-native">value</InputLabel>
-              <Select
-                native
-                value={value}
-                onChange={handleChange}
-                input={<OutlinedInput label="value" id="demo-dialog-native" />}
-              >
-                {/* <option aria-label="None" value="" /> */}
-                {options.map((option, index) => {
-                  return (
-                    <option key={index} value={option}>
-                      {option}
-                    </option>
-                  );
-                })}
-              </Select>
-            </FormControl>
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-              <InputLabel id="demo-dialog-select-label">value</InputLabel>
-              <Select
-                labelId="demo-dialog-select-label"
-                id="demo-dialog-select"
-                value={value}
-                onChange={handleChange}
-                input={<OutlinedInput label="value" />}
-              >
-                <MenuItem value="">
-                  <em>None</em>
-                </MenuItem>
-                {options.map((option, index) => {
-                  return (
-                    <MenuItem key={index} value={option}>
-                      {option}
-                    </MenuItem>
-                  );
-                })}
-              </Select>
-            </FormControl>
-          </Box>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Ok</Button>
-        </DialogActions>
-      </Dialog>
-    </div>
+    <FormControl sx={{ m: 1, minWidth: 120 }}>
+      <InputLabel htmlFor="demo-dialog-native">value</InputLabel>
+      <Select
+        native
+        value={value}
+        onChange={handleChange}
+        input={<OutlinedInput label="value" id="demo-dialog-native" />}
+      >
+        {/* <option aria-label="None" value="" /> */}
+        {options.map((option, index) => {
+          return (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          );
+        })}
+      </Select>
+    </FormControl>
   );
 }

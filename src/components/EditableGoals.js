@@ -17,9 +17,8 @@ const EditableGoal = ({
   return (
     <div className="rounded-xl flex flex-col border-4 mb-4 border-indigo-600 p-4">
       <span className="text-sm uppercase font-bold text-indigo-600">
-        CATEGORY
         <Category
-          category="Health & Fitness"
+          category={"Health & Fitness"}
           options={["Health & Fitness", "Love", "Friends"]}
         />
       </span>
@@ -42,7 +41,7 @@ const EditableGoal = ({
         <DeleteOutlineIcon onClick={() => removeTodo(index)} />
       </span>
       <span className="text-gray-400 mb-2">Steps to achieve this goal:</span>
-      <EditableTasks goalIndex={index} />
+      <EditableTasks parentIndex={index} />
     </div>
   );
 };
@@ -99,7 +98,7 @@ export default function EditableGoals(props) {
           />
         );
       })}
-      <Button onClick={() => addTodo("Goal Title")}>Add +</Button>
+      <Button onClick={() => addTodo("Goal Title")}>Add Goal +</Button>
     </div>
   );
 }
