@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 // Components
-import DimensionCard from "./../components/DimensionCard";
+import DimensionCard from "./DimensionCard";
 import Heading1 from "./Heading1";
 import Card from "./Card";
 
 // Content
-import { MindsetContent } from "./../content/MindsetContent";
-import { FinancialContent } from "./../content/FinancialContent";
-import { SleepContent } from "./../content/SleepContent";
-import { FriendsContent } from "./../content/FriendsContent";
-import { ValuesContent } from "./../content/ValuesContent";
-import { MeaningContent } from "./../content/MeaningContent";
+import { MindsetContent } from "../content/MindsetContent";
+import { FinancialContent } from "../content/FinancialContent";
+import { SleepContent } from "../content/SleepContent";
+import { FriendsContent } from "../content/FriendsContent";
+import { ValuesContent } from "../content/ValuesContent";
+import { MeaningContent } from "../content/MeaningContent";
 
 // Icons
 import HeadphonesOutlinedIcon from "@mui/icons-material/HeadphonesOutlined";
@@ -34,7 +34,7 @@ import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithou
 import EnergySavingsLeafOutlinedIcon from "@mui/icons-material/EnergySavingsLeafOutlined";
 import AllInclusiveOutlinedIcon from "@mui/icons-material/AllInclusiveOutlined";
 
-export default function Dimensions(props) {
+export default function MyDimensions(props) {
   return (
     <div
       className="Container justify-center flex px-3 gap-3 pb-12 text-black"

@@ -26,18 +26,9 @@ export default function SettingsPage(props) {
           <h1>{props.name}</h1>
           Balance is an open-source app designed to help you find happiness and
           meaning in your life.
-          {/* <script
-            data-name="BMC-Widget"
-            data-cfasync="false"
-            src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-            data-id="balanceapp"
-            data-description="Support me on Buy me a coffee!"
-            data-message=""
-            data-color="#5F7FFF"
-            data-position="Right"
-            data-x_margin="18"
-            data-y_margin="18"
-          ></script> */}
+          <h2>Data Privacy</h2>
+          All data is stored locally on your device. You can opt-in to backing
+          up your data by signing in.
         </div>
       </div>
     </div>

@@ -11,6 +11,10 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import BalanceIcon from "@mui/icons-material/Balance";
 import CategoryIcon from "@mui/icons-material/Category";
 import FaceIcon from "@mui/icons-material/Face";
+import LandscapeIcon from "@mui/icons-material/Landscape";
+import InterestsIcon from "@mui/icons-material/Interests";
+import TodayIcon from "@mui/icons-material/Today";
+import Onboarding from "./components/Onboarding";
 
 import firebase from "firebase/compat/app";
 import { useGetUserData } from "./hooks/useGetData";
@@ -30,42 +34,50 @@ const App = () => {
 
   // Page state
   const [value, setValue] = React.useState(0);
+  const [onboarding, setOnboarding] = React.useState(false);
+
   const headingDict = {
-    0: "My Balance",
-    1: "Journey",
-    2: "Today",
+    0: "Goals",
+    1: "Today",
+    2: "Learn",
   };
 
-  return (
-    <div className="Screen">
-      <Header name={headingDict[value]} />
-      <MainContainer value={value} appData={appData} />
-      <div className="BottomNavigation">
-        <Box>
-          <BottomNavigation
-            showLabels
-            value={value}
-            onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-          >
-            <BottomNavigationAction
-              label={headingDict[0]}
-              icon={<BalanceIcon />}
-            />
-            <BottomNavigationAction
-              label={headingDict[1]}
-              icon={<CategoryIcon />}
-            />
-            <BottomNavigationAction
-              label={headingDict[2]}
-              icon={<FaceIcon />}
-            />
-          </BottomNavigation>
-        </Box>
-      </div>
-    </div>
-  );
+  {
+    if (onboarding) {
+      return <Onboarding />;
+    } else {
+      return (
+        <div className="Screen">
+          <Header name={headingDict[value]} />
+          <MainContainer value={value} appData={appData} />
+          <div className="BottomNavigation">
+            <Box>
+              <BottomNavigation
+                showLabels
+                value={value}
+                onChange={(event, newValue) => {
+                  setValue(newValue);
+                }}
+              >
+                <BottomNavigationAction
+                  label={headingDict[0]}
+                  icon={<LandscapeIcon />}
+                />
+                <BottomNavigationAction
+                  label={headingDict[1]}
+                  icon={<TodayIcon />}
+                />
+                <BottomNavigationAction
+                  label={headingDict[2]}
+                  icon={<InterestsIcon />}
+                />
+              </BottomNavigation>
+            </Box>
+          </div>
+        </div>
+      );
+    }
+  }
 };
 
 export default App;

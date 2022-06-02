@@ -5,7 +5,11 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import BalanceIcon from "@mui/icons-material/Balance";
 import CategoryIcon from "@mui/icons-material/Category";
 import FaceIcon from "@mui/icons-material/Face";
-
+//
+//
+// NOT IN USE
+//
+//
 export default function SimpleBottomNavigation() {
   const [value, setValue] = React.useState(0);
 
@@ -19,9 +23,9 @@ export default function SimpleBottomNavigation() {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction label={value} icon={<BalanceIcon />} />
-          <BottomNavigationAction label="Dimensions" icon={<CategoryIcon />} />
-          <BottomNavigationAction label="AIdra" icon={<FaceIcon />} />
+          <BottomNavigationAction label="Goals" icon={<FaceIcon />} />
+          <BottomNavigationAction label="My Balance" icon={<BalanceIcon />} />
+          <BottomNavigationAction label="Learn" icon={<CategoryIcon />} />
         </BottomNavigation>
       </Box>
     </div>

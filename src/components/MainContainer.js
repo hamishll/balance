@@ -1,17 +1,17 @@
 import React from "react";
 
-import MyBalance from "./MyBalance";
-import Dimensions from "./Dimensions";
-import Today from "./Today";
+import MyGoals from "./MyGoals";
+import MyDimensions from "./MyDimensions";
+import MyToday from "./MyToday";
 
 export default function MainContainer(props) {
   switch (props.value) {
     case 0:
-      return <MyBalance value={props.value} appData={props.appData} />;
+      return <MyGoals value={props.value} appData={props.appData} />;
     case 1:
-      return <Dimensions value={props.value} appData={props.appData} />;
+      return <MyToday value={props.value} />;
     case 2:
-      return <Today value={props.value} />;
+      return <MyDimensions value={props.value} appData={props.appData} />;
     default:
       return "";
   }
