@@ -5,7 +5,7 @@ import HelpIcon from "./HelpIcon";
 
 export default function MyGoals(props) {
   return (
-    <div className="px-4 h-4/5 overflow-scroll">
+    <div className="px-4 grow flex flex-col overflow-scroll pb-2">
       <div className="flex flex-row items-center">
         <h1 className="grow">My Dream</h1>
         <HelpIcon

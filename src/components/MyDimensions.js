@@ -34,10 +34,26 @@ import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithou
 import EnergySavingsLeafOutlinedIcon from "@mui/icons-material/EnergySavingsLeafOutlined";
 import AllInclusiveOutlinedIcon from "@mui/icons-material/AllInclusiveOutlined";
 
+const c = `.Container {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* max-width: 414px; */
+  padding-top: 5px;
+  margin: 0 auto;
+  height: 85vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  align-content: stretch;
+  align-items: stretch;
+}`;
+
 export default function MyDimensions(props) {
   return (
     <div
-      className="Container justify-center flex px-3 gap-3 pb-12 text-black"
+      className="grow justify-center flex flex-row flex-wrap px-3 gap-3 pb-6 overflow-scroll text-black"
       id="Dimensions"
     >
       {/* <Card

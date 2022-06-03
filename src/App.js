@@ -34,7 +34,9 @@ const App = () => {
 
   // Page state
   const [value, setValue] = React.useState(0);
-  const [onboarding, setOnboarding] = React.useState(false);
+  const [onboarding, setOnboarding] = React.useState(
+    localStorage.getItem("onboarding") == "complete" ? false : true
+  );
 
   const headingDict = {
     0: "Goals",
@@ -44,13 +46,21 @@ const App = () => {
 
   {
     if (onboarding) {
-      return <Onboarding />;
-    } else {
       return (
         <div className="Screen">
-          <Header name={headingDict[value]} />
+          <Onboarding onboarding={onboarding} setOnboarding={setOnboarding} />
+        </div>
+      );
+    } else {
+      return (
+        <div className="Screen flex flex-col">
+          <Header
+            name={headingDict[value]}
+            onboarding={onboarding}
+            setOnboarding={setOnboarding}
+          />
           <MainContainer value={value} appData={appData} />
-          <div className="BottomNavigation">
+          <div className="BottomNavigation h-[85px] grow-0 flex-none">
             <Box>
               <BottomNavigation
                 showLabels

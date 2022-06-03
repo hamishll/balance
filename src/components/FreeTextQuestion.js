@@ -73,7 +73,7 @@ export default function FreeTextQuestion(props) {
 
   return (
     <ThemeProvider theme={theme}>
-      <ThemedTextField
+      <TextField
         className="w-full"
         id="outlined-multiline-static"
         multiline

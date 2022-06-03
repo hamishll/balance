@@ -6,6 +6,7 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import { TransitionGroup } from "react-transition-group";
 import Collapse from "@mui/material/Collapse";
+import CloseIcon from "@mui/icons-material/Close";
 
 const options = [
   "Health & Fitness",
@@ -64,12 +65,6 @@ const ThemedTextField = styled(TextField)(({ theme }) => ({
     border: "0px",
   },
 }));
-const defaultGoal = {
-  text: "Give your goal a title...",
-  isDone: false,
-  category: "Uncategorised",
-  tasks: [],
-};
 
 const EditableGoal = ({
   goal,
@@ -112,7 +107,7 @@ const EditableGoal = ({
           </select>
         </div>
         <div className="text-gray-300">
-          <DeleteOutlineIcon onClick={() => removeGoal(index)} />
+          <CloseIcon onClick={() => removeGoal(index)} />
         </div>
       </div>
       <span className="">
@@ -208,11 +203,19 @@ export default function EditableGoals2(props) {
     localStorage.setItem("goals", JSON.stringify(newGoals));
   };
 
-  const addGoal = (goal) => {
-    const newGoals = [...goals, goal];
+  const addGoal = () => {
+    const newGoals = [
+      ...goals,
+      {
+        key: Date.now(),
+        text: "Give your goal a title...",
+        isDone: false,
+        category: "Uncategorised",
+        tasks: [],
+      },
+    ];
     setGoals(newGoals);
     localStorage.setItem("goals", JSON.stringify(newGoals));
-    // console.log(newGoals);
   };
 
   const markGoal = (index) => {
@@ -272,9 +275,9 @@ export default function EditableGoals2(props) {
       <TransitionGroup>
         {goals.map((goal, index) => {
           return (
-            <Collapse key={index}>
+            <Collapse key={goal.key}>
               <EditableGoal
-                key={index}
+                key={goal.key}
                 index={index}
                 goal={goal}
                 // Goal functions
@@ -294,7 +297,9 @@ export default function EditableGoals2(props) {
       </TransitionGroup>
       <Button
         sx={{ color: "#BBB", justifyContent: "left" }}
-        onClick={() => addGoal(defaultGoal)}
+        onClick={(event) => {
+          addGoal();
+        }}
       >
         Add Goal +
       </Button>

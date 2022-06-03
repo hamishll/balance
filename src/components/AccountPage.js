@@ -7,12 +7,12 @@ import SignInScreen from "./SignInScreen";
 
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
-export default function AccountPage(props) {
+export default function AccountPage({ name, onboarding, setOnboarding }) {
   const [value, setValue] = React.useState(0);
 
   const minimisePage = () => {
     {
-      document.getElementById(props.name).style.top = "120vh";
+      document.getElementById(name).style.top = "120vh";
     }
   };
 
@@ -21,15 +21,24 @@ export default function AccountPage(props) {
   // }
 
   return (
-    <div className="PageCardContainer" id={props.name}>
+    <div className="PageCardContainer" id={name}>
       <div className="PageCloseBg" onClick={minimisePage} />
       <div className="PageCard">
         <div className="PageClose" onClick={minimisePage}>
           <CloseOutlinedIcon />
         </div>
-        <div className="PageCardContent">
-          <h1>{props.name}</h1>
+        <div className="PageCardContent text-center">
+          <h1 className="text-left">{name}</h1>
           <SignInScreen />
+
+          <Button
+            variant="outlined"
+            onClick={() => {
+              setOnboarding(!onboarding);
+            }}
+          >
+            Redo onboarding
+          </Button>
         </div>
       </div>
     </div>
