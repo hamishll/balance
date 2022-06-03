@@ -20,7 +20,7 @@ const ThemedModal = styled(Modal)(({ theme }) => ({
   "& .MuiBackdrop-root": {
     background:
       "linear-gradient(0deg, rgba(0,0,0,0.15) 90%, rgba(255,255,255,0.1) 100% )",
-    backdropFilter: "blur(4px)",
+    backdropFilter: "blur(10px)",
   },
   "& .MuiOutlinedInput-notchedOutline": {
     border: "0px",

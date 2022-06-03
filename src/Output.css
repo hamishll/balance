@@ -586,8 +586,16 @@ a {
   width: 37px;
 }
 
+.min-w-\[150px\] {
+  min-width: 150px;
+}
+
 .max-w-lg {
   max-width: 32rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .flex-none {
@@ -608,6 +616,18 @@ a {
 
 .basis-\[150px\] {
   flex-basis: 150px;
+}
+
+.basis-\[180px\] {
+  flex-basis: 180px;
+}
+
+.basis-\[2\/5\] {
+  flex-basis: 2 / 5;
+}
+
+.basis-\[1\/2\] {
+  flex-basis: 1 / 2;
 }
 
 .transform {

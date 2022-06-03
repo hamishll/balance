@@ -15,19 +15,12 @@ export default function MyToday(props) {
           sx={{ fontSize: "2em" }}
           content={
             <div>
-              <h2>Tips for creating goals</h2>
+              <h2>Take a moment to reflect on your current life balance</h2>
               <ul>
-                <li>Make sure your goals relate back to your dream</li>
+                <li>What are you happy about? What could be better?</li>
                 <li>
-                  Try to make your goals "SMART" (Specific, Measurable,
-                  Achievable, Realistic & Time-bound)
-                </li>
-                <li>
-                  Make goals focused on effort, not outcomes - for example, if
-                  you're learning chess, you may get demotivated if you set a
-                  goal to get to a certain level, but if you set a goal to spend
-                  20 minutes a day practicing chess, this is achievable,
-                  realistic, and time-bound.
+                  By identifying which dimensions of our life could use a boost,
+                  you can make a clearer plan for improving these areas.
                 </li>
               </ul>
             </div>

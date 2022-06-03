@@ -18,7 +18,6 @@ export default function AccountPage({ name, onboarding, setOnboarding }) {
 
   return (
     <div className="PageCardContainer  bg-white dark:bg-inherit" id={name}>
-      <div className="PageCloseBg" onClick={minimisePage} />
       <div className="PageCard  bg-white dark:bg-inherit">
         <div className="PageClose" onClick={minimisePage}>
           <CloseOutlinedIcon />

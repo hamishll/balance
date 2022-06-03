@@ -57,7 +57,6 @@ export default function DimensionPage(props) {
           assessmentSelected={assessmentSelected}
           setAssessmentSelected={setAssessmentSelected}
         />
-        <div className="PageCloseBg" onClick={minimisePage} />
         <div className="PageCard">
           <div className="PageClose" onClick={minimisePage}>
             <CloseOutlinedIcon />
