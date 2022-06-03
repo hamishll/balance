@@ -10,7 +10,7 @@ export default function SimpleBottomNavigation(props) {
   const [value, setValue] = React.useState(0);
 
   return (
-    <div className="BottomNavigation">
+    <div className="BottomNavigation border-t-1 border-black border-opacity-10">
       <Box sx={{ width: 390 }}>
         <BottomNavigation
           showLabels

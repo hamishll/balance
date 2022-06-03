@@ -3,7 +3,6 @@ import TextField from "@mui/material/TextField";
 import ControlledCheckbox from "./ControlledCheckbox";
 import Button from "@mui/material/Button";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import { TransitionGroup } from "react-transition-group";
 import Collapse from "@mui/material/Collapse";
 import CloseIcon from "@mui/icons-material/Close";
@@ -30,41 +29,43 @@ const Colors = {
   Work: "#007AFF",
   Finances: "#30B0C7",
 };
-const goalTheme = createTheme({
-  paddingLeft: "0px",
-  paddingRight: "5px",
-  paddingTop: "5px",
-  paddingBottom: "5px",
-  fontSize: "1.4em",
-  fontWeight: "bold",
-  lineHeight: "1.25em",
-});
-const taskTheme = createTheme({
-  paddingLeft: "0px",
-  paddingRight: "5px",
-  paddingTop: "9px",
-  paddingBottom: "9px",
-  fontSize: "1em",
-  fontWeight: "normal",
-  lineHeight: "normal",
-});
-const ThemedTextField = styled(TextField)(({ theme }) => ({
+
+
+const goalStyles = {
+  width: "100%",
   "& .MuiOutlinedInput-root": {
     padding: "0px",
   },
   "& .MuiOutlinedInput-input": {
-    paddingLeft: theme.paddingLeft,
-    paddingRight: theme.paddingRight,
-    paddingTop: theme.paddingTop,
-    paddingBottom: theme.paddingBottom,
-    fontSize: theme.fontSize,
-    fontWeight: theme.fontWeight,
-    lineHeight: theme.lineHeight,
+    paddingLeft: "0px",
+    paddingRight: "5px",
+    paddingTop: "5px",
+    paddingBottom: "5px",
+    fontSize: "1.4em",
+    fontWeight: "bold",
+    lineHeight: "1.25em",
   },
   "& .MuiOutlinedInput-notchedOutline": {
     border: "0px",
   },
-}));
+};
+const taskStyles = {
+  "& .MuiOutlinedInput-root": {
+    padding: "0px",
+  },
+  "& .MuiOutlinedInput-input": {
+    paddingLeft: "0px",
+    paddingRight: "5px",
+    paddingTop: "9px",
+    paddingBottom: "9px",
+    fontSize: "1em",
+    fontWeight: "normal",
+    lineHeight: "normal",
+  },
+  "& .MuiOutlinedInput-notchedOutline": {
+    border: "0px",
+  },
+};
 
 const EditableGoal = ({
   goal,
@@ -111,15 +112,13 @@ const EditableGoal = ({
         </div>
       </div>
       <span className="">
-        <ThemeProvider theme={goalTheme}>
-          <ThemedTextField
-            key={index}
-            defaultValue={goal.text}
-            sx={{ width: "100%" }}
-            onChange={(event) => handleGoalChange(event, index)}
-            multiline
-          />
-        </ThemeProvider>
+        <TextField
+          key={index}
+          defaultValue={goal.text}
+          sx={goalStyles}
+          onChange={(event) => handleGoalChange(event, index)}
+          multiline
+        />
 
         {/* <ControlledCheckbox
           checked={goal.isDone ?? false}
@@ -173,15 +172,14 @@ const EditableTask = ({
         size="medium"
         onClick={() => markTask(index, parentIndex)}
       />
-      <ThemeProvider theme={taskTheme}>
-        <ThemedTextField
-          className="grow"
-          key={index}
-          defaultValue={task.text}
-          onChange={(event) => handleTaskChange(event, index, parentIndex)}
-          multiline
-        />
-      </ThemeProvider>
+      <TextField
+        className="grow"
+        key={index}
+        sx={taskStyles}
+        defaultValue={task.text}
+        onChange={(event) => handleTaskChange(event, index, parentIndex)}
+        multiline
+      />
       <span className="text-gray-300">
         <DeleteOutlineIcon onClick={() => removeTask(index, parentIndex)} />
       </span>

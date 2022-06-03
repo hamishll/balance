@@ -55,13 +55,13 @@ const HelpIcon = ({ content, ...props }) => {
   const handleClose = () => setOpen(false);
 
   return (
-    <div className="text-gray-200">
+    <div className="text-gray-500 opacity-25">
       <LightTooltip
         open={open}
         onOpen={handleOpen}
         arrow
         title={<React.Fragment>{content}</React.Fragment>}
-        enterTouchDelay={0}
+        enterTouchDelay={50}
         leaveTouchDelay={0}
       >
         <HelpOutlineIcon sx={{ fontSize: props.sx }} />

@@ -1,47 +1,27 @@
 import React, { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
-import ControlledCheckbox from "./ControlledCheckbox";
 import Button from "@mui/material/Button";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import { TransitionGroup } from "react-transition-group";
 import Collapse from "@mui/material/Collapse";
 
-const goalTheme = createTheme({
-  paddingLeft: "0px",
-  paddingRight: "0px",
-  paddingTop: "10px",
-  paddingBottom: "10px",
-  fontSize: "1.25em",
-  fontWeight: "normal",
-  lineHeight: "1.25em",
-});
-const taskTheme = createTheme({
-  paddingLeft: "0px",
-  paddingRight: "5px",
-  paddingTop: "9px",
-  paddingBottom: "9px",
-  fontSize: "1em",
-  fontWeight: "normal",
-  lineHeight: "normal",
-});
-const ThemedTextField = styled(TextField)(({ theme }) => ({
+const taskStyles = {
   "& .MuiOutlinedInput-root": {
     padding: "0px",
   },
   "& .MuiOutlinedInput-input": {
-    paddingLeft: theme.paddingLeft,
-    paddingRight: theme.paddingRight,
-    paddingTop: theme.paddingTop,
-    paddingBottom: theme.paddingBottom,
-    fontSize: theme.fontSize,
-    fontWeight: theme.fontWeight,
-    lineHeight: theme.lineHeight,
+    paddingLeft: "0px",
+    paddingRight: "5px",
+    paddingTop: "9px",
+    paddingBottom: "9px",
+    fontSize: "1em",
+    fontWeight: "normal",
+    lineHeight: "normal",
   },
   "& .MuiOutlinedInput-notchedOutline": {
     border: "0px",
   },
-}));
+};
 
 const EditableGoal = ({
   goal,
@@ -58,15 +38,13 @@ const EditableGoal = ({
     <div className={"flex flex-col ml-6 py-2"}>
       <div className="text-sm uppercase font-bold flex flex-row items-center">
         <div className="grow text-sm">
-          <ThemeProvider theme={goalTheme}>
-            <ThemedTextField
-              key={index}
-              defaultValue={goal.text}
-              sx={{ width: "100%" }}
-              onChange={(event) => handleGoalChange(event, index)}
-              multiline
-            />
-          </ThemeProvider>
+          <TextField
+            key={index}
+            defaultValue={goal.text}
+            sx={taskStyles}
+            onChange={(event) => handleGoalChange(event, index)}
+            multiline
+          />
         </div>
         <div className="text-gray-300">
           <DeleteOutlineIcon onClick={() => removeGoal(index)} />

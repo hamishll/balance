@@ -5,7 +5,14 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import SettingsPage from "./SettingsPage";
 import AccountPage from "./AccountPage";
 
-export default function Header({ name, onboarding, setOnboarding, ...props }) {
+export default function Header({
+  name,
+  onboarding,
+  setOnboarding,
+  theme,
+  colorMode,
+  ...props
+}) {
   //const [value, setValue] = React.useState(0);
   const pageContent = "";
 
@@ -24,7 +31,12 @@ export default function Header({ name, onboarding, setOnboarding, ...props }) {
           <AccountCircleOutlinedIcon onClick={handleClickAccount} />
         </div>
       </div>
-      <SettingsPage content={pageContent} name="Settings" />
+      <SettingsPage
+        theme={theme}
+        colorMode={colorMode}
+        content={pageContent}
+        name="Settings"
+      />
       <AccountPage
         content={pageContent}
         onboarding={onboarding}

@@ -1,7 +1,8 @@
 import * as React from "react";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import ThemeSelector from "./ThemeSelector";
 
-export default function SettingsPage(props) {
+export default function SettingsPage({ theme, colorMode, ...props }) {
   const [value, setValue] = React.useState(0);
 
   const minimisePage = () => {
@@ -15,9 +16,9 @@ export default function SettingsPage(props) {
   // }
 
   return (
-    <div className="PageCardContainer" id={props.name}>
+    <div className="PageCardContainer bg-white dark:bg-inherit" id={props.name}>
       <div className="PageCloseBg" onClick={minimisePage} />
-      <div className="PageCard">
+      <div className="PageCard bg-inherit dark:bg-inherit">
         <div className="PageClose" onClick={minimisePage}>
           <CloseOutlinedIcon />
         </div>
@@ -29,6 +30,8 @@ export default function SettingsPage(props) {
           <h2>Data Privacy</h2>
           All data is stored locally on your device. You can opt-in to backing
           up your data by signing in.
+          <h2>Theme</h2>
+          <ThemeSelector theme={theme} colorMode={colorMode} />
         </div>
       </div>
     </div>
