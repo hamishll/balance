@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import firebase from "firebase/compat/app";
 
 import TextField from "@mui/material/TextField";
 
@@ -7,14 +6,6 @@ export default function FreeTextQuestion(props) {
   //   const [value, setValue] = React.useState(0);
 
   const [alignment, setAlignment] = React.useState(props.initValue ?? "");
-
-  let uid = "";
-  let user = firebase.auth().currentUser;
-  if (user) {
-    uid = user.uid;
-  } else {
-    // console.log("User is not logged in. ID:", user);
-  }
 
   useEffect(() => {
     setAlignment("" + alignment);
@@ -25,13 +16,13 @@ export default function FreeTextQuestion(props) {
     localStorage.setItem(props.k, event.target.value);
     // console.log(uid);
     // Set local storage
-    if (uid) {
-      // TO DO: Disabling write to firebase now until I can get around to making it not write on every keypress!
-      // updateValue(uid, props.k, alignment);
-    } else {
-      // Disabling write to firebase now
-      // console.log("User is not logged in, so can't update document");
-    }
+    // if (uid) {
+    //   // TO DO: Disabling write to firebase now until I can get around to making it not write on every keypress!
+    //   // updateValue(uid, props.k, alignment);
+    // } else {
+    //   // Disabling write to firebase now
+    //   // console.log("User is not logged in, so can't update document");
+    // }
   };
 
   // const db = firebase.firestore();

@@ -28,28 +28,28 @@ export default function AssessmentQuestion(props) {
     // Set local storage
     localStorage.setItem(props.k, newAlignment);
     if (uid) {
-      updateValue(uid, props.k, newAlignment);
+      //updateValue(uid, props.k, newAlignment);
     } else {
       console.log("User is not logged in, so can't update document");
     }
   };
 
-  const db = firebase.firestore();
-  const updateValue = (doc, field, value) => {
-    var usersUpdate = {};
-    usersUpdate[`${field}`] = value;
-    // console.log(usersUpdate);
+  // const db = firebase.firestore();
+  // const updateValue = (doc, field, value) => {
+  //   var usersUpdate = {};
+  //   usersUpdate[`${field}`] = value;
+  //   // console.log(usersUpdate);
 
-    db.collection("users")
-      .doc(doc)
-      .update(usersUpdate)
-      .then(function () {
-        console.log("Document successfully updated!");
-      })
-      .catch(function (error) {
-        console.error("Error updating document: ", error);
-      });
-  };
+  //   db.collection("users")
+  //     .doc(doc)
+  //     .update(usersUpdate)
+  //     .then(function () {
+  //       console.log("Document successfully updated!");
+  //     })
+  //     .catch(function (error) {
+  //       console.error("Error updating document: ", error);
+  //     });
+  // };
 
   return (
     <ToggleButtonGroup

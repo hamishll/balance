@@ -9,13 +9,13 @@ import { doc, getDoc } from "firebase/firestore";
 
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCFb5ZR7SuGnZRErFCP9zH63o0plzFIR_g",
-  authDomain: "balance-70204.firebaseapp.com",
-  projectId: "balance-70204",
-  storageBucket: "balance-70204.appspot.com",
-  messagingSenderId: "422888482271",
-  appId: "1:422888482271:web:b8fb8bc5eede79fda9d06a",
-  measurementId: "G-938VWJC81S",
+  apiKey: "xxx",
+  authDomain: "xxx",
+  projectId: "xxx",
+  storageBucket: "xxx",
+  messagingSenderId: "xxx",
+  appId: "xxx",
+  measurementId: "xxx",
 };
 
 const app = initializeApp(firebaseConfig);
