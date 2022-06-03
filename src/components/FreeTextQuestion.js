@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import firebase from "firebase/compat/app";
 
 import TextField from "@mui/material/TextField";
-import { createTheme, styled } from "@mui/material/styles";
 
 export default function FreeTextQuestion(props) {
   //   const [value, setValue] = React.useState(0);
@@ -19,7 +18,7 @@ export default function FreeTextQuestion(props) {
 
   useEffect(() => {
     setAlignment("" + alignment);
-  }, []);
+  }, [alignment]);
 
   const handleChange = (event) => {
     setAlignment(event.target.value);
@@ -35,22 +34,22 @@ export default function FreeTextQuestion(props) {
     }
   };
 
-  const db = firebase.firestore();
-  const updateValue = (doc, field, value) => {
-    var usersUpdate = {};
-    usersUpdate[`${field}`] = value;
-    // console.log(usersUpdate);
+  // const db = firebase.firestore();
+  // const updateValue = (doc, field, value) => {
+  //   var usersUpdate = {};
+  //   usersUpdate[`${field}`] = value;
+  //   // console.log(usersUpdate);
 
-    db.collection("users")
-      .doc(doc)
-      .update(usersUpdate)
-      .then(function () {
-        console.log("Document successfully updated!");
-      })
-      .catch(function (error) {
-        console.error("Error updating document: ", error);
-      });
-  };
+  //   db.collection("users")
+  //     .doc(doc)
+  //     .update(usersUpdate)
+  //     .then(function () {
+  //       console.log("Document successfully updated!");
+  //     })
+  //     .catch(function (error) {
+  //       console.error("Error updating document: ", error);
+  //     });
+  // };
 
   return (
     <TextField

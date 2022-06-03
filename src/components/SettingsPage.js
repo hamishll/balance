@@ -3,12 +3,10 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import ThemeSelector from "./ThemeSelector";
 
 export default function SettingsPage({ theme, colorMode, ...props }) {
-  const [value, setValue] = React.useState(0);
+  //const [value, setValue] = React.useState(0);
 
   const minimisePage = () => {
-    {
-      document.getElementById(props.name).style.top = "120vh";
-    }
+    document.getElementById(props.name).style.top = "120vh";
   };
 
   // const handleClickAssessment = () => {

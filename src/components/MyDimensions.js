@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 // Components
 import DimensionCard from "./DimensionCard";
 import Heading1 from "./Heading1";
-import Card from "./Card";
 
 // Content
 import { MindsetContent } from "../content/MindsetContent";
@@ -20,40 +19,15 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import EmojiPeopleOutlinedIcon from "@mui/icons-material/EmojiPeopleOutlined";
 import ColorLensOutlinedIcon from "@mui/icons-material/ColorLensOutlined";
 import SelfImprovementOutlinedIcon from "@mui/icons-material/SelfImprovementOutlined";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LocalAtmOutlinedIcon from "@mui/icons-material/LocalAtmOutlined";
-import BakeryDiningOutlinedIcon from "@mui/icons-material/BakeryDiningOutlined";
-import HikingOutlinedIcon from "@mui/icons-material/HikingOutlined";
-import HealthAndSafetyOutlinedIcon from "@mui/icons-material/HealthAndSafetyOutlined";
-import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
-import NavigationOutlinedIcon from "@mui/icons-material/NavigationOutlined";
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import FollowTheSignsIcon from "@mui/icons-material/FollowTheSigns";
-import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithoutContactOutlined";
-import EnergySavingsLeafOutlinedIcon from "@mui/icons-material/EnergySavingsLeafOutlined";
-import AllInclusiveOutlinedIcon from "@mui/icons-material/AllInclusiveOutlined";
-
-const c = `.Container {
-  justify-content: center;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  /* max-width: 414px; */
-  padding-top: 5px;
-  margin: 0 auto;
-  height: 85vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  align-content: stretch;
-  align-items: stretch;
-}`;
 
 export default function MyDimensions(props) {
   return (
     <div
-      className="grow justify-center flex flex-row flex-wrap px-3 gap-3 pb-6 overflow-scroll text-black"
+      className="no-scrollbar grow justify-center flex flex-row flex-wrap px-3 gap-3 pb-6 overflow-scroll"
       id="Dimensions"
     >
       {/* <Card

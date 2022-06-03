@@ -1,8 +1,5 @@
 import * as React from "react";
-import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import { Card } from "@mui/material";
 import ControlledButton from "./ControlledButton";
-import Button from "@mui/material/Button";
 
 export default function KnowledgeCheck(props) {
   //   const [value, setValue] = React.useState(0);
@@ -21,7 +18,7 @@ export default function KnowledgeCheck(props) {
   //const [disabled, setDisabled] = React.useState(false);
 
   return (
-    <div className="rounded-xl p-4 flex justify-center text-center flex-col bg-stone-100">
+    <div className="rounded-xl p-4 flex justify-center text-center flex-col ">
       <span className="font-bold pb-2">{props.question}</span>
       {props.correctAnswers.map((item, index) => {
         return (

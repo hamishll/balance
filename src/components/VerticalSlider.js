@@ -1,10 +1,9 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-import { styled } from "@mui/material/styles";
 
 export default function VerticalSlider(props) {
-  const StyledSlider = styled(Slider)({
+  const styles = {
     color: props.color,
     height: "100%",
     "& .MuiSlider-track": {
@@ -31,7 +30,10 @@ export default function VerticalSlider(props) {
         display: "none",
       },
     },
-  });
+    '& input[type="range"]': {
+      WebkitAppearance: "slider-vertical",
+    },
+  };
 
   const [value, setValue] = React.useState(props.initValue);
 
@@ -42,12 +44,8 @@ export default function VerticalSlider(props) {
 
   return (
     <Box sx={{ height: "90%" }}>
-      <StyledSlider
-        sx={{
-          '& input[type="range"]': {
-            WebkitAppearance: "slider-vertical",
-          },
-        }}
+      <Slider
+        sx={styles}
         step={1}
         orientation="vertical"
         defaultValue={value}

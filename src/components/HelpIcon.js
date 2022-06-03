@@ -1,4 +1,4 @@
-import React, { JSXElementConstructor } from "react"; //created using "rscp"
+import React from "react"; //created using "rscp"
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
@@ -12,7 +12,6 @@ const style = {
   border: "2px solid #000",
   padding: "10px",
 };
-const theme = {};
 
 const ThemedModal = styled(Modal)(({ theme }) => ({
   backgroundColor: theme.backgroundColor,

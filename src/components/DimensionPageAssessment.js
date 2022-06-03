@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import AssessmentQuestion from "./AssessmentQuestion";
@@ -26,13 +26,16 @@ export default function DimensionPageAssessment(props) {
       } catch {}
     }
     // }
-  }, [props.assessmentSelected]);
+  }, [props.assessmentSelected, props.name]);
 
   if (!props.assessmentSelected) {
     return "";
   } else {
     return (
-      <div className="PageCardContainer" id={props.name}>
+      <div
+        className="PageCardContainer bg-white dark:bg-slate-800"
+        id={props.name}
+      >
         {/* <div className="PageCloseBg" onClick={minimisePage}/> */}
         <div className="PageCard">
           <div className="PageCardContent">
@@ -46,7 +49,7 @@ export default function DimensionPageAssessment(props) {
                 case "singlechoice": {
                   return (
                     <Box key={index}>
-                      <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
+                      <div className="font-bold leading-tight text-2xl mt-8 mb-4">
                         {question.question}
                       </div>
                       <AssessmentQuestion
@@ -62,7 +65,7 @@ export default function DimensionPageAssessment(props) {
                 case "slider": {
                   return (
                     <Box key={index}>
-                      <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
+                      <div className="font-bold leading-tight text-2xl mt-8 mb-4">
                         {question.question}
                       </div>
                       <DiscreteSlider
@@ -77,7 +80,7 @@ export default function DimensionPageAssessment(props) {
                 case "multichoice": {
                   return (
                     <Box key={index}>
-                      <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
+                      <div className="font-bold leading-tight text-2xl mt-8 mb-4 ">
                         {question.question}
                       </div>
                       <MultiChoiceQuestion
@@ -92,7 +95,7 @@ export default function DimensionPageAssessment(props) {
                 case "freetext": {
                   return (
                     <Box key={index}>
-                      <div className="font-bold leading-tight text-2xl mt-8 mb-4 text-black">
+                      <div className="font-bold leading-tight text-2xl mt-8 mb-4 ">
                         {question.question}
                       </div>
                       <FreeTextQuestion
@@ -102,6 +105,10 @@ export default function DimensionPageAssessment(props) {
                       />
                     </Box>
                   );
+                }
+
+                default: {
+                  return "";
                 }
               }
             })}

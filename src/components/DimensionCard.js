@@ -1,9 +1,7 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import DimensionPage from "./DimensionPage";
-import DimensionPageAssessment from "./DimensionPageAssessment";
-
 import Rating from "@mui/material/Rating";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
@@ -33,7 +31,7 @@ export default function DimensionCard(props) {
   return (
     <>
       <div
-        className="overflow-hidden relative basis-5/12 grow max-w-[50%] p-2 rounded-xl cursor-pointer"
+        className="overflow-hidden relative grow basis-[150px] max-w-lg p-2 rounded-xl cursor-pointer"
         style={{ backgroundColor: props.color }}
         onClick={handleClick}
       >

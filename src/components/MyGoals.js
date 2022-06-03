@@ -5,7 +5,7 @@ import HelpIcon from "./HelpIcon";
 
 export default function MyGoals(props) {
   return (
-    <div className="px-4 grow flex flex-col overflow-scroll pb-2">
+    <div className="no-scrollbar px-4 grow flex flex-col overflow-scroll pb-2">
       <div className="flex flex-row items-center">
         <h1 className="grow">My Dream</h1>
         <HelpIcon
@@ -37,7 +37,7 @@ export default function MyGoals(props) {
       </div>
       <FreeTextQuestion
         k={"dream"}
-        rows={8}
+        rows={4}
         initValue={localStorage.getItem("dream")}
       />
       <div className="flex flex-row items-center">

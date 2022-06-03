@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from "react";
-import TextField from "@mui/material/TextField";
-import ControlledCheckbox from "./ControlledCheckbox";
+import React from "react";
 import Button from "@mui/material/Button";
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import Status from "./Status";
 import FreeTextQuestion from "./FreeTextQuestion";
 import HelpIcon from "./HelpIcon";

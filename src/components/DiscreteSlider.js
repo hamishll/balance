@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import Box from "@mui/material/Box";
+import React from "react";
 import Slider from "@mui/material/Slider";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const marks = [
   {
@@ -26,27 +24,16 @@ const marks = [
   },
 ];
 
-function valuetext(value) {
-  return value;
-}
-
-function valueLabelFormat(value) {
-  return marks.findIndex((mark) => mark.value === value) + 1;
-}
-
-const theme = createTheme({
-  palette: {
-    grey: {
-      main: "rgb(123,123,123)",
-    },
-    darkgrey: {
-      main: "rgb(123,123,123)",
-    },
-  },
-});
-
 export default function DiscreteSlider(props) {
   const [value, setValue] = React.useState(props.initValue);
+
+  function valuetext(value) {
+    return value;
+  }
+
+  function valueLabelFormat(value) {
+    return marks.findIndex((mark) => mark.value === value) + 1;
+  }
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import TextField from "@mui/material/TextField";
 import ControlledCheckbox from "./ControlledCheckbox";
 import Button from "@mui/material/Button";
@@ -29,7 +29,6 @@ const Colors = {
   Work: "#007AFF",
   Finances: "#30B0C7",
 };
-
 
 const goalStyles = {
   width: "100%",
@@ -83,7 +82,7 @@ const EditableGoal = ({
 }) => {
   return (
     <div
-      className={`rounded-xl flex flex-col border-4 mb-4 p-3`}
+      className={`rounded-xl flex flex-col max-w-lg border-4 mb-4 p-3`}
       style={{ borderColor: Colors[goal.category] }}
     >
       <div
@@ -268,12 +267,16 @@ export default function EditableGoals2(props) {
     localStorage.setItem("goals", JSON.stringify(goals));
   };
 
+  const collapseStyles = {
+    maxWidth: "500px",
+  };
+
   return (
-    <div>
+    <div className="flex-wrap">
       <TransitionGroup>
         {goals.map((goal, index) => {
           return (
-            <Collapse key={goal.key}>
+            <Collapse key={goal.key} sx={collapseStyles}>
               <EditableGoal
                 key={goal.key}
                 index={index}

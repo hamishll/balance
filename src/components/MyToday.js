@@ -8,7 +8,7 @@ export default function MyToday(props) {
   //const [value, setValue] = React.useState(0);
 
   return (
-    <div className="px-4 flex flex-col grow overflow-scroll">
+    <div className="no-scrollbar px-4 flex flex-col grow overflow-scroll">
       <div className="flex flex-row items-center">
         <h1 className="grow">How do you feel today?</h1>
         <HelpIcon

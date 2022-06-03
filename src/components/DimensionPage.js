@@ -14,7 +14,6 @@ import DimensionPageAssessment from "./DimensionPageAssessment";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 import styles from "./../css/Post.css";
-import MultiChoiceQuestion from "./MultiChoiceQuestion";
 
 export default function DimensionPage(props) {
   DimensionPage.defaultProps = {
@@ -33,7 +32,7 @@ export default function DimensionPage(props) {
       } catch {}
     }
     // }
-  }, [props.selected]);
+  }, [props.selected, props.name]);
 
   const minimisePage = () => {
     props.setSelected(false);
@@ -48,7 +47,10 @@ export default function DimensionPage(props) {
     return "";
   } else {
     return (
-      <div className="PageCardContainer" id={props.name}>
+      <div
+        className="PageCardContainer bg-white dark:bg-slate-800"
+        id={props.name}
+      >
         <DimensionPageAssessment
           questions={props.questions}
           name={props.name + "Assessment"}
@@ -65,7 +67,7 @@ export default function DimensionPage(props) {
             {props.name}
           </div>
 
-          <div className="p-4">
+          <div className="p-4 bg-inherit">
             <div style={{ textAlign: "center" }}>
               <Button
                 variant="outlined"

@@ -55,6 +55,7 @@ html {
 }
 li {
   padding-bottom: 12px;
+  padding-left: 12px;
 }
 .Screen {
   overflow: hidden;
@@ -160,7 +161,7 @@ li {
   transition: 0.2s ease-in-out;
   max-width: 1000px;
 }
-.PageCardContainer ::-webkit-scrollbar {
+.no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .PageCard {
@@ -211,8 +212,6 @@ li {
 .PageIcon svg {
   transform: scale(9) rotate(-10deg);
 }
-
-
 
 .MuiFormControlLabel-root {
   padding-bottom: 10px;
