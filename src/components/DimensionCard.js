@@ -5,6 +5,7 @@ import DimensionPage from "./DimensionPage";
 import Rating from "@mui/material/Rating";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
+import Page from "./Page";
 
 export default function DimensionCard(props) {
   DimensionCard.defaultProps = {
@@ -12,19 +13,10 @@ export default function DimensionCard(props) {
     goals: [],
   };
 
-  //   const [value, setValue] = React.useState(0);
-  // const getColor = (value) => {
-  //     //value from 0 to 1
-  //     var hue=(10 + (value)*100).toString(10);
-  //     return ["hsl(",hue,",100%,43%)"].join("");
-  //   }
-  //var bgColor = {color: getColor(props.score/5)};
-  //const [name, setName] = useState("name1");
-
-  const [selected, setSelected] = useState(false);
+  const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
-    setSelected(true);
+    setOpen(true);
     // console.log(selected);
   };
 
@@ -68,16 +60,16 @@ export default function DimensionCard(props) {
           /> */}
         </div>
       </div>
-      <DimensionPage
-        questions={props.questions}
-        content={props.content}
-        goals={props.goals}
-        name={props.name}
-        color={props.color}
-        icon={props.icon}
-        selected={selected}
-        setSelected={setSelected}
-      />
+      <Page open={open} setOpen={setOpen} name={props.name}>
+        <DimensionPage
+          questions={props.questions}
+          content={props.content}
+          goals={props.goals}
+          name={props.name}
+          color={props.color}
+          icon={props.icon}
+        />
+      </Page>
     </>
   );
 }

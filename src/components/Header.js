@@ -4,6 +4,7 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import SettingsPage from "./SettingsPage";
 import AccountPage from "./AccountPage";
+import Page from "./Page";
 
 export default function Header({
   name,
@@ -16,14 +17,28 @@ export default function Header({
   //const [value, setValue] = React.useState(0);
   const pageContent = "";
 
+  const [openSettings, setOpenSettings] = React.useState(false);
+
   const handleClickSettings = () => {
-    document.getElementById("Settings").style.top = "0vh";
+    setOpenSettings(true);
+    // console.log(selected);
   };
+  const handleCloseSettings = () => {
+    setOpenSettings(false);
+  };
+
+  const [openAccount, setOpenAccount] = React.useState(false);
+
   const handleClickAccount = () => {
-    document.getElementById("Account").style.top = "0vh";
+    setOpenAccount(true);
+    // console.log(selected);
   };
+  const handleCloseAccount = () => {
+    setOpenAccount(false);
+  };
+
   return (
-    <>
+    <React.Fragment>
       <div className="px-4 pt-6 pb-2 text-4xl grow-0 flex-none font-bold relative flex flex-row">
         {name}
         <div className="right-6 absolute flex gap-8 text-2xl top-8 HeaderControls cursor-pointer">
@@ -31,18 +46,22 @@ export default function Header({
           <AccountCircleOutlinedIcon onClick={handleClickAccount} />
         </div>
       </div>
-      <SettingsPage
-        theme={theme}
-        colorMode={colorMode}
-        content={pageContent}
-        name="Settings"
-      />
-      <AccountPage
-        content={pageContent}
-        onboarding={onboarding}
-        setOnboarding={setOnboarding}
-        name="Account"
-      />
-    </>
+      <Page open={openSettings} setOpen={setOpenSettings}>
+        <SettingsPage
+          theme={theme}
+          colorMode={colorMode}
+          content={pageContent}
+          name="Settings"
+        />
+      </Page>
+      <Page open={openAccount} setOpen={setOpenAccount}>
+        <AccountPage
+          content={pageContent}
+          onboarding={onboarding}
+          setOnboarding={setOnboarding}
+          name="Account"
+        />
+      </Page>
+    </React.Fragment>
   );
 }

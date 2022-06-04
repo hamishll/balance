@@ -17,28 +17,18 @@ export default function AccountPage({ name, onboarding, setOnboarding }) {
   // }
 
   return (
-    <div
-      className="PageCardContainer rounded-t-3xl z-30 max-w-3xl w-full bg-white dark:bg-slate-800 dark:bg-inherit"
-      id={name}
-    >
-      <div className="PageCard no-scrollbar  bg-white dark:bg-inherit">
-        <div className="PageClose" onClick={minimisePage}>
-          <CloseOutlinedIcon />
-        </div>
-        <div className="PageCardContent text-center">
-          <h1 className="text-left">{name}</h1>
-          <SignInScreen />
+    <div className="PageCardContent text-center">
+      <h1 className="text-left">{name}</h1>
+      <SignInScreen />
 
-          <Button
-            variant="outlined"
-            onClick={() => {
-              setOnboarding(!onboarding);
-            }}
-          >
-            Redo onboarding
-          </Button>
-        </div>
-      </div>
+      <Button
+        variant="outlined"
+        onClick={() => {
+          setOnboarding(!onboarding);
+        }}
+      >
+        Redo onboarding
+      </Button>
     </div>
   );
 }
