@@ -129,7 +129,9 @@ export default function DimensionPage(props) {
                 {typeof props.content == "object" ? (
                   props.content
                 ) : (
-                  <ReactMarkdown children={props.content} />
+                  <div class="post">
+                    <ReactMarkdown children={props.content} />
+                  </div>
                 )}
               </div>
               {/* <h2>Useful resources</h2>
