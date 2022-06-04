@@ -24,7 +24,7 @@ export default function ControlledCheckbox(props) {
       icon={<RadioButtonUncheckedIcon />}
       checked={props.checked ?? checked}
       // color={"success"}
-      size={props.size ?? "large"}
+      size={props.size ?? "medium"}
       onChange={handleChange}
       onClick={props.onClick}
       inputProps={{ "aria-label": "controlled" }}

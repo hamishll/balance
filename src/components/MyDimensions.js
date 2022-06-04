@@ -7,7 +7,7 @@ import Heading1 from "./Heading1";
 // Content
 import { MindsetContent } from "../content/MindsetContent";
 import { FinancialContent } from "../content/FinancialContent";
-import { SleepContent } from "../content/SleepContent";
+import SleepContent from "../content/SleepContent";
 import { FriendsContent } from "../content/FriendsContent";
 import { ValuesContent } from "../content/ValuesContent";
 import { MeaningContent } from "../content/MeaningContent";
@@ -27,7 +27,7 @@ import FollowTheSignsIcon from "@mui/icons-material/FollowTheSigns";
 export default function MyDimensions(props) {
   return (
     <div
-      className="no-scrollbar grow justify-center flex flex-row flex-wrap px-3 gap-3 pb-6 overflow-scroll"
+      className="no-scrollbar grow justify-center flex flex-row flex-wrap px-3 gap-3 pb-[100px] overflow-scroll"
       id="Dimensions"
     >
       {/* <Card
@@ -73,7 +73,7 @@ export default function MyDimensions(props) {
       <Heading1 toptext="Dimensions" text="" />
       <DimensionCard
         userdata={props.userdata}
-        content={SleepContent}
+        content={<SleepContent />}
         goals={props.appData.Sleep.goals}
         questions={props.appData.Sleep.questions}
         name="Health & Fitness"

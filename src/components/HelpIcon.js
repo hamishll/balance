@@ -19,7 +19,7 @@ const ThemedModal = styled(Modal)(({ theme }) => ({
   border: "0px",
   "& .MuiBackdrop-root": {
     background:
-      "linear-gradient(0deg, rgba(0,0,0,0.15) 90%, rgba(255,255,255,0.1) 100% )",
+      "linear-gradient(0deg, rgba(0,0,0,0.15) 93%, rgba(0,0,0,0) 100% )",
     backdropFilter: "blur(10px)",
   },
   "& .MuiOutlinedInput-notchedOutline": {
@@ -40,7 +40,7 @@ const LightTooltip = styled(({ className, ...props }) => (
     paddingLeft: 16,
     paddingRight: 16,
     paddingTop: 1,
-    paddingBottom: 8,
+    paddingBottom: 16,
     // boxShadow: "0px 0px 15px rgba(0,0,0,0.2)",
   },
   [`& .${tooltipClasses.arrow}`]: {
@@ -60,7 +60,7 @@ const HelpIcon = ({ content, ...props }) => {
         onOpen={handleOpen}
         arrow
         title={<React.Fragment>{content}</React.Fragment>}
-        enterTouchDelay={50}
+        enterTouchDelay={10}
         leaveTouchDelay={0}
       >
         <HelpOutlineIcon sx={{ fontSize: props.sx }} />

@@ -5,6 +5,7 @@ import FreeTextQuestion from "./FreeTextQuestion";
 import HelpIcon from "./HelpIcon";
 import EditableGoalsSimple from "./EditableGoalsSimple";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import MultiChoiceQuestion from "./MultiChoiceQuestion";
 
 // Consts
 
@@ -12,7 +13,7 @@ export default function Onboarding({ onboarding, setOnboarding }) {
   const [page, setPage] = React.useState(1);
 
   React.useEffect(() => {
-    if (page === 7) setPage(1);
+    if (page === 8) setPage(1);
     document.querySelector(`#slide-${page > 5 ? 1 : page}`).scrollIntoView();
   }, [page]);
 
@@ -20,7 +21,7 @@ export default function Onboarding({ onboarding, setOnboarding }) {
 
   return (
     <div className="w-full h-full text-left overflow-hidden relative">
-      {/* <div className="absolute left-0 top-0">
+      <div className="absolute right-10 bottom-10">
         <Button
           sx={{ borderRadius: 20 }}
           variant="contained"
@@ -30,7 +31,7 @@ export default function Onboarding({ onboarding, setOnboarding }) {
         >
           Next
         </Button>
-      </div> */}
+      </div>
 
       <div className="slides w-full h-full flex overflow-x-auto snap-x snap-mandatory scroll-smooth">
         <div
@@ -153,6 +154,22 @@ export default function Onboarding({ onboarding, setOnboarding }) {
             <div>
               How are you feeling about your life today across these dimensions?
             </div>
+            <HelpIcon
+              sx={{ fontSize: "1em" }}
+              content={
+                <div>
+                  <h2>Take a moment to reflect on your current life balance</h2>
+                  <ul>
+                    <li>What are you happy about? What could be better?</li>
+                    <li>
+                      By identifying which dimensions of our life could use a
+                      boost, you can make a clearer plan for improving these
+                      areas.
+                    </li>
+                  </ul>
+                </div>
+              }
+            />
             <Status />
           </div>
         </div>
@@ -160,6 +177,45 @@ export default function Onboarding({ onboarding, setOnboarding }) {
         <div
           className="flex p-4 snap-start w-full h-full shrink-0 "
           id="slide-7"
+        >
+          <div className="mt-24 text-4xl flex-col">
+            <div className="text-6xl font-bold text-[#007AFF]">4</div>
+            <div>What do you want to focus on?</div>
+            <HelpIcon
+              sx={{ fontSize: "1em" }}
+              content={
+                <div>
+                  <h2>What areas of your life would you like to improve?</h2>
+                  <ul>
+                    <li>
+                      Look at what you scored low on in the previous exercise.
+                      Do you want to focus on these areas?
+                    </li>
+                  </ul>
+                </div>
+              }
+            />
+            <MultiChoiceQuestion
+              k={"focuses"}
+              key={"focuses"}
+              question={"uh"}
+              choices={[
+                "🍏 Health & Fitness",
+                "👋 Friends",
+                "👪 Family",
+                "💕 Love",
+                "✨ Having fun",
+                "🎨 Creating",
+                "💻 Work",
+                "💸 Finances",
+              ]}
+            />
+          </div>
+        </div>
+
+        <div
+          className="flex p-4 snap-start w-full h-full shrink-0 "
+          id="slide-8"
         >
           <div className="mt-24 text-4xl flex-col grow">
             <div>

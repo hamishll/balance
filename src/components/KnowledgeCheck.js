@@ -1,15 +1,21 @@
 import * as React from "react";
 import ControlledButton from "./ControlledButton";
 
-export default function KnowledgeCheck(props) {
+export default function KnowledgeCheck({
+  question,
+  correctAnswers,
+  incorrectAnswers,
+  correct,
+  ...props
+}) {
   //   const [value, setValue] = React.useState(0);
 
-  const [color, setColor] = React.useState("info");
+  // const [color, setColor] = React.useState("info");
 
-  const handleChange = () => {
-    //setDisabled((previousState) => !previousState);
-    setColor(props.correct ? "success" : "error");
-  };
+  // const handleChange = () => {
+  //   //setDisabled((previousState) => !previousState);
+  //   setColor(correct ? "success" : "error");
+  // };
   const buttonStyle = {
     margin: "5px",
     display: "flex",
@@ -18,9 +24,9 @@ export default function KnowledgeCheck(props) {
   //const [disabled, setDisabled] = React.useState(false);
 
   return (
-    <div className="rounded-xl p-4 flex justify-center text-center flex-col ">
-      <span className="font-bold pb-2">{props.question}</span>
-      {props.correctAnswers.map((item, index) => {
+    <div className="rounded-xl p-4 flex justify-center text-center flex-col bg-black bg-opacity-5 dark:bg-opacity-20">
+      <span className="font-bold pb-2">{question}</span>
+      {correctAnswers.map((item, index) => {
         return (
           <ControlledButton
             sx={buttonStyle}
@@ -33,7 +39,7 @@ export default function KnowledgeCheck(props) {
           />
         );
       })}
-      {props.incorrectAnswers.map((item, index) => {
+      {incorrectAnswers.map((item, index) => {
         return (
           <ControlledButton
             sx={buttonStyle}

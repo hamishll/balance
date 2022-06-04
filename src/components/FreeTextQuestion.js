@@ -44,6 +44,7 @@ export default function FreeTextQuestion(props) {
 
   return (
     <TextField
+      sx={props.sx}
       className="w-full"
       id="outlined-multiline-static"
       multiline

@@ -36,7 +36,7 @@ export default function DimensionCard(props) {
         onClick={handleClick}
       >
         <div className="CategoryCardIcon">{props.icon}</div>
-        <div className="text-white text-[19px] font-semibold leading-tight">
+        <div className="text-white text-[18px] font-semibold leading-tight">
           {props.name}
         </div>
         <div className="CategoryCardNum">

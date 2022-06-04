@@ -82,7 +82,7 @@ const EditableGoal = ({
 }) => {
   return (
     <div
-      className={`rounded-xl flex flex-col max-w-lg border-4 mb-4 p-3`}
+      className={`rounded-xl flex flex-col grow basis-1/3 max-w-lg border-4 p-3 dark:bg-black dark:bg-opacity-20`}
       style={{ borderColor: Colors[goal.category] }}
     >
       <div
@@ -127,23 +127,23 @@ const EditableGoal = ({
       </span>
 
       {/* <span className="text-gray-400 mb-2">Steps to achieve this goal:</span> */}
-      {/* <TransitionGroup> */}
-      {goal.tasks.map((task, childIndex) => {
-        return (
-          // <Collapse key={childIndex}>
-          <EditableTask
-            key={childIndex}
-            task={task}
-            index={childIndex}
-            parentIndex={index}
-            markTask={markTask}
-            removeTask={removeTask}
-            handleTaskChange={handleTaskChange}
-          />
-          // </Collapse>
-        );
-      })}
-      {/* </TransitionGroup> */}
+      <TransitionGroup>
+        {goal.tasks.map((task, childIndex) => {
+          return (
+            <Collapse key={childIndex}>
+              <EditableTask
+                key={childIndex}
+                task={task}
+                index={childIndex}
+                parentIndex={index}
+                markTask={markTask}
+                removeTask={removeTask}
+                handleTaskChange={handleTaskChange}
+              />
+            </Collapse>
+          );
+        })}
+      </TransitionGroup>
       <Button
         sx={{ color: "#BBB", justifyContent: "left" }}
         onClick={() => addTask("Task name", index)}
@@ -272,32 +272,32 @@ export default function EditableGoals2(props) {
   };
 
   return (
-    <div className="flex-wrap">
-      <TransitionGroup>
-        {goals.map((goal, index) => {
-          return (
-            <Collapse key={goal.key} sx={collapseStyles}>
-              <EditableGoal
-                key={goal.key}
-                index={index}
-                goal={goal}
-                // Goal functions
-                setCategory={setCategory}
-                markGoal={markGoal}
-                removeGoal={removeGoal}
-                handleGoalChange={handleGoalChange}
-                // Task functions
-                addTask={addTask}
-                markTask={markTask}
-                removeTask={removeTask}
-                handleTaskChange={handleTaskChange}
-              />
-            </Collapse>
-          );
-        })}
-      </TransitionGroup>
+    <div className="flex flex-wrap gap-4">
+      {/* <TransitionGroup> */}
+      {goals.map((goal, index) => {
+        return (
+          // <Collapse key={goal.key} sx={collapseStyles}>
+          <EditableGoal
+            key={goal.key}
+            index={index}
+            goal={goal}
+            // Goal functions
+            setCategory={setCategory}
+            markGoal={markGoal}
+            removeGoal={removeGoal}
+            handleGoalChange={handleGoalChange}
+            // Task functions
+            addTask={addTask}
+            markTask={markTask}
+            removeTask={removeTask}
+            handleTaskChange={handleTaskChange}
+          />
+          // </Collapse>
+        );
+      })}
+      {/* </TransitionGroup> */}
       <Button
-        sx={{ color: "#BBB", justifyContent: "left" }}
+        sx={{ color: "#BBB", justifyContent: "left", width: "100%" }}
         onClick={(event) => {
           addGoal();
         }}

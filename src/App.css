@@ -36,6 +36,59 @@
   --background: rgb(255, 255, 255);
 } */
 
+details > summary {
+  border-radius: "5px";
+  cursor: pointer;
+  padding: .5rem .75rem;
+}
+
+details > summary > * {
+  display: inline;
+}
+details > div {
+  margin-top: 0;
+  padding: 1rem;
+}
+
+summary::-webkit-details-marker, 
+details summary::marker {
+  display: none;
+  content: "";
+}
+
+summary.more::after {
+  font-size: 0.8em;
+  margin-left: 6px;
+  padding: 2px 0px;
+  white-space: nowrap;
+  color: #007AFF;
+  content: 'Read More';
+}
+details[open] summary.more:after {
+  content: "Read Less";
+}
+summary.more {
+  pointer-events: none;
+}
+
+.learningContent h2 {
+  width: 100%;
+}
+
+li {
+  display: list-item;
+  list-style: disc;
+  list-style-type: disc; 
+}
+ul {	
+  display: block;
+  list-style-type: disc;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 2em;
+}
+
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
   overflow: hidden;
@@ -53,10 +106,7 @@ html {
   place-items: center;
   color: rgba(255, 255, 255, 0.8);
 }
-li {
-  padding-bottom: 12px;
-  padding-left: 12px;
-}
+
 .Screen {
   overflow: hidden;
   width: 100vw;
@@ -83,6 +133,7 @@ li {
 .Container::-webkit-scrollbar {
   display: none;
 }
+
 .MyBalance {
   margin: 0px 10px;
 }
@@ -93,14 +144,12 @@ li {
 
 .Heading1 {
   width: 100vw;
-  margin-top: 10px;
-  padding: 15px 0px 0px 0px;
+  padding: 10px 0px 0px 0px;
   font-size: 1em;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  border-top: 1px solid hsl(0, 0%, 90%);
 }
 .Card {
   padding: 15px;
@@ -153,13 +202,10 @@ li {
 }
 
 .PageCardContainer {
-  z-index: 2;
-  width: 100.7vw;
   position: fixed;
   top: 120vh;
   min-height: 100vh;
   transition: 0.2s ease-in-out;
-  max-width: 1000px;
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;

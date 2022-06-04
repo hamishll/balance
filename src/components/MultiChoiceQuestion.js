@@ -25,7 +25,7 @@ export default function MultiChoiceQuestion(props) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 0, paddingBottom: 2 }}>
       {props.choices.map((q, index) => {
         return (
           <ControlledChip

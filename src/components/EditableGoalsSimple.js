@@ -6,6 +6,7 @@ import { TransitionGroup } from "react-transition-group";
 import Collapse from "@mui/material/Collapse";
 
 const taskStyles = {
+  width: "100%",
   "& .MuiOutlinedInput-root": {
     padding: "0px",
   },

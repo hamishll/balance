@@ -5,7 +5,7 @@ import HelpIcon from "./HelpIcon";
 
 export default function MyGoals(props) {
   return (
-    <div className="no-scrollbar px-4 grow flex flex-col overflow-scroll pb-2">
+    <div className="no-scrollbar px-4 pb-[100px] grow flex flex-col overflow-scroll">
       <div className="flex flex-row items-center">
         <h1 className="grow">My Dream</h1>
         <HelpIcon
@@ -36,8 +36,11 @@ export default function MyGoals(props) {
         />
       </div>
       <FreeTextQuestion
+        sx={{
+          "& .MuiOutlinedInput-root": { fontSize: "0.8em", padding: "10px" },
+        }}
         k={"dream"}
-        rows={4}
+        rows={6}
         initValue={localStorage.getItem("dream")}
       />
       <div className="flex flex-row items-center">

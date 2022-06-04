@@ -14,8 +14,11 @@ export default function SettingsPage({ theme, colorMode, ...props }) {
   // }
 
   return (
-    <div className="PageCardContainer bg-white dark:bg-inherit" id={props.name}>
-      <div className="PageCard bg-inherit dark:bg-inherit">
+    <div
+      className="PageCardContainer rounded-t-3xl z-30 max-w-3xl w-full bg-white dark:bg-slate-800 dark:bg-inherit"
+      id={props.name}
+    >
+      <div className="PageCard no-scrollbar bg-inherit dark:bg-inherit">
         <div className="PageClose" onClick={minimisePage}>
           <CloseOutlinedIcon />
         </div>

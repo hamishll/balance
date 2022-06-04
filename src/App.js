@@ -1,6 +1,6 @@
 // import "./App.css";
 import "./Output.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Sections
 import Header from "./components/Header";
@@ -53,7 +53,7 @@ const App = ({ mode }) => {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <div
-            className={`Screen flex flex-col dark:text-gray-50  bg-white dark:bg-slate-800`}
+            className={`Screen flex flex-col dark:text-gray-50  bg-white dark:bg-slate-800 touch-none`}
           >
             <Header
               name={headingDict[value]}
@@ -63,30 +63,29 @@ const App = ({ mode }) => {
               colorMode={colorMode}
             />
             <MainContainer value={value} appData={appData} />
-            <div className="BottomNavigation h-[85px] grow-0 flex-none border-t border-black border-opacity-10 dark:bg-slate-800">
-              <Box>
-                <BottomNavigation
-                  sx={{ backgroundColor: "inherit" }}
-                  showLabels
-                  value={value}
-                  onChange={(event, newValue) => {
-                    setValue(newValue);
-                  }}
-                >
-                  <BottomNavigationAction
-                    label={headingDict[0]}
-                    icon={<LandscapeIcon />}
-                  />
-                  <BottomNavigationAction
-                    label={headingDict[1]}
-                    icon={<TodayIcon />}
-                  />
-                  <BottomNavigationAction
-                    label={headingDict[2]}
-                    icon={<InterestsIcon />}
-                  />
-                </BottomNavigation>
-              </Box>
+            {/* <div className="h-[85px] flex grow-0 border-t border-black border-opacity-10 dark:bg-slate-800"></div> */}
+            <div className="fixed -bottom-px h-[85px] w-full max-w-screen-lg border-t border-black border-opacity-10 bg-white dark:bg-slate-800">
+              <BottomNavigation
+                sx={{ backgroundColor: "inherit" }}
+                showLabels
+                value={value}
+                onChange={(event, newValue) => {
+                  setValue(newValue);
+                }}
+              >
+                <BottomNavigationAction
+                  label={headingDict[0]}
+                  icon={<LandscapeIcon />}
+                />
+                <BottomNavigationAction
+                  label={headingDict[1]}
+                  icon={<TodayIcon />}
+                />
+                <BottomNavigationAction
+                  label={headingDict[2]}
+                  icon={<InterestsIcon />}
+                />
+              </BottomNavigation>
             </div>
           </div>
         </ThemeProvider>
@@ -102,13 +101,32 @@ export default function ThemedApp() {
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", (event) => {
       newColorScheme = event.matches ? "dark" : "light";
-      localStorage.setItem("theme", newColorScheme);
+      if (newColorScheme == "dark") {
+        colorMode.setMode("dark");
+      }
     });
 
   // MUI
   const [mode, setMode] = React.useState(
-    localStorage.getItem("theme") ?? newColorScheme
+    localStorage.getItem("theme") ??
+      (window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light")
   );
+  useEffect(() => {
+    localStorage.setItem("theme", mode);
+    if (mode == "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    const newColor = mode === "light" ? "#FFFFFF" : "#1e293b";
+    document
+      .querySelector("meta[name=theme-color]")
+      .setAttribute("content", newColor);
+  }, [mode]);
+  console.log(mode);
   // colorMode.toggleColorMode is the method called by our toggle button. It toggles the state of mode
   const colorMode = React.useMemo(
     () => ({
@@ -124,7 +142,7 @@ export default function ThemedApp() {
         document.documentElement.classList.contains("dark")
           ? document.documentElement.classList.remove("dark")
           : document.documentElement.classList.add("dark");
-        // localStorage.setItem("theme", mode);
+        localStorage.setItem("theme", mode);
       },
     }),
     []

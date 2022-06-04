@@ -33,11 +33,11 @@ export default function DimensionPageAssessment(props) {
   } else {
     return (
       <div
-        className="PageCardContainer bg-white dark:bg-slate-800"
+        className="PageCardContainer rounded-t-3xl z-30 max-w-3xl w-full bg-white dark:bg-slate-800"
         id={props.name}
       >
         {/* <div className="PageCloseBg" onClick={minimisePage}/> */}
-        <div className="PageCard">
+        <div className="PageCard no-scrollbar">
           <div className="PageCardContent">
             <div className="PageClose" onClick={handleClick}>
               <CloseOutlinedIcon />
