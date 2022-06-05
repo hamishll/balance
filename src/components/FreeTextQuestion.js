@@ -2,6 +2,13 @@ import React, { useEffect } from "react";
 
 import TextField from "@mui/material/TextField";
 
+const sxBase = {
+  "& .MuiOutlinedInput-root": {
+    backgroundColor: "rgba(0,0,0,0.1)",
+    borderRadius: 2,
+  },
+};
+
 export default function FreeTextQuestion({ k, sx, rows, initValue, ...props }) {
   //   const [value, setValue] = React.useState(0);
 
@@ -44,7 +51,7 @@ export default function FreeTextQuestion({ k, sx, rows, initValue, ...props }) {
 
   return (
     <TextField
-      sx={sx}
+      sx={{ ...sx, ...sxBase }}
       className="w-full"
       id="outlined-multiline-static"
       multiline

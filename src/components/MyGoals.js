@@ -37,7 +37,10 @@ export default function MyGoals(props) {
       </div>
       <FreeTextQuestion
         sx={{
-          "& .MuiOutlinedInput-root": { fontSize: "0.8em", padding: "10px" },
+          "& .MuiOutlinedInput-root": {
+            fontSize: "0.8em",
+            padding: "10px",
+          },
         }}
         k={"dream"}
         rows={6}
