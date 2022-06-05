@@ -1,5 +1,7 @@
 export const MindsetContent = `
 
+# Summary
+
 Worry is a psychological effect which we can control. Cultivate a mental
 attitude of peace and happiness, be yourself and don’t stress the little
 things. Think ‘what is the worst thing that could happen?’ and accept

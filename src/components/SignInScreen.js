@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
+import FireStoreDataSync from "./FireStoreDataSync";
 import FireStoreData from "./FireStoreData";
 
 // Configure FirebaseUI.
@@ -43,14 +44,15 @@ function SignInScreen() {
     );
   }
   return (
-    <div>
+    <div className="flex flex-col gap-2">
       {/* <h1>My App</h1> */}
       <p>
         Welcome {firebase.auth().currentUser.displayName}! You are now
         signed-in!
       </p>
       <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
-      <FireStoreData />
+      {/* <FireStoreData /> */}
+      <FireStoreDataSync />
     </div>
   );
 }

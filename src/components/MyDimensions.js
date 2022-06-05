@@ -24,9 +24,12 @@ import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import FollowTheSignsIcon from "@mui/icons-material/FollowTheSigns";
 import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
-
+//71 89 12
+//127 141 173
+//149 156 173
+//255 234 183 Cream
 const Colors = [
-  "#555555",
+  "rgb(149 156 173)",
   "#34C759",
   "#FFCD00",
   "#FF9500",

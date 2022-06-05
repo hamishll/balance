@@ -7,7 +7,7 @@ import ReactMarkdown from "react-markdown";
 export default function Tip({ id, summary, children, hideTask, ...props }) {
   const more = children ? "more" : "";
   return (
-    <details className="rounded-xl bg-stone-100 bg-opacity-100 dark:bg-opacity-20 basis-80 grow flex">
+    <details className="rounded-xl bg-stone-100 bg-opacity-100 dark:bg-black dark:bg-opacity-20 basis-80 grow flex">
       <summary className={`text-md ${more} font-medium`}>
         <div className="relative">
           {hideTask ? (

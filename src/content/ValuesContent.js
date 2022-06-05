@@ -1,5 +1,7 @@
 export const ValuesContent = `
 
+# Summary
+
 If you expect bad things to happen, then you won't be so sad when they do. Conversely, if you expect good fortune you will be disappointed when it is not achieved. 
 
 We are unhappy because we are insatiable, and typically lose interest in the things we achieve, giving rise to even greater desires. 

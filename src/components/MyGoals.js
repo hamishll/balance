@@ -38,8 +38,9 @@ export default function MyGoals(props) {
       <FreeTextQuestion
         sx={{
           "& .MuiOutlinedInput-root": {
-            fontSize: "0.8em",
+            fontSize: "0.9em",
             padding: "10px",
+            borderRadius: 2,
           },
         }}
         k={"dream"}

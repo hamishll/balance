@@ -1,5 +1,7 @@
 export const MeaningContent = `
 
+# Summary
+
 1. He who has a *why* can bear almost any *how*
 
 The ultimate freedom we all have, is the ability to choose one's attitude
@@ -15,7 +17,7 @@ We shouldn't aim for a tensionless state but rather the striving and
 struggling of pursuing a worthwhile goal, a freely chosen task.
 
 
-## A case for hope in any circumstance
+# A case for hope in any circumstance
 
 Even those in desperate situations have reason to hope. Health, family,
 happiness, professional abilities, fortune, position in society - so long
@@ -46,7 +48,7 @@ Our society tends to value humans based on their usefulness, however the
 elderly have an unconditional value and dignity in their past actions that
 we should also value.
 
-## Finding meaning in suffering
+# Finding meaning in suffering
 
 Imagine you lose the one you love. Such an event may be a cause of serious
 depression. However one can find meaning in this unavoidable suffering - for
@@ -58,7 +60,7 @@ Consider also people with significant disabilities who can still find happiness;
 many of which report that the misfortunate that befell them has made them more 
 grateful of their life and report that the suffering helped them grow.
 
-## Don't chase 'happiness'
+# Don't chase 'happiness'
 
 Our current popular culture stresses the idea that we ought to be
 happy, which can leave us feeling frustrated and ashamed of not being happy. 
@@ -77,7 +79,7 @@ is indispensible to mental well-being. **What man actually needs is
 not a tensionless state but rather the striving and struggling of
 a worthwhile goal, a freely chosen task**.
 
-## The nature of suffering
+# The nature of suffering
 
 Our suffering is similar to the behaviour of a gas - a specific
 quantity of gas will fill a chamber completely and evenly, no matter
@@ -86,7 +88,7 @@ no matter whether the suffering is great or small**.
 
 
 
-## The existensial vacuum
+# The existensial vacuum
 
 The existential vacuum is a widespread phenomenon of the twentieth
 century. This is understandable; it may be due to a twofold loss which
@@ -99,7 +101,7 @@ tradition tells us what we ought to do**.
 This manifests itself primarily as a state of boredom. If we can find 
 *meaning* in our lives we can counteract this existential vacuum.
 
-## The meaning of life
+# The meaning of life
 
 Just as in chess, there is no one "best" move, only the best move 
 for a given situation. The same holds true for human existence. One
@@ -112,7 +114,7 @@ The more one forgets himself - by giving himself to a cause to serve or
 another person to love - the more human he is and the more he actualises 
 himself. 
 
-## Three forms of meaning in life
+# Three forms of meaning in life
 
 We can find meaning in three aspects of our life:
 - Creating a work or doing a deed 

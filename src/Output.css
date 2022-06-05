@@ -575,6 +575,10 @@ a {
   margin-left: 10px;
 }
 
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -733,6 +737,10 @@ a {
 
 .gap-3 {
   gap: 0.75rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .overflow-hidden {
@@ -959,6 +967,11 @@ a {
 .text-\[\#007AFF\] {
   --tw-text-opacity: 1;
   color: rgb(0 122 255 / var(--tw-text-opacity));
+}
+
+.text-green-700 {
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
 }
 
 .opacity-25 {
