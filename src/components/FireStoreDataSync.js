@@ -26,7 +26,7 @@ const FireStoreDataSync = () => {
             doc={documents.id}
             value={JSON.stringify({ ...localStorage })}
           >
-            Sync data
+            Backup data
           </UpdateWithInput>
           <Button
             variant="outlined"

@@ -9,7 +9,7 @@ export const FriendsContent = (
     <h2>Summary</h2>
 
     <Tip
-      id="sleep-summary"
+      id="friends-summary"
       hideTask={true}
       summary="We're never formally taught how to get on with other people, however our popularity, 
         happiness and sense of worth depend upon almost entirely on our skill in dealing with people."

@@ -23,7 +23,7 @@ export default function DimensionCard(props) {
   return (
     <>
       <div
-        className="overflow-hidden relative grow basis-[150px] max-w-lg p-2 rounded-xl cursor-pointer"
+        className={`overflow-hidden relative grow basis-[150px] ${props.className} max-w-lg p-2 rounded-xl cursor-pointer`}
         style={{ backgroundColor: props.color }}
         onClick={handleClick}
       >

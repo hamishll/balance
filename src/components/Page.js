@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import Slide from "@mui/material/Slide";
 import Fade from "@mui/material/Fade";
 import Modal from "@mui/material/Modal";
@@ -7,7 +7,9 @@ import Backdrop from "@mui/material/Backdrop";
 // Icons
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
-const styles = {};
+const styles = {
+  "& .MuiBackdrop-root": {},
+};
 const pageCloseStyles = {
   width: 35,
   height: 35,
@@ -28,6 +30,16 @@ export default function Page({ open, setOpen, name, children }) {
     setOpen(false);
   };
 
+  // Media query so backdrop only shows if >768px
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  );
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 768px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
+
   return (
     <Modal
       sx={styles}
@@ -36,7 +48,7 @@ export default function Page({ open, setOpen, name, children }) {
       open={open}
       onClose={handleClose}
       closeAfterTransition
-      BackdropComponent={Backdrop}
+      BackdropComponent={matches ? Backdrop : ""}
       BackdropProps={{
         timeout: 350,
       }}

@@ -651,6 +651,10 @@ a {
   flex-basis: 33.333333%;
 }
 
+.basis-\[100px\] {
+  flex-basis: 100px;
+}
+
 .basis-80 {
   flex-basis: 20rem;
 }
@@ -731,16 +735,16 @@ a {
   gap: 1rem;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .gap-8 {
   gap: 2rem;
 }
 
 .gap-3 {
   gap: 0.75rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .overflow-hidden {
@@ -1033,6 +1037,10 @@ summary:not(.more) {
   pointer-events: none;
 }
 
+.MuiCheckbox-root {
+  pointer-events:all;
+}
+
 .learningContent h2 {
   width: 100%;
 }
@@ -1224,8 +1232,6 @@ html {
   position: absolute;
   top: -5vh;
   left: 0px;
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
   z-index: -1;
 }
 
@@ -1262,7 +1268,7 @@ html {
 }
 
 @media (min-width: 1024px) {
-  .MuiBackdrop-root  {
+  .MuiModal-root .MuiBackdrop-root  {
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
   }

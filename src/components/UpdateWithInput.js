@@ -6,9 +6,8 @@ import "firebase/compat/firestore";
 import Button from "@mui/material/Button";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-const db = firebase.firestore();
-
 const UpdateWithInput = ({ doc, value, children }) => {
+  const db = firebase.firestore();
   const [success, setSuccess] = React.useState(false);
 
   const updateValue = () => {

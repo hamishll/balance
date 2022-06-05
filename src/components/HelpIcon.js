@@ -48,7 +48,7 @@ const LightTooltip = styled(({ className, ...props }) => (
   },
 }));
 
-const HelpIcon = ({ content, ...props }) => {
+const HelpIcon = ({ content, children, ...props }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

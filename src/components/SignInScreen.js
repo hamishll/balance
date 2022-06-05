@@ -5,6 +5,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import FireStoreDataSync from "./FireStoreDataSync";
 import FireStoreData from "./FireStoreData";
+import Button from "@mui/material/Button";
 
 // Configure FirebaseUI.
 const uiConfig = {
@@ -50,7 +51,9 @@ function SignInScreen() {
         Welcome {firebase.auth().currentUser.displayName}! You are now
         signed-in!
       </p>
-      <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
+      <Button variant="outlined" onClick={() => firebase.auth().signOut()}>
+        Sign-out
+      </Button>
       {/* <FireStoreData /> */}
       <FireStoreDataSync />
     </div>

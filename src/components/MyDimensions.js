@@ -57,6 +57,7 @@ export default function MyDimensions(props) {
 
       <Heading1 toptext="Overall" text="" />
       <DimensionCard
+        className="basis-[100px]"
         content={ValuesContent}
         goals={props.appData.Values.goals}
         questions={props.appData.Values.questions}
@@ -66,6 +67,7 @@ export default function MyDimensions(props) {
         score={3.3}
       />
       <DimensionCard
+        className="basis-[100px]"
         userdata={props.userdata}
         content={MindsetContent}
         goals={props.appData.Generic.goals}
@@ -76,6 +78,7 @@ export default function MyDimensions(props) {
         score={4.1}
       />
       <DimensionCard
+        className="basis-[100px]"
         userdata={props.userdata}
         goals={props.appData.Generic.goals}
         questions={props.appData.Generic.questions}

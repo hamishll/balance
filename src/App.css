@@ -71,6 +71,9 @@ details[open] summary.more:after {
 summary:not(.more) {
   pointer-events: none;
 }
+.MuiCheckbox-root {
+  pointer-events:all;
+}
 
 .learningContent h2 {
   width: 100%;
@@ -248,7 +251,6 @@ html {
   position: absolute;
   top: -5vh;
   left: 0px;
-  backdrop-filter: blur(2px);
   z-index: -1;
 }
 
@@ -280,7 +282,7 @@ html {
 
 }
 @media (min-width: 1024px) {
-  .MuiBackdrop-root  {
+  .MuiModal-root .MuiBackdrop-root  {
     backdrop-filter: blur(10px);
   }
 }
