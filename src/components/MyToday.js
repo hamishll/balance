@@ -37,11 +37,11 @@ export default function MyToday(props) {
         key={"focuses"}
         question={"uh"}
         choices={[
+          "🌙 Sleep & Rest",
           "🍏 Health & Fitness",
           "👋 Friends",
           "👪 Family",
           "💕 Love",
-          "✨ Having fun",
           "🎨 Creating",
           "💻 Work",
           "💸 Finances",

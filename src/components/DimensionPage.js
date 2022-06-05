@@ -9,7 +9,6 @@ import ControlledCheckbox from "./ControlledCheckbox";
 import ReactMarkdown from "react-markdown";
 import DimensionPageAssessment from "./DimensionPageAssessment";
 import styles from "./../css/Post.css";
-import Page from "./Page";
 
 export default function DimensionPage(props) {
   DimensionPage.defaultProps = {

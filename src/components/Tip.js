@@ -4,21 +4,25 @@ import ReactMarkdown from "react-markdown";
 
 // Consts
 
-export default function Tip({ id, summary, children, ...props }) {
+export default function Tip({ id, summary, children, hideTask, ...props }) {
   const more = children ? "more" : "";
   return (
-    <details className="rounded-xl bg-opacity-10 dark:bg-opacity-20 basis-80 grow flex bg-black">
-      <summary className={`text-md ${more}`}>
+    <details className="rounded-xl bg-stone-100 bg-opacity-100 dark:bg-opacity-20 basis-80 grow flex">
+      <summary className={`text-md ${more} font-medium`}>
         <div className="relative">
-          <ControlledCheckbox
-            id={id}
-            sx={{
-              paddingTop: 0,
-              paddingRight: 1,
-              paddingBottom: 0,
-              paddingLeft: 0,
-            }}
-          />
+          {hideTask ? (
+            ""
+          ) : (
+            <ControlledCheckbox
+              id={id}
+              sx={{
+                paddingTop: 0,
+                paddingRight: 1,
+                paddingBottom: 0,
+                paddingLeft: 0,
+              }}
+            />
+          )}
           {summary}
         </div>
       </summary>

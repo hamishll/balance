@@ -12,21 +12,23 @@ import HikingOutlinedIcon from "@mui/icons-material/HikingOutlined";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithoutContactOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
-export default function MyStatus(props) {
+export default function Status(props) {
   // const [value, setValue] = React.useState(props.initValue);
   const Dimensions = [
+    "Sleep",
     "Health",
     "Friends",
     "Family",
     "Love",
-    "Fun",
     "Personal Development",
     "Work",
     "Finances",
   ];
 
   const Colors = [
+    "#30B0C7",
     "#34C759",
     "#FFCD00",
     "#FF9500",
@@ -34,15 +36,15 @@ export default function MyStatus(props) {
     "#AF52DE",
     "#5856D6",
     "#007AFF",
-    "#30B0C7",
   ];
 
   const Icons = [
+    <DarkModeOutlinedIcon />,
     <HikingOutlinedIcon />,
     <ConnectWithoutContactOutlinedIcon />,
     <FamilyRestroomIcon />,
     <FavoriteBorderOutlinedIcon />,
-    <HeadphonesOutlinedIcon />,
+
     <ColorLensOutlinedIcon />,
     <WorkOutlineOutlinedIcon />,
     <LocalAtmOutlinedIcon />,

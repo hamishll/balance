@@ -13,20 +13,26 @@ export default function Onboarding({ onboarding, setOnboarding }) {
   const [page, setPage] = React.useState(1);
 
   React.useEffect(() => {
-    if (page === 8) setPage(1);
-    document.querySelector(`#slide-${page > 5 ? 1 : page}`).scrollIntoView();
+    //if (page === 8) setPage(1);
+    //document.querySelector(`#slide-${page > 8 ? 1 : page}`).scrollIntoView();
+    document.querySelector(`#slide-${page}`).scrollIntoView();
   }, [page]);
 
   // Functions (pass down to children if required)
 
   return (
     <div className="w-full h-full text-left overflow-hidden relative">
-      <div className="absolute right-10 bottom-10">
+      <div className="absolute right-10 bottom-20">
         <Button
-          sx={{ borderRadius: 20 }}
+          sx={{ borderRadius: 20, fontSize: 18 }}
           variant="contained"
           onClick={() => {
-            setPage((page) => page + 1);
+            if (page === 8) {
+              localStorage.setItem("onboarding", "complete");
+              setOnboarding(!onboarding);
+            } else {
+              setPage((page) => Math.min(page + 1, 8));
+            }
           }}
         >
           Next
@@ -45,9 +51,10 @@ export default function Onboarding({ onboarding, setOnboarding }) {
             Do you know what you want to achieve in life?
             <br />
             <br />
-            <span className="text-gray-400">
+            {/* <span className="text-gray-400 animate-pulse">
               Swipe <ArrowForwardIosIcon />
-            </span>
+              <ArrowForwardIosIcon />
+            </span> */}
           </div>
         </div>
         <div
@@ -222,17 +229,7 @@ export default function Onboarding({ onboarding, setOnboarding }) {
               <span className="text-[#007AFF]">Amazing!</span> <br />
               <br /> Now let's get started on your journey!
             </div>
-            <div className="text-center w-full mt-80">
-              <Button
-                variant="outlined"
-                onClick={() => {
-                  localStorage.setItem("onboarding", "complete");
-                  setOnboarding(!onboarding);
-                }}
-              >
-                Let's get started!
-              </Button>
-            </div>
+            <div className="text-center w-full mt-80"></div>
           </div>
         </div>
       </div>

@@ -64,7 +64,7 @@ const App = ({ mode }) => {
             />
             <MainContainer value={value} appData={appData} />
             {/* <div className="h-[85px] flex grow-0 border-t border-black border-opacity-10 dark:bg-slate-800"></div> */}
-            <div className="fixed -bottom-px h-[85px] w-full max-w-screen-lg border-t border-black border-opacity-10 bg-white dark:bg-slate-800">
+            <div className="fixed -bottom-px h-[85px] w-full max-w-screen-lg border-t border-black border-opacity-20 bg-white dark:bg-slate-800">
               <BottomNavigation
                 sx={{ backgroundColor: "inherit" }}
                 showLabels
@@ -126,7 +126,6 @@ export default function ThemedApp() {
       .querySelector("meta[name=theme-color]")
       .setAttribute("content", newColor);
   }, [mode]);
-  console.log(mode);
   // colorMode.toggleColorMode is the method called by our toggle button. It toggles the state of mode
   const colorMode = React.useMemo(
     () => ({

@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 
 import TextField from "@mui/material/TextField";
 
-export default function FreeTextQuestion(props) {
+export default function FreeTextQuestion({ k, sx, rows, initValue, ...props }) {
   //   const [value, setValue] = React.useState(0);
 
-  const [alignment, setAlignment] = React.useState(props.initValue ?? "");
+  const [alignment, setAlignment] = React.useState(initValue ?? "");
 
   useEffect(() => {
     setAlignment("" + alignment);
@@ -13,12 +13,12 @@ export default function FreeTextQuestion(props) {
 
   const handleChange = (event) => {
     setAlignment(event.target.value);
-    localStorage.setItem(props.k, event.target.value);
+    localStorage.setItem(k, event.target.value);
     // console.log(uid);
     // Set local storage
     // if (uid) {
     //   // TO DO: Disabling write to firebase now until I can get around to making it not write on every keypress!
-    //   // updateValue(uid, props.k, alignment);
+    //   // updateValue(uid, k, alignment);
     // } else {
     //   // Disabling write to firebase now
     //   // console.log("User is not logged in, so can't update document");
@@ -44,11 +44,11 @@ export default function FreeTextQuestion(props) {
 
   return (
     <TextField
-      sx={props.sx}
+      sx={sx}
       className="w-full"
       id="outlined-multiline-static"
       multiline
-      rows={props.rows ?? 4}
+      rows={rows ?? 4}
       value={"" + alignment}
       onChange={handleChange}
     />
