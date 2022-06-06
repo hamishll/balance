@@ -24,21 +24,7 @@ import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import FollowTheSignsIcon from "@mui/icons-material/FollowTheSigns";
 import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
-//71 89 12
-//127 141 173
-//149 156 173
-//255 234 183 Cream
-const Colors = [
-  "rgb(149 156 173)",
-  "#34C759",
-  "#FFCD00",
-  "#FF9500",
-  "#FF3B30",
-  "#AF52DE",
-  "#5856D6",
-  "#007AFF",
-  "#30B0C7",
-];
+import { Colors } from "./Theme.js";
 
 export default function MyDimensions(props) {
   return (

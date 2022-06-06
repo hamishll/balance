@@ -15,6 +15,7 @@ import Onboarding from "./components/Onboarding";
 
 import { appdata } from "./data/appdata";
 import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
+import PWAPrompt from "./components/PWAPrompt";
 
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
@@ -86,6 +87,7 @@ const App = ({ mode }) => {
                   icon={<InterestsIcon />}
                 />
               </BottomNavigation>
+              <PWAPrompt />
             </div>
           </div>
         </ThemeProvider>

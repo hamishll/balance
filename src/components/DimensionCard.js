@@ -24,7 +24,7 @@ export default function DimensionCard(props) {
     <>
       <div
         className={`overflow-hidden relative grow basis-[150px] ${props.className} max-w-lg p-2 rounded-xl cursor-pointer`}
-        style={{ backgroundColor: props.color }}
+        style={{ background: props.color }}
         onClick={handleClick}
       >
         <div className="CategoryCardIcon">{props.icon}</div>

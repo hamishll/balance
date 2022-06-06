@@ -1,5 +1,4 @@
 import React from "react"; //created using "rscp"
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import Modal from "@mui/material/Modal";
@@ -12,20 +11,6 @@ const style = {
   border: "2px solid #000",
   padding: "10px",
 };
-
-const ThemedModal = styled(Modal)(({ theme }) => ({
-  backgroundColor: theme.backgroundColor,
-  borderRadius: "20px",
-  border: "0px",
-  "& .MuiBackdrop-root": {
-    background:
-      "linear-gradient(0deg, rgba(0,0,0,0.15) 93%, rgba(0,0,0,0) 100% )",
-    backdropFilter: "blur(10px)",
-  },
-  "& .MuiOutlinedInput-notchedOutline": {
-    border: "0px",
-  },
-}));
 
 const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -48,22 +33,42 @@ const LightTooltip = styled(({ className, ...props }) => (
   },
 }));
 
-const HelpIcon = ({ content, children, ...props }) => {
-  const [open, setOpen] = React.useState(false);
+export default function ModalTooltip({
+  content,
+  children,
+  forceOpen,
+  preventBlur,
+  ...props
+}) {
+  const [open, setOpen] = React.useState(forceOpen ?? false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const ThemedModal = styled(Modal)(({ theme }) => ({
+    backgroundColor: theme.backgroundColor,
+    borderRadius: "20px",
+    border: "0px",
+    "& .MuiBackdrop-root": {
+      background:
+        "linear-gradient(0deg, rgba(0,0,0,0.15) 93%, rgba(0,0,0,0) 100% )",
+      backdropFilter: preventBlur ? "" : "blur(10px)",
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+      border: "0px",
+    },
+  }));
+
   return (
-    <div className="text-gray-500 opacity-25">
+    <React.Fragment>
       <LightTooltip
         open={open}
         onOpen={handleOpen}
         arrow
-        title={<React.Fragment>{content}</React.Fragment>}
+        title={content}
         enterTouchDelay={10}
         leaveTouchDelay={0}
       >
-        <HelpOutlineIcon sx={{ fontSize: props.sx }} />
+        {children}
       </LightTooltip>
       <ThemedModal
         open={open}
@@ -73,8 +78,6 @@ const HelpIcon = ({ content, children, ...props }) => {
       >
         <div style={{ style }}></div>
       </ThemedModal>
-    </div>
+    </React.Fragment>
   );
-};
-
-export default HelpIcon;
+}

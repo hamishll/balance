@@ -13,6 +13,7 @@ import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithoutContactOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import { Colors } from "./Theme.js";
 
 export default function Status(props) {
   // const [value, setValue] = React.useState(props.initValue);
@@ -25,17 +26,6 @@ export default function Status(props) {
     "Personal Development",
     "Work",
     "Finances",
-  ];
-
-  const Colors = [
-    "#30B0C7",
-    "#34C759",
-    "#FFCD00",
-    "#FF9500",
-    "#FF3B30",
-    "#AF52DE",
-    "#5856D6",
-    "#007AFF",
   ];
 
   const Icons = [
@@ -56,7 +46,7 @@ export default function Status(props) {
         return (
           <div className="mx-1 w-[37px] h-[250px]" key={index}>
             <VerticalSlider
-              color={Colors[index]}
+              color={Colors[index + 1]}
               k={dimension + ".q0"}
               initValue={parseInt(localStorage.getItem(dimension + ".q0") ?? 0)}
               // question={question.question}

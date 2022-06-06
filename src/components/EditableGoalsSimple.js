@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
@@ -55,10 +55,131 @@ const EditableGoal = ({
   );
 };
 
-export default function EditableGoalsSimple(props) {
+const defaultGoals = [
+  {
+    key: 101,
+    isDone: false,
+    text: "Raise a family",
+    category: "Family",
+    tasks: [{ text: "Have kids" }, { text: "Support kids through school" }],
+  },
+  {
+    key: 102,
+    isDone: false,
+    text: "Travel the world",
+    category: "Personal Growth",
+    tasks: [
+      { text: "Travel around Asia" },
+      { text: "Travel around Europe" },
+      { text: "Travel around Africa" },
+      { text: "Travel around North America" },
+      { text: "Travel around South America" },
+    ],
+  },
+  {
+    key: 103,
+    isDone: false,
+    text: "Have a successful career",
+    category: "Work",
+    tasks: [
+      { text: "Get promoted to [New Role] by 2023" },
+      { text: "Work on [Exciting Project]" },
+    ],
+  },
+  {
+    key: 104,
+    isDone: false,
+    text: "Fall in love",
+    category: "Love",
+    tasks: [
+      { text: "Love myself" },
+      { text: "Find the one" },
+      { text: "Provide for them" },
+    ],
+  },
+  {
+    key: 105,
+    isDone: false,
+    text: "Own my own home",
+    category: "Financial Freedom",
+    tasks: [
+      { text: "Identify where I want to live" },
+      { text: "Save enough money for a deposit" },
+      { text: "Set up property alerts" },
+    ],
+  },
+  {
+    key: 106,
+    isDone: false,
+    text: "Become famous",
+    category: "Personal Growth",
+    tasks: [
+      { text: "Identify what I want to be known for" },
+      { text: "Create a social media presence" },
+      { text: "Build my portfolio" },
+    ],
+  },
+  {
+    key: 107,
+    isDone: false,
+    text: "Create my art",
+    category: "Personal Growth",
+    tasks: [
+      { text: "Dedicate an hour a day to my personal projects" },
+      { text: "Collaborate with others" },
+    ],
+  },
+  {
+    key: 108,
+    isDone: false,
+    text: "Become an athlete in my sport",
+    category: "Health & Fitness",
+    tasks: [{ text: "Train three times a week" }, { text: "Join a club" }],
+  },
+  {
+    key: 109,
+    isDone: false,
+    text: "Contribute to science",
+    category: "Personal Growth",
+    tasks: [{ text: "Finish my research in [chosen subject]" }],
+  },
+  {
+    key: 110,
+    isDone: false,
+    text: "Do my part to tackle climate change",
+    category: "Personal Growth",
+    tasks: [
+      { text: "Measure my carbon footprint" },
+      { text: "Recycle plastics" },
+      { text: "Offset my carbon emissions" },
+      { text: "Vote for green candidates" },
+    ],
+  },
+  {
+    key: 111,
+    isDone: false,
+    text: "Retire at age [XX]",
+    category: "Financial Freedom",
+    tasks: [
+      { text: "Save [XX%] of my paycheck each month" },
+      { text: "Buy a house" },
+      {
+        text: "Invest my money in a diversified index fund such as the S&P500",
+      },
+    ],
+  },
+];
+
+export default function EditableGoalsSimple({ page, ...props }) {
   const [goals, setGoals] = React.useState(
     JSON.parse(localStorage.getItem("goals")) ?? []
   );
+
+  useEffect(() => {
+    if (page == 5 && localStorage.getItem("goalsAdded") != "true") {
+      populateInitialGoals();
+    }
+  }, [page]);
 
   // These all need access to the state, so defining the functions here, and passing them down to children
 
@@ -67,6 +188,22 @@ export default function EditableGoalsSimple(props) {
     newGoals[index].category = event.target.value;
     setGoals(newGoals);
     localStorage.setItem("goals", JSON.stringify(newGoals));
+  };
+
+  const populateInitialGoals = () => {
+    const goalsAdded = localStorage.getItem("goalsAdded") ?? "false";
+    const goalsToAdd = [];
+    defaultGoals.forEach((goal, index) => {
+      if (localStorage.getItem("OnboardingLifeAchievements." + index) == 1) {
+        goalsToAdd.push(goal);
+        console.log(goalsToAdd);
+      }
+    });
+    console.log("Final array", goalsToAdd);
+    setGoals(goals.concat(goalsToAdd));
+    console.log(goals.concat(goalsToAdd));
+    localStorage.setItem("goals", JSON.stringify(goals.concat(goalsToAdd)));
+    localStorage.setItem("goalsAdded", "true");
   };
 
   const addGoal = () => {

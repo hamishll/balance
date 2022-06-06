@@ -29,6 +29,9 @@ export default function AccountPage({ name, onboarding, setOnboarding }) {
       >
         Redo onboarding
       </Button>
+      <Button variant="outlined" onClick={() => localStorage.clear()}>
+        Delete all data
+      </Button>
     </div>
   );
 }

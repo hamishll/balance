@@ -13,9 +13,9 @@ const options = [
   "Family",
   "Love",
   "Fun",
-  "Personal Development",
+  "Personal Growth",
   "Work",
-  "Finances",
+  "Financial Freedom",
   "Uncategorised",
 ];
 
@@ -25,9 +25,9 @@ const Colors = {
   Family: "#FF9500",
   Love: "#FF3B30",
   Fun: "#AF52DE",
-  "Personal Development": "#5856D6",
+  "Personal Growth": "#5856D6",
   Work: "#007AFF",
-  Finances: "#30B0C7",
+  "Financial Freedom": "#30B0C7",
 };
 
 const goalStyles = {
