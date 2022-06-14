@@ -109,6 +109,7 @@ html {
   background: rgb(129, 192, 255);
   padding: 20px;
   display: grid;
+  align-items: center;
   place-items: center;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -179,9 +180,6 @@ html {
   cursor: pointer;
 }
 
-.CategoryCardNum {
-  font-size: 30px;
-}
 .CategoryCardIcon {
   width: 85px;
   height: 85px;
@@ -191,22 +189,15 @@ html {
   justify-content: center;
   margin-bottom: 7px;
   position: absolute;
-  top: 30px;
-  right: -25px;
+  top: 20px;
+  right: -35px;
 }
 
 .CategoryCardIcon svg {
-  transform: scale(3.5) rotate(0deg);
-  opacity: 0.1;
-  mix-blend-mode: overlay;
-  color: black;
+  transform: scale(2.5) rotate(0deg);
+  opacity: 0.15;
+  color: white;
 }
-.CategoryCardIconOld svg {
-  transform: scale(2.5) translate(51%, 51%);
-  opacity: 0.5;
-  mix-blend-mode: screen;
-}
-
 .PageCardContainer {
   position: fixed;
   top: 120vh;
@@ -258,10 +249,11 @@ html {
   color: white;
   mix-blend-mode: overlay;
   opacity: 0.2;
-  position: absolute;
+  position: relative;
+  top: 25px;
 }
 .PageIcon svg {
-  transform: scale(9) rotate(-10deg);
+  transform: scale(7) rotate(0deg);
 }
 
 .MuiFormControlLabel-root {

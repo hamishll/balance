@@ -41,40 +41,6 @@ export default function MyDimensions(props) {
         relationships, finances and work to find balance and be happy."
       /> */}
 
-      <Heading1 toptext="Overall" text="" />
-      <DimensionCard
-        className="basis-[100px]"
-        content={ValuesContent}
-        goals={props.appData.Values.goals}
-        questions={props.appData.Values.questions}
-        name="Values"
-        icon={<ExploreOutlinedIcon />}
-        color={Colors[0]}
-        score={3.3}
-      />
-      <DimensionCard
-        className="basis-[100px]"
-        userdata={props.userdata}
-        content={MindsetContent}
-        goals={props.appData.Generic.goals}
-        questions={props.appData.Generic.questions}
-        name="Handling worry"
-        icon={<SelfImprovementOutlinedIcon />}
-        color={Colors[0]}
-        score={4.1}
-      />
-      <DimensionCard
-        className="basis-[100px]"
-        userdata={props.userdata}
-        goals={props.appData.Generic.goals}
-        questions={props.appData.Generic.questions}
-        content={MeaningContent}
-        name="Finding Meaning"
-        icon={<FollowTheSignsIcon />}
-        color={Colors[0]}
-        score={3.1}
-      />
-
       <Heading1 toptext="Dimensions" text="" />
 
       <DimensionCard
@@ -84,8 +50,8 @@ export default function MyDimensions(props) {
         content={SleepContent}
         name="Sleep"
         icon={<DarkModeOutlinedIcon />}
-        color={Colors[8]}
-        score={3.1}
+        color={Colors[1]}
+        score={62}
       />
 
       <DimensionCard
@@ -93,7 +59,8 @@ export default function MyDimensions(props) {
         questions={props.appData.Generic.questions}
         name="Health & Fitness"
         icon={<DirectionsRunIcon />}
-        color={Colors[1]}
+        color={Colors[2]}
+        score={50}
       />
 
       <DimensionCard
@@ -103,8 +70,8 @@ export default function MyDimensions(props) {
         questions={props.appData.Generic.questions}
         name="Friends"
         icon={<EmojiPeopleOutlinedIcon />}
-        color={Colors[2]}
-        score={2.0}
+        color={Colors[3]}
+        score={40}
       />
       <DimensionCard
         userdata={props.userdata}
@@ -112,8 +79,8 @@ export default function MyDimensions(props) {
         questions={props.appData.Generic.questions}
         name="Family"
         icon={<FamilyRestroomIcon />}
-        color={Colors[3]}
-        score={2.0}
+        color={Colors[4]}
+        score={40}
       />
       <DimensionCard
         userdata={props.userdata}
@@ -121,8 +88,8 @@ export default function MyDimensions(props) {
         questions={props.appData.Generic.questions}
         name="Love"
         icon={<FavoriteBorderOutlinedIcon />}
-        color={Colors[4]}
-        score={4.5}
+        color={Colors[5]}
+        score={90}
       />
 
       <DimensionCard
@@ -131,8 +98,8 @@ export default function MyDimensions(props) {
         questions={props.appData.Generic.questions}
         name="Personal Growth"
         icon={<ColorLensOutlinedIcon />}
-        color={Colors[5]}
-        score={2.5}
+        color={Colors[6]}
+        score={50}
       />
       <DimensionCard
         userdata={props.userdata}
@@ -140,8 +107,8 @@ export default function MyDimensions(props) {
         questions={props.appData.Generic.questions}
         name="Work"
         icon={<LocalAtmOutlinedIcon />}
-        color={Colors[6]}
-        score={4.2}
+        color={Colors[7]}
+        score={84}
       />
       <DimensionCard
         userdata={props.userdata}
@@ -150,8 +117,41 @@ export default function MyDimensions(props) {
         questions={props.appData["Financial Freedom"].questions}
         name="Financial freedom"
         icon={<LocalAtmOutlinedIcon />}
-        color={Colors[7]}
-        score={4.2}
+        color={Colors[8]}
+        score={84}
+      />
+      <Heading1 toptext="Overall" text="" />
+      <DimensionCard
+        // className="basis-[100px]"
+        content={ValuesContent}
+        goals={props.appData.Values.goals}
+        questions={props.appData.Values.questions}
+        name="Values"
+        icon={<ExploreOutlinedIcon />}
+        color={Colors[0]}
+        score={66}
+      />
+      <DimensionCard
+        // className="basis-[100px]"
+        userdata={props.userdata}
+        content={MindsetContent}
+        goals={props.appData.Generic.goals}
+        questions={props.appData.Generic.questions}
+        name="Handling worry"
+        icon={<SelfImprovementOutlinedIcon />}
+        color={Colors[0]}
+        score={82}
+      />
+      <DimensionCard
+        // className="basis-[100px]"
+        userdata={props.userdata}
+        goals={props.appData.Generic.goals}
+        questions={props.appData.Generic.questions}
+        content={MeaningContent}
+        name="Finding Meaning"
+        icon={<FollowTheSignsIcon />}
+        color={Colors[0]}
+        score={62}
       />
     </div>
   );

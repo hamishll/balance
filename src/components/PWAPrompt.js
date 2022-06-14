@@ -25,9 +25,9 @@ const LightTooltip = styled(({ className, ...props }) => (
     maxWidth: 366,
     margin: 12,
     borderRadius: 10,
-    paddingLeft: 16,
-    paddingRight: 16,
-    paddingTop: 1,
+    paddingLeft: 20,
+    paddingRight: 40,
+    paddingTop: 16,
     paddingBottom: 16,
     boxShadow: "0px 0px 25px rgba(0,0,0,0.4)",
   },
@@ -53,8 +53,10 @@ export default function PWAPrompt() {
   const handleClose = () => setOpen(false);
 
   const promptText = (
-    <div className="leading-8 pt-2">
-      <h3>Balance works best when added as an app on your home screen!</h3>
+    <div className="leading-8">
+      <h3 className="leading-6 pb-2">
+        Balance works best when added as an app on your home screen!
+      </h3>
       1. Press the{" "}
       <span className="text-blue-600">
         <IosShareRounded />
@@ -67,7 +69,7 @@ export default function PWAPrompt() {
         Add to Home Screen <AddBoxOutlinedIcon />
       </span>
       <div
-        className="absolute right-[7px] top-[5px] cursor-pointer"
+        className="absolute right-[14px] top-[12px] cursor-pointer"
         onClick={handleClose}
       >
         <CloseIcon />

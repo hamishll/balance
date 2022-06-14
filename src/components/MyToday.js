@@ -27,7 +27,7 @@ export default function MyToday(props) {
       <div className="flex flex-row items-center">
         <h1 className="grow">How do you feel today?</h1>
         <ModalTooltip content={helpTip}>
-          <span className="text-gray-500 opacity-25">
+          <span className="cursor-pointer text-gray-500 opacity-25">
             <HelpOutlineIcon sx={{ fontSize: "1.75em" }} />
           </span>
         </ModalTooltip>

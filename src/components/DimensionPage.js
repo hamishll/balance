@@ -29,7 +29,10 @@ export default function DimensionPage(props) {
         assessmentSelected={assessmentSelected}
         setAssessmentSelected={setAssessmentSelected}
       />
-      <div className="Heading" style={{ backgroundColor: props.color }}>
+      <div
+        className="Heading overflow-hidden"
+        style={{ backgroundColor: props.color }}
+      >
         <span className="PageIcon">{props.icon}</span>
         {props.name}
       </div>

@@ -65,6 +65,7 @@ export default function ModalTooltip({
         onOpen={handleOpen}
         arrow
         title={content}
+        enterDelay={250}
         enterTouchDelay={10}
         leaveTouchDelay={0}
       >

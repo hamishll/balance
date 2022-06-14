@@ -21,35 +21,37 @@ export default function DimensionCard(props) {
   };
 
   return (
-    <>
+    <React.Fragment>
       <div
-        className={`overflow-hidden relative grow basis-[150px] ${props.className} max-w-lg p-2 rounded-xl cursor-pointer`}
+        className={`overflow-hidden px-3 py-1 relative flex-row items-center flex grow basis-full max-w-md ${props.className} rounded-xl cursor-pointer`}
         style={{ background: props.color }}
         onClick={handleClick}
       >
         <div className="CategoryCardIcon">{props.icon}</div>
-        <div className="text-white text-[18px] font-semibold leading-tight">
+        <div className="w-[30%] text-white text-[18px] font-semibold leading-tight">
           {props.name}
         </div>
-        <div className="CategoryCardNum">
-          <Rating
-            name="read-only"
-            // Value to be replaced by state at some point, instead of localstorage
-            value={
-              parseInt(localStorage.getItem(props.name + ".g1") ?? 0) +
-              parseInt(localStorage.getItem(props.name + ".g2") ?? 0) +
-              parseInt(localStorage.getItem(props.name + ".g3") ?? 0) +
-              parseInt(localStorage.getItem(props.name + ".g4") ?? 0) +
-              parseInt(localStorage.getItem(props.name + ".g5") ?? 0)
-            }
-            max={0 + (props.goals ? props.goals.length : 0)}
-            icon={<CheckCircleIcon />}
-            emptyIcon={<RadioButtonUncheckedIcon htmlColor="white" />}
-            precision={1}
-            style={{ color: "white", opacity: 1 }}
-            readOnly
-          />
-          {/* <Rating
+        <div className="w-[40%]">
+          <span className="text-xs">Tasks</span>
+          <div>
+            <Rating
+              name="read-only"
+              // Value to be replaced by state at some point, instead of localstorage
+              value={
+                parseInt(localStorage.getItem(props.name + ".g1") ?? 0) +
+                parseInt(localStorage.getItem(props.name + ".g2") ?? 0) +
+                parseInt(localStorage.getItem(props.name + ".g3") ?? 0) +
+                parseInt(localStorage.getItem(props.name + ".g4") ?? 0) +
+                parseInt(localStorage.getItem(props.name + ".g5") ?? 0)
+              }
+              max={0 + (props.goals ? props.goals.length : 0)}
+              icon={<CheckCircleIcon />}
+              emptyIcon={<RadioButtonUncheckedIcon htmlColor="white" />}
+              precision={1}
+              style={{ color: "white", opacity: 1 }}
+              readOnly
+            />
+            {/* <Rating
             name="read-only"
             // Value to be replaced by state at some point, instead of localstorage
             value={parseInt(localStorage.getItem(props.name + ".q0") ?? 0)}
@@ -58,6 +60,20 @@ export default function DimensionCard(props) {
             style={{ color: "white", opacity: 1 }}
             readOnly
           /> */}
+          </div>
+        </div>
+        <div className="flex-col flex">
+          <span className="text-xs">Score </span>
+          <span className="w-[30%] text-white text-2xl font-semibold leading-tight">
+            {props.score}
+          </span>
+
+          <div className="bg-white w-[80px] h-[4px] rounded-lg bg-opacity-30">
+            <div
+              className="bg-white h-[4px] rounded-lg bg-opacity-100"
+              style={{ width: props.score + "%" }}
+            ></div>
+          </div>
         </div>
       </div>
       <Page open={open} setOpen={setOpen} name={props.name}>
@@ -70,6 +86,6 @@ export default function DimensionCard(props) {
           icon={props.icon}
         />
       </Page>
-    </>
+    </React.Fragment>
   );
 }

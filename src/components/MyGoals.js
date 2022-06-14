@@ -51,7 +51,7 @@ export default function MyGoals(props) {
       <div className="flex flex-row items-center">
         <h1 className="grow">My Dream</h1>
         <ModalTooltip content={dreamTip}>
-          <span className="text-gray-500 opacity-25">
+          <span className="cursor-pointer text-gray-500 opacity-25">
             <HelpOutlineIcon sx={{ fontSize: "1.75em" }} />
           </span>
         </ModalTooltip>
@@ -71,7 +71,7 @@ export default function MyGoals(props) {
       <div className="flex flex-row items-center">
         <h1 className="grow">My Life Goals</h1>
         <ModalTooltip content={goalTip}>
-          <span className="text-gray-500 opacity-25">
+          <span className="cursor-pointer text-gray-500 opacity-25">
             <HelpOutlineIcon sx={{ fontSize: "1.75em" }} />
           </span>
         </ModalTooltip>
