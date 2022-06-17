@@ -39,7 +39,7 @@ export default function Header({
 
   return (
     <React.Fragment>
-      <div className="px-4 pt-6 pb-2 text-4xl grow-0 flex-none font-bold relative flex flex-row">
+      <div className="font-bold px-4 pt-6 pb-2 text-4xl grow-0 flex-none font-bold relative flex flex-row">
         {name}
         <div className="right-6 absolute flex gap-8 text-2xl top-8 HeaderControls cursor-pointer">
           <SettingsOutlinedIcon onClick={handleClickSettings} />

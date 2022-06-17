@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import AssessmentQuestion from "./AssessmentQuestion";
+import SingleChoiceQuestion from "./SingleChoiceQuestion";
 import MultiChoiceQuestion from "./MultiChoiceQuestion";
 import FreeTextQuestion from "./FreeTextQuestion";
 import DiscreteSlider from "./DiscreteSlider";
@@ -52,13 +52,18 @@ export default function DimensionPageAssessment(props) {
                       <div className="font-bold leading-tight text-2xl mt-8 mb-4">
                         {question.question}
                       </div>
-                      <AssessmentQuestion
+                      <SingleChoiceQuestion
                         k={question.key}
                         key={question.key}
                         initValue={parseInt(localStorage.getItem(question.key))}
                         question={question.question}
                         choices={question.choices}
+                        weight={question.weight}
+                        assessmentScore={props.assessmentScore}
+                        setAssessmentScore={props.setAssessmentScore}
+                        name={props.name}
                       />
+                      <div className="my-4">{question.recommendation}</div>
                     </Box>
                   );
                 }

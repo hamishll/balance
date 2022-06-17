@@ -10,7 +10,16 @@ import ReactMarkdown from "react-markdown";
 import DimensionPageAssessment from "./DimensionPageAssessment";
 import styles from "./../css/Post.css";
 
-export default function DimensionPage(props) {
+export default function DimensionPage({
+  questions,
+  content,
+  goals,
+  name,
+  color,
+  icon,
+  assessmentScore,
+  setAssessmentScore,
+}) {
   DimensionPage.defaultProps = {
     goals: [],
   };
@@ -24,47 +33,66 @@ export default function DimensionPage(props) {
   return (
     <React.Fragment>
       <DimensionPageAssessment
-        questions={props.questions}
-        name={props.name + "Assessment"}
+        questions={questions}
+        name={name + "Assessment"}
         assessmentSelected={assessmentSelected}
         setAssessmentSelected={setAssessmentSelected}
+        assessmentScore={assessmentScore}
+        setAssessmentScore={setAssessmentScore}
       />
       <div
         className="Heading overflow-hidden"
-        style={{ backgroundColor: props.color }}
+        style={{ backgroundColor: color }}
       >
-        <span className="PageIcon">{props.icon}</span>
-        {props.name}
+        <span className="PageIcon">{icon}</span>
+        {name}
       </div>
       <div className="px-4 pb-12 pt-4 bg-inherit">
         <div style={{ textAlign: "center" }}>
+          <div className="flex-col flex items-center">
+            <span className="text-md">Your {name} score: </span>
+            <span className="w-full text-6xl font-semibold leading-tight">
+              {assessmentScore}
+            </span>
+
+            <div
+              className="bg-white w-1/2 max-w-md h-[6px] mb-4 rounded-lg bg-opacity-30"
+              style={{ backgroundColor: `${color}30` }}
+            >
+              <div
+                className={`h-full rounded-lg bg-opacity-100`}
+                style={{ width: assessmentScore + "%", backgroundColor: color }}
+              ></div>
+            </div>
+          </div>
+
           <Button
             variant="outlined"
             sx={{
-              color: props.color,
+              color: color,
               border: 1,
-              borderColor: props.color,
+              borderColor: color,
 
               "&:active": {
-                borderColor: props.color,
-                backgroundColor: props.color,
+                borderColor: color,
+                backgroundColor: color,
               },
 
               "&:hover": {
-                borderColor: props.color,
-                backgroundColor: props.color,
+                borderColor: color,
+                backgroundColor: color,
                 color: "white",
               },
             }}
             onClick={handleClickAssessment}
           >
-            Complete Assessment
+            {assessmentScore == 0 ? "Complete Assessment" : "Retake Assessment"}
           </Button>
         </div>
 
         <h2>Top tips</h2>
         <FormGroup>
-          {props.goals.map((q, index) => {
+          {goals.map((q, index) => {
             return (
               <FormControlLabel
                 sx={{ lineHeight: "normal" }}
@@ -73,7 +101,7 @@ export default function DimensionPage(props) {
                 control={
                   <ControlledCheckbox
                     size="medium"
-                    id={props.name + ".g" + (index + 1)}
+                    id={name + ".g" + (index + 1)}
                   />
                 }
                 label={q}
@@ -84,11 +112,11 @@ export default function DimensionPage(props) {
         </FormGroup>
         <div className="learningContent  flex flex-wrap flex-row justify-center gap-4">
           {/* Get rid of this once you've updated all content to be JSX based */}
-          {typeof props.content == "object" ? (
-            props.content
+          {typeof content == "object" ? (
+            content
           ) : (
             <div className="post">
-              <ReactMarkdown children={props.content} />
+              <ReactMarkdown children={content} />
             </div>
           )}
         </div>

@@ -77,11 +77,76 @@ const focusTip = (
 
 export default function Onboarding({ onboarding, setOnboarding }) {
   const [page, setPage] = React.useState(1);
+  const [dream, setDream] = React.useState(localStorage.getItem("dream") ?? "");
 
   React.useEffect(() => {
     //if (page === 8) setPage(1);
     //document.querySelector(`#slide-${page > 8 ? 1 : page}`).scrollIntoView();
     document.querySelector(`#slide-${page}`).scrollIntoView();
+  }, [page]);
+
+  // Set dream if user has passed to this page
+  React.useEffect(() => {
+    if (page == 4 && !localStorage.getItem("dream")) {
+      let location = "";
+      if (localStorage.getItem("OnboardingLocation.0")) {
+        location = "in the mountains";
+      } else if (localStorage.getItem("OnboardingLocation.2")) {
+        location = "by the beach";
+      } else if (localStorage.getItem("OnboardingLocation.3")) {
+        location = "in the city";
+      } else if (localStorage.getItem("OnboardingLocation.5")) {
+        location = "in the countryside";
+      }
+      const family = !localStorage.getItem("OnboardingLifeAchievements.0")
+        ? ""
+        : "I have breakfast with my partner and our children and enjoy the view out of the window.";
+
+      const travel = !localStorage.getItem("OnboardingLifeAchievements.1")
+        ? ""
+        : "I'm fortunate to have travelled the world, experiencing many different landscapes and cultures. My next trip is in just a few months.";
+
+      const career = !localStorage.getItem("OnboardingLifeAchievements.2")
+        ? ""
+        : "My career as a _________ has been hugely rewarding, and my favourite thing about my job is ________.";
+
+      const retire = !localStorage.getItem("OnboardingLifeAchievements.3")
+        ? ""
+        : "I've retired earlier than most, and cherish the free time I have to spend on my passions.";
+
+      const love = !localStorage.getItem("OnboardingLifeAchievements.4")
+        ? ""
+        : "My partner _____________.";
+
+      const home = !localStorage.getItem("OnboardingLifeAchievements.5")
+        ? ""
+        : "I own my own home, it's a _________________.";
+
+      const famous = !localStorage.getItem("OnboardingLifeAchievements.6")
+        ? ""
+        : "I'm known for ____________.";
+
+      const create = !localStorage.getItem("OnboardingLifeAchievements.7")
+        ? ""
+        : "I create ________.";
+
+      const athlete = !localStorage.getItem("OnboardingLifeAchievements.8")
+        ? ""
+        : "I have achieved success in my sport, ________.";
+
+      const science = !localStorage.getItem("OnboardingLifeAchievements.9")
+        ? ""
+        : "I'm proud of my contribution to the field of ________.";
+
+      const planet = !localStorage.getItem("OnboardingLifeAchievements.10")
+        ? ""
+        : "I do my part to save the planet by __________ and ________.";
+
+      const dreamString = `I wake up in my house ${location}. ${family} ${travel} \n \n ${career} ${retire} \n \n ${love} ${home} ${famous} \n \n ${create} ${athlete} ${science} ${planet}`;
+      localStorage.setItem("dream", dreamString);
+      setDream(dreamString);
+    } else {
+    }
   }, [page]);
 
   // Functions (pass down to children if required)
@@ -183,18 +248,20 @@ export default function Onboarding({ onboarding, setOnboarding }) {
           id="slide-4"
         >
           <div className="mt-24 text-4xl flex-col">
-            <div className="text-6xl font-bold text-[#007AFF]">1</div>
-            <div>Describe your dream life</div>
+            <div>
+              <span className="font-bold text-[#007AFF]">1. </span>
+              Describe your dream life
+            </div>
             <ModalTooltip content={dreamTip}>
               <span className="text-gray-500 opacity-25">
                 <HelpOutlineIcon />
               </span>
             </ModalTooltip>
-            <FreeTextQuestion
-              k={"dream"}
-              rows={8}
-              initValue={localStorage.getItem("dream")}
-            />
+            {dream ? (
+              <FreeTextQuestion k={"dream"} rows={16} initValue={dream} />
+            ) : (
+              ""
+            )}
           </div>
         </div>
 
@@ -203,8 +270,10 @@ export default function Onboarding({ onboarding, setOnboarding }) {
           id="slide-5"
         >
           <div className="mt-24 text-4xl flex-col">
-            <div className="text-6xl font-bold text-[#007AFF]">2</div>
-            <div>What big goals will get you there?</div>
+            <div>
+              <span className="font-bold text-[#007AFF]">2. </span>What big
+              goals will get you there?
+            </div>
             <ModalTooltip content={goalTip}>
               <span className="text-gray-500 opacity-25">
                 <HelpOutlineIcon />
@@ -237,8 +306,10 @@ export default function Onboarding({ onboarding, setOnboarding }) {
           id="slide-6"
         >
           <div className="mt-24 text-4xl flex-col">
-            <div className="text-6xl font-bold text-[#007AFF]">3</div>
-            <div>What do you want to focus on currently?</div>
+            <div>
+              <span className="font-bold text-[#007AFF]">3. </span>
+              What do you want to focus on currently?
+            </div>
             <ModalTooltip content={focusTip}>
               <span className="text-gray-500 opacity-25">
                 <HelpOutlineIcon />

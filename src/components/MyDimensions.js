@@ -115,7 +115,7 @@ export default function MyDimensions(props) {
         content={FinancialContent}
         goals={props.appData["Financial Freedom"].goals}
         questions={props.appData["Financial Freedom"].questions}
-        name="Financial freedom"
+        name="Financial Freedom"
         icon={<LocalAtmOutlinedIcon />}
         color={Colors[8]}
         score={84}
@@ -135,8 +135,8 @@ export default function MyDimensions(props) {
         // className="basis-[100px]"
         userdata={props.userdata}
         content={MindsetContent}
-        goals={props.appData.Generic.goals}
-        questions={props.appData.Generic.questions}
+        goals={props.appData.Worry.goals}
+        questions={props.appData.Worry.questions}
         name="Handling worry"
         icon={<SelfImprovementOutlinedIcon />}
         color={Colors[0]}

@@ -54,7 +54,7 @@ const App = ({ mode }) => {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <div
-            className={`Screen flex flex-col dark:text-gray-50  bg-white dark:bg-slate-800 touch-none`}
+            className={`Screen flex flex-col dark:text-gray-50 bg-white dark:bg-slate-800 touch-none`}
           >
             <Header
               name={headingDict[value]}

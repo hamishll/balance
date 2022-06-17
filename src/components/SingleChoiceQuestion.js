@@ -5,7 +5,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import TextField from "@mui/material/TextField";
 
-export default function AssessmentQuestion(props) {
+export default function SingleChoiceQuestion(props) {
   //   const [value, setValue] = React.useState(0);
 
   const [alignment, setAlignment] = React.useState(props.initValue);
@@ -24,9 +24,23 @@ export default function AssessmentQuestion(props) {
   // }, [alignment]);
 
   const handleChange = (event, newAlignment) => {
-    setAlignment([newAlignment]);
+    const oldAlignment = isNaN(alignment) ? -1 : alignment;
+    setAlignment(newAlignment);
     // Set local storage
     localStorage.setItem(props.k, newAlignment);
+    // Modulate the assessment score
+    props.setAssessmentScore(
+      props.assessmentScore -
+        (oldAlignment * props.weight) / props.choices.length +
+        (newAlignment * props.weight) / props.choices.length
+    );
+    // Save the modulated assessment score to localstorage
+    localStorage.setItem(
+      props.name,
+      props.assessmentScore -
+        (oldAlignment * props.weight) / props.choices.length +
+        (newAlignment * props.weight) / props.choices.length
+    );
     if (uid) {
       //updateValue(uid, props.k, newAlignment);
     } else {

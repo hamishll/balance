@@ -15,6 +15,10 @@ export default function DimensionCard(props) {
 
   const [open, setOpen] = React.useState(false);
 
+  const [assessmentScore, setAssessmentScore] = React.useState(
+    localStorage.getItem(props.name + "Assessment") ?? 0
+  );
+
   const handleClick = () => {
     setOpen(true);
     // console.log(selected);
@@ -32,7 +36,7 @@ export default function DimensionCard(props) {
           {props.name}
         </div>
         <div className="w-[40%]">
-          <span className="text-xs">Tasks</span>
+          <span className="text-xs text-white">Tasks</span>
           <div>
             <Rating
               name="read-only"
@@ -63,15 +67,15 @@ export default function DimensionCard(props) {
           </div>
         </div>
         <div className="flex-col flex">
-          <span className="text-xs">Score </span>
+          <span className="text-xs text-white">Score </span>
           <span className="w-[30%] text-white text-2xl font-semibold leading-tight">
-            {props.score}
+            {assessmentScore}
           </span>
 
           <div className="bg-white w-[80px] h-[4px] rounded-lg bg-opacity-30">
             <div
               className="bg-white h-[4px] rounded-lg bg-opacity-100"
-              style={{ width: props.score + "%" }}
+              style={{ width: assessmentScore + "%" }}
             ></div>
           </div>
         </div>
@@ -84,6 +88,8 @@ export default function DimensionCard(props) {
           name={props.name}
           color={props.color}
           icon={props.icon}
+          assessmentScore={assessmentScore}
+          setAssessmentScore={setAssessmentScore}
         />
       </Page>
     </React.Fragment>

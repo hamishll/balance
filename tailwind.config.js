@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["system-ui", "Roboto", "sans-serif"],
-      serif: ["Ramaraja", "serif"],
+      serif: ["Vollkorn", "Ramaraja", "serif"],
     },
     extend: {},
   },
