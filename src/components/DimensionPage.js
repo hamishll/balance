@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // Components
 import Button from "@mui/material/Button";
@@ -9,6 +9,23 @@ import ControlledCheckbox from "./ControlledCheckbox";
 import ReactMarkdown from "react-markdown";
 import DimensionPageAssessment from "./DimensionPageAssessment";
 import styles from "./../css/Post.css";
+
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    let id = setInterval(() => {
+      savedCallback.current();
+    }, delay);
+    return () => clearInterval(id);
+  }, [delay]);
+}
 
 export default function DimensionPage({
   questions,
@@ -29,6 +46,18 @@ export default function DimensionPage({
   const handleClickAssessment = () => {
     setAssessmentSelected(true);
   };
+
+  const [counter, setCounter] = useState(0);
+
+  useInterval(() => {
+    if (counter < Math.round(assessmentScore, 0)) {
+      setCounter(counter + 1);
+    }
+  }, 10);
+
+  useEffect(() => {
+    if (assessmentSelected === false) setCounter(0);
+  }, [assessmentSelected]);
 
   return (
     <React.Fragment>
@@ -52,7 +81,7 @@ export default function DimensionPage({
           <div className="flex-col flex items-center">
             <span className="text-md">Your {name} score: </span>
             <span className="w-full text-6xl font-semibold leading-tight">
-              {assessmentScore}
+              {counter}
             </span>
 
             <div
@@ -61,7 +90,7 @@ export default function DimensionPage({
             >
               <div
                 className={`h-full rounded-lg bg-opacity-100`}
-                style={{ width: assessmentScore + "%", backgroundColor: color }}
+                style={{ width: counter + "%", backgroundColor: color }}
               ></div>
             </div>
           </div>
@@ -95,13 +124,21 @@ export default function DimensionPage({
           {goals.map((q, index) => {
             return (
               <FormControlLabel
-                sx={{ lineHeight: "normal" }}
+                sx={{
+                  lineHeight: "normal",
+                }}
                 key={index}
                 value="end"
                 control={
                   <ControlledCheckbox
                     size="medium"
                     id={name + ".g" + (index + 1)}
+                    sx={{
+                      color: color,
+                      "&.Mui-checked": {
+                        color: color,
+                      },
+                    }}
                   />
                 }
                 label={q}

@@ -69,7 +69,7 @@ export default function DimensionCard(props) {
         <div className="flex-col flex">
           <span className="text-xs text-white">Score </span>
           <span className="w-[30%] text-white text-2xl font-semibold leading-tight">
-            {assessmentScore}
+            {Math.round(assessmentScore, 0)}
           </span>
 
           <div className="bg-white w-[80px] h-[4px] rounded-lg bg-opacity-30">

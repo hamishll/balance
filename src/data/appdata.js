@@ -12,11 +12,12 @@ export const appdata = {
     questions: [
       {
         key: "Values.q0",
-        type: "slider",
+        type: "singlechoice",
         question: "Are you finding time for the things you value currently?",
-        choices: ["💳 Answer 1", "🏥 Answer 2", "📈 Answer 3"],
+        choices: ["No", "Sometimes", "Yes"],
         recommendation: "",
         threshold: 0,
+        weight: 30,
       },
       {
         key: "Values.q1",
@@ -62,6 +63,7 @@ export const appdata = {
         recommendation:
           "Spend some time making a list of what makes you happy and make a list of steps you can take to maximise these items",
         threshold: 3,
+        weight: 50,
       },
 
       {
@@ -76,6 +78,7 @@ export const appdata = {
         choices: ["No", "Partially", "Yes"],
         recommendation: "",
         threshold: 3,
+        weight: 20,
       },
     ],
   },
@@ -129,16 +132,272 @@ export const appdata = {
       {
         key: "Financial Freedom.q4",
         type: "singlechoice",
+        question:
+          "How much unsecured debt do you have relative to your salary?",
+        description:
+          "This includes any personal loans, credit card debt, or overdrafts, but not mortgages.",
+        choices: ["2x", "1.5x", "1x", "0.5x", "0x"],
+        recommendation: "",
+        threshold: 3,
+        weight: 10,
+      },
+      {
+        key: "Financial Freedom.q5",
+        type: "singlechoice",
         question: "How much of your income do you save per month?",
         choices: ["0%", "5%", "10%", "20%", "30%+"],
         recommendation: "",
         threshold: 3,
+        weight: 30,
       },
-
       {
-        key: "Financial Freedom.q5",
+        key: "Financial Freedom.q6",
+        type: "singlechoice",
+        question:
+          "How much do you have saved relative to your annual spending?",
+        description:
+          "For example, if you spend £20,000 per year, if you have £100,000 saved you would have 5x your annual spending saved.",
+        choices: ["0x", "5x", "10x", "15x", "20x"],
+        recommendation: "",
+        threshold: 3,
+        weight: 40,
+      },
+      {
+        key: "Financial Freedom.q7",
+        type: "singlechoice",
+        question:
+          "Do you budget your monthly spending and know what you spend your money on?",
+        choices: ["No", "Sometimes", "Yes"],
+        recommendation: "",
+        threshold: 3,
+        weight: 20,
+      },
+      {
+        key: "Financial Freedom.q8",
         type: "freetext",
         question: "What expenses could you reduce in your life?",
+      },
+    ],
+  },
+  "Health & Fitness": {
+    goals: [
+      "Allocate some time to stretch every morning",
+      "Exercise with a friend",
+      "Avoid high-sugar foods",
+    ],
+    dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
+    questions: [
+      {
+        key: "Health & Fitness.q1",
+        type: "singlechoice",
+        question: "How many hours a week do you do light exercise?",
+        description:
+          "Any activity that doesn't cause you to be short of breath, or to sweat. This includes walking 🚶 or taking a casual bike ride 🚴.",
+        choices: ["<1 hour", "2 hours", "4 hours", "8 hours"],
+        recommendation: "",
+        threshold: 3,
+        weight: 20,
+      },
+      {
+        key: "Health & Fitness.q2",
+        type: "singlechoice",
+        question: "How many hours a week do you do moderate to heavy exercise?",
+        description:
+          "Any activity that really gets your heart-rate going! This includes weight-lifting 🏋️, heavy manual labour 👷, and most team sports 🤽‍♂️",
+        choices: ["<1 hour", "2 hours", "4 hours", "8 hours"],
+        recommendation: "",
+        threshold: 3,
+        weight: 40,
+      },
+      {
+        key: "Health & Fitness.q3",
+        type: "singlechoice",
+        question: "How healthy is your weight?",
+        description: "You can use any BMI calculator to work this out.",
+        choices: ["Obese", "Overweight / Underweight", "Healthy"],
+        recommendation: "",
+        threshold: 3,
+        weight: 40,
+      },
+    ],
+  },
+  Friends: {
+    goals: ["Goal 1", "Goal 2", "Goal 3"],
+    dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
+    questions: [
+      {
+        key: "Friends.q1",
+        type: "singlechoice",
+        question: "Do you have at least one friend you can be truly open with?",
+        description: "Anyone who you would confide in for personal advice.",
+        choices: ["No", "Yes"],
+        recommendation: "",
+        threshold: 3,
+        weight: 40,
+      },
+      {
+        key: "Friends.q2",
+        type: "singlechoice",
+        question: "How frequently do you spend time with your friends?",
+        description: "",
+        choices: ["Monthly", "Weekly", "Daily"],
+        recommendation: "",
+        threshold: 3,
+        weight: 40,
+      },
+      {
+        key: "Friends.q3",
+        type: "singlechoice",
+        question: "Do your friends make you feel good about yourself?",
+        description: "",
+        choices: ["😔 No", "🙂 Sometimes", "😊 Yes"],
+        recommendation: "",
+        threshold: 3,
+        weight: 20,
+      },
+    ],
+  },
+  Family: {
+    goals: ["Goal 1", "Goal 2", "Goal 3"],
+    dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
+    questions: [
+      {
+        key: "Family.q1",
+        type: "singlechoice",
+        question: "Do you make time for shared activities with your family?",
+        description:
+          "This could be sharing meals together, watching films, playing games etc.",
+        choices: ["Rarely", "Weekly", "Daily"],
+        recommendation: "",
+        threshold: 3,
+        weight: 50,
+      },
+      {
+        key: "Family.q2",
+        type: "singlechoice",
+        question:
+          "Can you have open and honest conversations with your family about issues in your life?",
+        description: "",
+        choices: ["No", "Partially", "Yes"],
+        recommendation: "",
+        threshold: 3,
+        weight: 50,
+      },
+    ],
+  },
+  Love: {
+    goals: ["Goal 1", "Goal 2", "Goal 3"],
+    dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
+    questions: [
+      {
+        key: "Love.q1",
+        type: "singlechoice",
+        question: "Do you love yourself?",
+        description: "Do you have confidence in yourself and your abilities?",
+        choices: ["😔 No", "😐 Partially", "🙂 Mostly", "😊 Totally"],
+        recommendation: "",
+        threshold: 3,
+        weight: 40,
+      },
+      {
+        key: "Love.q2",
+        type: "singlechoice",
+        question: "Does your partner make you feel good about yourself?",
+        description:
+          "Do they make you feel respected, intelligent, attractive?",
+        choices: ["Not applicable", "No", "Sometimes", "All the time"],
+        recommendation: "",
+        threshold: 3,
+        weight: 30,
+      },
+      {
+        key: "Love.q3",
+        type: "singlechoice",
+        question:
+          "Does your partner have similar interests and outlook on the world?",
+        description:
+          "Shared hobbies and interests can strengthen your relationship",
+        choices: ["Not applicable", "No", "Partially", "Yes"],
+        recommendation: "",
+        threshold: 3,
+        weight: 30,
+      },
+    ],
+  },
+  "Personal Growth": {
+    goals: ["Goal 1", "Goal 2", "Goal 3"],
+    dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
+    questions: [
+      {
+        key: "Personal Growth.q1",
+        type: "singlechoice",
+        question: "Do you have a creative outlet?",
+        description:
+          "This could be making art, music, coding, writing - anything where you are expressing yourself or making something new!",
+        choices: ["No", "Not sure", "Yes"],
+        recommendation: "",
+        threshold: 3,
+        weight: 30,
+      },
+      {
+        key: "Personal Growth.q2",
+        type: "singlechoice",
+        question: "How much time do you find each week for creative work?",
+        description:
+          "This could be any creative tasks you complete in either your work or personal time",
+        choices: ["<2 hours", "5 hours", "10 hours", "15 hours", "20+ hours"],
+        recommendation: "",
+        threshold: 3,
+        weight: 40,
+      },
+      {
+        key: "Personal Growth.q3",
+        type: "singlechoice",
+        question: "Do you seek out new experiences and challenges?",
+        description:
+          "This could be trying new hobbies, travelling, taking on new responsibilities in your job",
+        choices: ["No", "Occassionally", "Sometimes", "Often", "All the time"],
+        recommendation: "",
+        threshold: 3,
+        weight: 30,
+      },
+    ],
+  },
+  Work: {
+    goals: ["Goal 1", "Goal 2", "Goal 3"],
+    dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
+    questions: [
+      {
+        key: "Work.q1",
+        type: "singlechoice",
+        question: "How do you feel about your work?",
+        description:
+          "Does your work feel meaningful? Do you get on well with your colleagues?",
+        choices: ["😞 I hate it", "😑 It's OK", "😀 I love it"],
+        recommendation: "",
+        threshold: 3,
+        weight: 50,
+      },
+      {
+        key: "Work.q2",
+        type: "singlechoice",
+        question: "How many hours a week do you work?",
+        description:
+          "Any activity that doesn't cause you to be short of breath, or to sweat. This includes walking or taking a casual bike ride.",
+        choices: [">60 hours", "50 hours", "40 hours", "<30 hours"],
+        recommendation: "",
+        threshold: 3,
+        weight: 20,
+      },
+      {
+        key: "Work.q3",
+        type: "singlechoice",
+        question: "Do you feel valued by your colleagues?",
+        description: "",
+        choices: ["😞 Never", "😑 Sometimes", "😀 Yes"],
+        recommendation: "",
+        threshold: 3,
+        weight: 30,
       },
     ],
   },
@@ -151,7 +410,13 @@ export const appdata = {
         type: "singlechoice",
         question:
           "Do you find yourself worrying about things which you have control over?",
-        choices: ["All the time", "Often", "Sometimes", "Rarely", "Never"],
+        choices: [
+          "😣 All the time",
+          "Often",
+          "Sometimes",
+          "Rarely",
+          "Never 😌",
+        ],
         recommendation: "",
         threshold: 3,
         weight: 40,
@@ -160,7 +425,13 @@ export const appdata = {
         key: "Worry.q2",
         type: "singlechoice",
         question: "Do you ever feel anxious?",
-        choices: ["All the time", "Often", "Sometimes", "Rarely", "Never"],
+        choices: [
+          "😣 All the time",
+          "Often",
+          "Sometimes",
+          "Rarely",
+          "Never 😌",
+        ],
         recommendation: "",
         threshold: 3,
         weight: 40,
@@ -189,7 +460,8 @@ export const appdata = {
         type: "singlechoice",
         question: "How many hours of sleep do you get per night?",
         choices: ["<5", "6", "7", "8", "9+"],
-        recommendation: "",
+        recommendation:
+          "Numerous studies have shown that getting more sleep will improve your physical and mental health.",
         threshold: 3,
         weight: 50,
       },
@@ -213,6 +485,24 @@ export const appdata = {
         recommendation: "",
         threshold: 3,
         weight: 15,
+      },
+    ],
+  },
+  Meaning: {
+    goals: ["Goal 1", "Goal 2", "Goal 3"],
+    dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
+    questions: [
+      {
+        key: "Meaning.q1",
+        type: "singlechoice",
+        question:
+          "Are there people or a vocation that gives your life meaning?",
+        description:
+          "People could be a lover, your family or community. Vocation could be a hobby or job you are passionate about.",
+        choices: ["No", "Vocation", "People", "Vocation & People"],
+        recommendation: "",
+        threshold: 3,
+        weight: 20,
       },
     ],
   },

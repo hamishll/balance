@@ -39,22 +39,24 @@ If sleep were a new prescription drug, people would pay thousands for it, but sl
       id="sleep-tip-3"
       summary="Avoid caffeine after midday, it can take as long as eight hours to wear off fully."
     />
-    <Tip id="sleep-tip-4" summary="Avoid alcohol before bed." />
-    <Tip
-      id="sleep-tip-5"
-      summary="Avoid large meals and beverages late at night. Drinking too many fluids at night can cause frequent awakenings."
-    />
-    <Tip id="sleep-tip-6" summary="Avoid medicines that disrupt your sleep." />
-    <Tip id="sleep-tip-7" summary="Don't nap after 3pm." />
-    <Tip id="sleep-tip-8" summary="Relax before bed - read." />
-    <Tip id="sleep-tip-9" summary="Take a hot bath before bed." />
     <Tip
       id="sleep-tip-10"
       summary="Dark bedroom, cool bedroom, gadget-free bedroom."
     />
+
+    <Tip id="sleep-tip-4" summary="Avoid alcohol before bed." />
+    <Tip id="sleep-tip-6" summary="Avoid medicines that disrupt your sleep." />
+    <Tip id="sleep-tip-7" summary="Don't nap after 3pm." />
+    <Tip id="sleep-tip-8" summary="Relax before bed - read." />
+    <Tip id="sleep-tip-9" summary="Take a hot bath before bed." />
+
     <Tip
       id="sleep-tip-11"
       summary="Daylight is key to regulating sleep patterns."
+    />
+    <Tip
+      id="sleep-tip-5"
+      summary="Avoid large meals and beverages late at night. Drinking too many fluids at night can cause frequent awakenings."
     />
     <Tip
       id="sleep-tip-12"

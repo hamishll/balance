@@ -52,6 +52,9 @@ export default function DimensionPageAssessment(props) {
                       <div className="font-bold leading-tight text-2xl mt-8 mb-4">
                         {question.question}
                       </div>
+                      <div className="mb-4 opacity-50">
+                        {question.description}
+                      </div>
                       <SingleChoiceQuestion
                         k={question.key}
                         key={question.key}
@@ -63,7 +66,9 @@ export default function DimensionPageAssessment(props) {
                         setAssessmentScore={props.setAssessmentScore}
                         name={props.name}
                       />
-                      <div className="my-4">{question.recommendation}</div>
+                      <div className="opacity-50 my-4">
+                        {question.recommendation}
+                      </div>
                     </Box>
                   );
                 }
@@ -72,6 +77,9 @@ export default function DimensionPageAssessment(props) {
                     <Box key={index}>
                       <div className="font-bold leading-tight text-2xl mt-8 mb-4">
                         {question.question}
+                      </div>
+                      <div className="mb-4 opacity-50">
+                        {question.description}
                       </div>
                       <DiscreteSlider
                         k={question.key}
@@ -88,6 +96,9 @@ export default function DimensionPageAssessment(props) {
                       <div className="font-bold leading-tight text-2xl mt-8 mb-4 ">
                         {question.question}
                       </div>
+                      <div className="mb-4 opacity-50">
+                        {question.description}
+                      </div>
                       <MultiChoiceQuestion
                         k={question.key}
                         key={question.key}
@@ -102,6 +113,9 @@ export default function DimensionPageAssessment(props) {
                     <Box key={index}>
                       <div className="font-bold leading-tight text-2xl mt-8 mb-4 ">
                         {question.question}
+                      </div>
+                      <div className="mb-4 opacity-50">
+                        {question.description}
                       </div>
                       <FreeTextQuestion
                         k={question.key}

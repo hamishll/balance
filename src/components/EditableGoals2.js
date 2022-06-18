@@ -135,6 +135,7 @@ const EditableGoal = ({
                 key={childIndex}
                 task={task}
                 index={childIndex}
+                category={goal.category}
                 parentIndex={index}
                 markTask={markTask}
                 removeTask={removeTask}
@@ -158,6 +159,7 @@ const EditableTask = ({
   task,
   index,
   parentIndex,
+  category,
   // Task functions
   markTask,
   removeTask,
@@ -166,7 +168,13 @@ const EditableTask = ({
   return (
     <div className="flex flex-row items-center">
       <ControlledCheckbox
-        sx={{ paddingLeft: "0px" }}
+        sx={{
+          paddingLeft: "0px",
+          color: Colors[category],
+          "&.Mui-checked": {
+            color: Colors[category],
+          },
+        }}
         checked={task.isDone ?? false}
         size="medium"
         onClick={() => markTask(index, parentIndex)}

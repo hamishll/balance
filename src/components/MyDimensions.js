@@ -45,8 +45,8 @@ export default function MyDimensions(props) {
 
       <DimensionCard
         userdata={props.userdata}
-        goals={props.appData.Sleep.goals}
-        questions={props.appData.Sleep.questions}
+        goals={props.appData["Sleep"].goals}
+        questions={props.appData["Sleep"].questions}
         content={SleepContent}
         name="Sleep"
         icon={<DarkModeOutlinedIcon />}
@@ -55,8 +55,8 @@ export default function MyDimensions(props) {
       />
 
       <DimensionCard
-        goals={props.appData.Generic.goals}
-        questions={props.appData.Generic.questions}
+        goals={props.appData["Health & Fitness"].goals}
+        questions={props.appData["Health & Fitness"].questions}
         name="Health & Fitness"
         icon={<DirectionsRunIcon />}
         color={Colors[2]}
@@ -66,8 +66,8 @@ export default function MyDimensions(props) {
       <DimensionCard
         userdata={props.userdata}
         content={FriendsContent}
-        goals={props.appData.Generic.goals}
-        questions={props.appData.Generic.questions}
+        goals={props.appData["Friends"].goals}
+        questions={props.appData["Friends"].questions}
         name="Friends"
         icon={<EmojiPeopleOutlinedIcon />}
         color={Colors[3]}
@@ -75,8 +75,8 @@ export default function MyDimensions(props) {
       />
       <DimensionCard
         userdata={props.userdata}
-        goals={props.appData.Generic.goals}
-        questions={props.appData.Generic.questions}
+        goals={props.appData["Family"].goals}
+        questions={props.appData["Family"].questions}
         name="Family"
         icon={<FamilyRestroomIcon />}
         color={Colors[4]}
@@ -84,8 +84,8 @@ export default function MyDimensions(props) {
       />
       <DimensionCard
         userdata={props.userdata}
-        goals={props.appData.Generic.goals}
-        questions={props.appData.Generic.questions}
+        goals={props.appData["Love"].goals}
+        questions={props.appData["Love"].questions}
         name="Love"
         icon={<FavoriteBorderOutlinedIcon />}
         color={Colors[5]}
@@ -94,8 +94,8 @@ export default function MyDimensions(props) {
 
       <DimensionCard
         userdata={props.userdata}
-        goals={props.appData.Generic.goals}
-        questions={props.appData.Generic.questions}
+        goals={props.appData["Personal Growth"].goals}
+        questions={props.appData["Personal Growth"].questions}
         name="Personal Growth"
         icon={<ColorLensOutlinedIcon />}
         color={Colors[6]}
@@ -103,8 +103,8 @@ export default function MyDimensions(props) {
       />
       <DimensionCard
         userdata={props.userdata}
-        goals={props.appData.Generic.goals}
-        questions={props.appData.Generic.questions}
+        goals={props.appData["Work"].goals}
+        questions={props.appData["Work"].questions}
         name="Work"
         icon={<LocalAtmOutlinedIcon />}
         color={Colors[7]}
@@ -124,8 +124,8 @@ export default function MyDimensions(props) {
       <DimensionCard
         // className="basis-[100px]"
         content={ValuesContent}
-        goals={props.appData.Values.goals}
-        questions={props.appData.Values.questions}
+        goals={props.appData["Values"].goals}
+        questions={props.appData["Values"].questions}
         name="Values"
         icon={<ExploreOutlinedIcon />}
         color={Colors[0]}
@@ -135,8 +135,8 @@ export default function MyDimensions(props) {
         // className="basis-[100px]"
         userdata={props.userdata}
         content={MindsetContent}
-        goals={props.appData.Worry.goals}
-        questions={props.appData.Worry.questions}
+        goals={props.appData["Worry"].goals}
+        questions={props.appData["Worry"].questions}
         name="Handling worry"
         icon={<SelfImprovementOutlinedIcon />}
         color={Colors[0]}
@@ -145,8 +145,8 @@ export default function MyDimensions(props) {
       <DimensionCard
         // className="basis-[100px]"
         userdata={props.userdata}
-        goals={props.appData.Generic.goals}
-        questions={props.appData.Generic.questions}
+        goals={props.appData["Meaning"].goals}
+        questions={props.appData["Meaning"].questions}
         content={MeaningContent}
         name="Finding Meaning"
         icon={<FollowTheSignsIcon />}
