@@ -5,6 +5,7 @@ import MyStatus from "./Status";
 import ModalTooltip from "./ModalTooltip";
 import MultiChoiceQuestion from "./MultiChoiceQuestion";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import Quote from "./Quote";
 
 const helpTip = (
   <div>
@@ -56,6 +57,7 @@ export default function MyToday(props) {
         initValue={localStorage.getItem("currentfocus")}
       /> */}
       <h1>Recommended for you</h1>
+      <Quote category="Work" />
       Recommended activities based on identified focus areas
     </div>
   );

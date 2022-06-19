@@ -20,7 +20,6 @@ export default function AccountPage({ name, onboarding, setOnboarding }) {
     <div className="PageCardContent text-center">
       <h1 className="text-left">{name}</h1>
       <SignInScreen />
-
       <Button
         variant="outlined"
         onClick={() => {
@@ -32,6 +31,9 @@ export default function AccountPage({ name, onboarding, setOnboarding }) {
       <Button variant="outlined" onClick={() => localStorage.clear()}>
         Delete all data
       </Button>
+      <h2>Data Privacy</h2>
+      All data is stored locally on your device. You can opt-in to backing up
+      your data by signing in.
     </div>
   );
 }

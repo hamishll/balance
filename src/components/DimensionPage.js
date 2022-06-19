@@ -9,6 +9,7 @@ import ControlledCheckbox from "./ControlledCheckbox";
 import ReactMarkdown from "react-markdown";
 import DimensionPageAssessment from "./DimensionPageAssessment";
 import styles from "./../css/Post.css";
+import Quote from "./Quote";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -147,7 +148,7 @@ export default function DimensionPage({
             );
           })}
         </FormGroup>
-        <div className="learningContent  flex flex-wrap flex-row justify-center gap-4">
+        <div className="learningContent flex flex-wrap flex-row justify-center gap-4">
           {/* Get rid of this once you've updated all content to be JSX based */}
           {typeof content == "object" ? (
             content

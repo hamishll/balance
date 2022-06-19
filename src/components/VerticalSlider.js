@@ -17,7 +17,7 @@ const marks = [
   },
   {
     value: 3,
-    label: "😔",
+    label: "😞",
   },
   {
     value: 4,
@@ -68,7 +68,7 @@ export default function VerticalSlider(props) {
     },
     "& .MuiSlider-valueLabel": {
       background: "unset",
-      fontSize: 40,
+      fontSize: 60,
     },
     '& input[type="range"]': {
       WebkitAppearance: "slider-vertical",
