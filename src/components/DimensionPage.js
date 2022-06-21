@@ -21,6 +21,9 @@ function useInterval(callback, delay) {
 
   // Set up the interval.
   useEffect(() => {
+    if (!delay && delay !== 0) {
+      return;
+    }
     let id = setInterval(() => {
       savedCallback.current();
     }, delay);
@@ -47,17 +50,25 @@ export default function DimensionPage({
   const handleClickAssessment = () => {
     setAssessmentSelected(true);
   };
-
+  const [isPlaying, setPlaying] = useState(true);
   const [counter, setCounter] = useState(0);
 
-  useInterval(() => {
-    if (counter < Math.round(assessmentScore, 0)) {
-      setCounter(counter + 1);
-    }
-  }, 10);
+  useInterval(
+    () => {
+      if (counter < Math.round(assessmentScore, 0)) {
+        setCounter(counter + 1);
+      } else {
+        setPlaying(false);
+      }
+    },
+    isPlaying ? 10 : null
+  );
 
   useEffect(() => {
-    if (assessmentSelected === false) setCounter(0);
+    if (assessmentSelected === false) {
+      setPlaying(true);
+      setCounter(0);
+    }
   }, [assessmentSelected]);
 
   return (

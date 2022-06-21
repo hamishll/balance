@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import { quotes } from "./../data/quotes";
 import IconButton from "@mui/material/IconButton";
 import CachedIcon from "@mui/icons-material/Cached";
@@ -67,18 +66,19 @@ export default function Quote({ category }) {
   };
 
   return (
-    <div className="flex flex-col text-center content-center relative justify-center rounded-xl min-h-[140px] dark:bg-black bg-blue-600 bg-opacity-10 w-full p-4">
+    <div className="flex flex-col text-center content-center relative justify-center rounded-xl min-h-[150px] dark:bg-black bg-blue-600 bg-opacity-10 w-full p-4">
       <div className="text-blue-800 dark:text-blue-200 opacity-80 text-xl font-semibold">
         {shuffledQuotes[seed].quote}
       </div>
       <div className="text-blue-800 dark:text-blue-200 opacity-80 text-md">
-        - {shuffledQuotes[seed].author}
+        {shuffledQuotes[seed].author ? " - " : ""}
+        {shuffledQuotes[seed].author}
       </div>
-      <div className="absolute right-3 bottom-3">
-        <IconButton onClick={incrementSeed}>
+      <div className="text-blue-300 absolute right-3 bottom-3">
+        <IconButton color="inherit" onClick={incrementSeed}>
           <CachedIcon />
         </IconButton>
-        <IconButton onClick={handleSharing}>
+        <IconButton color="inherit" onClick={handleSharing}>
           <IosShareIcon />
         </IconButton>
       </div>

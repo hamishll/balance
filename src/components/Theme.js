@@ -1,5 +1,5 @@
 export const Colors = [
-  "rgb(149 156 173)",
+  "#959cad",
   "#30B0C7",
   "#34C759",
   "#FFCD00",

@@ -58,7 +58,6 @@ export default function MyToday(props) {
       /> */}
       <h1>Recommended for you</h1>
       <Quote category="Work" />
-      Recommended activities based on identified focus areas
     </div>
   );
 }

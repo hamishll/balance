@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 // Components
 import DimensionCard from "./DimensionCard";
@@ -26,12 +26,84 @@ import FollowTheSignsIcon from "@mui/icons-material/FollowTheSigns";
 import DirectionsRunIcon from "@mui/icons-material/DirectionsRun";
 import { Colors } from "./Theme.js";
 
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // Remember the latest callback.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    if (!delay && delay !== 0) {
+      return;
+    }
+    let id = setInterval(() => {
+      savedCallback.current();
+    }, delay);
+    return () => clearInterval(id);
+  }, [delay]);
+}
+
 export default function MyDimensions(props) {
+  const [isPlaying, setPlaying] = useState(true);
+  const [counter, setCounter] = useState(0);
+
+  const [overallScore, setOverallScore] = useState(
+    (parseInt(localStorage.getItem("ValuesAssessment") ?? 0) +
+      parseInt(localStorage.getItem("Handling worryAssessment") ?? 0) +
+      parseInt(localStorage.getItem("LoveAssessment") ?? 0) +
+      parseInt(localStorage.getItem("SleepAssessment") ?? 0) +
+      parseInt(localStorage.getItem("Finding MeaningAssessment") ?? 0) +
+      parseInt(localStorage.getItem("FriendsAssessment") ?? 0) +
+      parseInt(localStorage.getItem("WorkAssessment") ?? 0) +
+      parseInt(localStorage.getItem("Health & FitnessAssessment") ?? 0) +
+      parseInt(localStorage.getItem("Personal GrowthAssessment") ?? 0) +
+      parseInt(localStorage.getItem("Financial FreedomAssessment") ?? 0) +
+      parseInt(localStorage.getItem("FamilyAssessment") ?? 0)) /
+      11
+  );
+  console.log(overallScore);
+
+  useInterval(
+    () => {
+      if (counter < Math.round(overallScore, 0)) {
+        setCounter(counter + 1);
+      } else {
+        setPlaying(false);
+        console.log("Stop the count!");
+      }
+    },
+    isPlaying ? 10 : null
+  );
+
+  // useEffect(() => {
+  //   setPlaying(true);
+  //   setCounter(0);
+  // }, []);
+
   return (
     <div
-      className="grow justify-center flex flex-row flex-wrap px-3 gap-3 pb-[100px] overflow-scroll no-scrollbar"
+      className="grow justify-center  flex flex-row flex-wrap px-3 gap-3 pb-[100px] overflow-scroll no-scrollbar"
       id="Dimensions"
     >
+      <div className="flex-col w-full text-center flex items-center">
+        <span className="text-sm ">Your Balance score: </span>
+        <span className="w-full text-6xl font-semibold leading-tight">
+          {counter}
+        </span>
+
+        <div
+          className="bg-white w-1/2 max-w-md h-[6px] mb-4 rounded-lg bg-opacity-30"
+          style={{ backgroundColor: `${Colors[0]}30` }}
+        >
+          <div
+            className={`h-full rounded-lg bg-opacity-100`}
+            style={{ width: counter + "%", backgroundColor: Colors[0] }}
+          ></div>
+        </div>
+      </div>
       {/* <Card
         name="explainerCard"
         backgroundColor="rgb(240,240,240)"

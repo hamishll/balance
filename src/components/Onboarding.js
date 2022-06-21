@@ -90,13 +90,13 @@ export default function Onboarding({ onboarding, setOnboarding }) {
     if (page == 4 && !localStorage.getItem("dream")) {
       let location = "";
       if (localStorage.getItem("OnboardingLocation.0")) {
-        location = "in the mountains";
+        location = "I wake up in my house in the mountains.";
       } else if (localStorage.getItem("OnboardingLocation.2")) {
-        location = "by the beach";
+        location = "I wake up in my house by the beach.";
       } else if (localStorage.getItem("OnboardingLocation.3")) {
-        location = "in the city";
+        location = "I wake up in my house in the city.";
       } else if (localStorage.getItem("OnboardingLocation.5")) {
-        location = "in the countryside";
+        location = "I wake up in my house in the countryside.";
       }
       const family = !localStorage.getItem("OnboardingLifeAchievements.0")
         ? ""
@@ -142,7 +142,7 @@ export default function Onboarding({ onboarding, setOnboarding }) {
         ? ""
         : "I do my part to save the planet by __________ and ________.";
 
-      const dreamString = `I wake up in my house ${location}. ${family} ${travel} \n \n ${career} ${retire} \n \n ${love} ${home} ${famous} \n \n ${create} ${athlete} ${science} ${planet}`;
+      const dreamString = `${location} ${family} ${travel} \n \n ${career} ${retire} \n \n ${love} ${home} ${famous} \n \n ${create} ${athlete} ${science} ${planet}`;
       localStorage.setItem("dream", dreamString);
       setDream(dreamString);
     } else {
