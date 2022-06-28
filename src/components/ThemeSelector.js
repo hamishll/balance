@@ -15,16 +15,14 @@ export default function ThemeSelector({ theme, colorMode }) {
     <Box
       sx={{
         display: "flex",
-        width: "100%",
         alignItems: "center",
         justifyContent: "center",
         bgcolor: "inherit",
         color: "text.primary",
         borderRadius: 1,
-        p: 3,
       }}
     >
-      {theme.palette.mode} mode
+      {/* {theme.palette.mode} mode */}
       <IconButton
         sx={{ ml: 1 }}
         onClick={colorMode.toggleColorMode}

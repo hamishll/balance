@@ -58,7 +58,7 @@ export default function Page({ open, setOpen, name, children }) {
         <div className="z-[1400] flex justify-center">
           <div
             // PAGE
-            className="z-[1400] rounded-t-3xl max-h-screen w-full max-w-3xl cursor-default min-h-screen lg:mt-4 no-scrollbar overflow-scroll bg-white dark:bg-slate-800"
+            className="z-[1400] rounded-t-3xl max-h-screen w-full flex flex-col max-w-3xl cursor-default min-h-screen lg:mt-4 no-scrollbar overflow-scroll bg-white dark:bg-slate-800"
             id={name}
           >
             <div

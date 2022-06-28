@@ -44,7 +44,12 @@ const App = ({ mode }) => {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <div className={`Screen dark:text-gray-50 dark:bg-slate-800`}>
-            <Onboarding onboarding={onboarding} setOnboarding={setOnboarding} />
+            <Onboarding
+              onboarding={onboarding}
+              setOnboarding={setOnboarding}
+              theme={theme}
+              colorMode={colorMode}
+            />
           </div>
         </ThemeProvider>
       </ColorModeContext.Provider>

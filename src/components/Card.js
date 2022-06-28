@@ -14,7 +14,7 @@ export default function Card(props) {
   return (
     <div
       id={props.name}
-      className="Card rounded-2xl bg-cover "
+      className="Card rounded-2xl bg-cover"
       style={{ backgroundColor: props.backgroundColor }}
     >
       <div className="CardClose" onClick={minimiseCard}>

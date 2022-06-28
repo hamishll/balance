@@ -10,6 +10,7 @@ import ReactMarkdown from "react-markdown";
 import DimensionPageAssessment from "./DimensionPageAssessment";
 import styles from "./../css/Post.css";
 import Quote from "./Quote";
+import ModuleCard from "./ModuleCard";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -40,6 +41,7 @@ export default function DimensionPage({
   icon,
   assessmentScore,
   setAssessmentScore,
+  modules,
 }) {
   DimensionPage.defaultProps = {
     goals: [],
@@ -159,8 +161,21 @@ export default function DimensionPage({
             );
           })}
         </FormGroup>
+        <h2>Learning</h2>
         <div className="learningContent flex flex-wrap flex-row justify-center gap-4">
           {/* Get rid of this once you've updated all content to be JSX based */}
+          {modules.map((module, index) => {
+            return (
+              <ModuleCard
+                key={index}
+                name={module.name}
+                content={module.content}
+                color={color}
+              />
+            );
+          })}
+        </div>
+        {/* <div className="learningContent flex flex-wrap flex-row justify-center gap-4">
           {typeof content == "object" ? (
             content
           ) : (
@@ -168,7 +183,7 @@ export default function DimensionPage({
               <ReactMarkdown children={content} />
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </React.Fragment>
   );

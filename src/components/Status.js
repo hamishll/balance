@@ -13,29 +13,29 @@ import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import FamilyRestroomIcon from "@mui/icons-material/FamilyRestroom";
 import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithoutContactOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import { Colors } from "./Theme.js";
+import SelfImprovementIcon from "@mui/icons-material/SelfImprovement";
+import { Colors, Colors2 } from "./Theme.js";
 
 export default function Status(props) {
   // const [value, setValue] = React.useState(props.initValue);
   const Dimensions = [
     "Sleep",
-    "Health",
+    "Mental Health",
+    "Health & Fitness",
     "Friends",
     "Family",
     "Love",
-    "Personal Development",
-    "Work",
+    "Meaningful Work",
     "Finances",
   ];
 
   const Icons = [
     <DarkModeOutlinedIcon />,
+    <SelfImprovementIcon />,
     <HikingOutlinedIcon />,
     <ConnectWithoutContactOutlinedIcon />,
     <FamilyRestroomIcon />,
     <FavoriteBorderOutlinedIcon />,
-
-    <ColorLensOutlinedIcon />,
     <WorkOutlineOutlinedIcon />,
     <LocalAtmOutlinedIcon />,
   ];

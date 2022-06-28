@@ -7,27 +7,16 @@ import { TransitionGroup } from "react-transition-group";
 import Collapse from "@mui/material/Collapse";
 import CloseIcon from "@mui/icons-material/Close";
 
-const options = [
-  "Health & Fitness",
-  "Friends",
-  "Family",
-  "Love",
-  "Fun",
-  "Personal Growth",
-  "Work",
-  "Financial Freedom",
-  "Uncategorised",
-];
-
 const Colors = {
+  Sleep: "#007AFF",
+  "Mental Health": "#30B0C7",
   "Health & Fitness": "#34C759",
   Friends: "#FFCD00",
   Family: "#FF9500",
   Love: "#FF3B30",
-  Fun: "#AF52DE",
-  "Personal Growth": "#5856D6",
-  Work: "#007AFF",
-  "Financial Freedom": "#30B0C7",
+  "Meaningful Work": "#AF52DE",
+  "Financial Freedom": "#5856D6",
+  Uncategorised: "#333333",
 };
 
 const goalStyles = {
@@ -82,8 +71,11 @@ const EditableGoal = ({
 }) => {
   return (
     <div
-      className={`rounded-xl flex flex-col grow basis-1/3 max-w-lg border-4 p-3 dark:bg-black dark:bg-opacity-20`}
-      style={{ borderColor: Colors[goal.category] }}
+      className={`rounded-xl flex flex-col grow basis-1/3 max-w-lg border-0 p-4 dark:bg-black dark:bg-opacity-20`}
+      style={{
+        backgroundColor: Colors[goal.category] + "15",
+        borderColor: Colors[goal.category] + "",
+      }}
     >
       <div
         className="text-sm uppercase font-bold flex flex-row"
@@ -97,7 +89,7 @@ const EditableGoal = ({
             className="appearance-none font-bold uppercase bg-transparent border-transparent focus:border-transparent focus:outline-none border-none focus:ring-0"
             value={goal.category}
           >
-            {options.map((option, index) => {
+            {Object.keys(Colors).map((option, index) => {
               return (
                 <option key={index} value={option}>
                   {option}
@@ -106,7 +98,7 @@ const EditableGoal = ({
             })}
           </select>
         </div>
-        <div className="text-gray-300">
+        <div className="text-gray-500">
           <CloseIcon onClick={() => removeGoal(index)} />
         </div>
       </div>
@@ -145,12 +137,14 @@ const EditableGoal = ({
           );
         })}
       </TransitionGroup>
-      <Button
-        sx={{ color: "#BBB", justifyContent: "left" }}
-        onClick={() => addTask("Task name", index)}
-      >
-        Add Task +
-      </Button>
+      <span className="text-gray-500 opacity-60">
+        <Button
+          sx={{ color: "inherit", justifyContent: "left" }}
+          onClick={() => addTask("Task name", index)}
+        >
+          Add Task +
+        </Button>
+      </span>
     </div>
   );
 };
@@ -187,7 +181,7 @@ const EditableTask = ({
         onChange={(event) => handleTaskChange(event, index, parentIndex)}
         multiline
       />
-      <span className="text-gray-300">
+      <span className="text-gray-500">
         <DeleteOutlineIcon onClick={() => removeTask(index, parentIndex)} />
       </span>
     </div>

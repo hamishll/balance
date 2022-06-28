@@ -66,7 +66,7 @@ export default function Quote({ category }) {
   };
 
   return (
-    <div className="flex flex-col text-center content-center relative justify-center rounded-xl min-h-[150px] dark:bg-black bg-blue-600 bg-opacity-10 w-full p-4">
+    <div className="flex flex-col text-center content-center relative justify-center rounded-xl min-h-[150px] dark:bg-black bg-blue-600 bg-opacity-10 dark:bg-opacity-10 w-full p-4">
       <div className="text-blue-800 dark:text-blue-200 opacity-80 text-xl font-semibold">
         {shuffledQuotes[seed].quote}
       </div>

@@ -7,6 +7,12 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import MultiChoiceQuestion from "./MultiChoiceQuestion";
 import ModalTooltip from "./ModalTooltip";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import BlobCard from "./BlobCard";
+import ThemeSelector from "./ThemeSelector";
+
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
 
 // Consts
 const dreamTip = (
@@ -75,7 +81,12 @@ const focusTip = (
   </div>
 );
 
-export default function Onboarding({ onboarding, setOnboarding }) {
+export default function Onboarding({
+  onboarding,
+  setOnboarding,
+  theme,
+  colorMode,
+}) {
   const [page, setPage] = React.useState(1);
   const [dream, setDream] = React.useState(localStorage.getItem("dream") ?? "");
 
@@ -168,33 +179,48 @@ export default function Onboarding({ onboarding, setOnboarding }) {
         >
           Next
         </Button>
+        <div className="fixed top-6 right-6 opacity-20">
+          <ThemeSelector theme={theme} colorMode={colorMode} />
+        </div>
       </div>
 
       <div className="slides w-full h-full flex overflow-x-auto snap-x snap-mandatory scroll-smooth">
         <div
-          className="flex flex-col p-6 snap-start w-full h-full shrink-0"
+          className="flex flex-col py-6 pl-6 snap-start w-full h-full shrink-0"
           id="slide-1"
         >
-          <div className="mt-24 text-4xl">
-            <span className="text-[#007AFF]">Balance</span> helps guide you to a
-            more fulfilling life through three simple steps:
-            <br />
-            <br />
-            {/* <span className="text-gray-400 animate-pulse">
-              Swipe <ArrowForwardIosIcon />
-              <ArrowForwardIosIcon />
-            </span> */}
-          </div>
-          <div className="text-xl">
-            <ol className="pl-6 pr-2 list-decimal">
-              <li className="pt-6 list-decimal">Identify your dream life</li>
-              <li className="pt-6 list-decimal">
-                Find what goals will get you there
-              </li>
-              <li className="pt-6 list-decimal before:text-[#007AFF]">
-                Learn more in each of these areas
-              </li>
-            </ol>
+          <div className="mt-24 mb-8 text-4xl">About Balance</div>
+          <p>
+            Balance is an open-source app designed to help you find happiness
+            and meaning in your life.
+          </p>
+          It aims to help you find happiness and meaning through three steps:
+          <div className="flex flex-row gap-4 shrink-0 w-full snap-x snap-mandatory overflow-x-scroll pr-16 pb-12">
+            <BlobCard icon={<AutoAwesomeIcon fontSize="inherit" />}>
+              <div className="text-lg font-semibold pb-2 pr-[100px]">
+                1. Identify what your ideal life looks like
+              </div>
+              Describe a day in your dream life in as much detail as possible.
+              This helps you to understand what it is you value and what gives
+              your life meaning.
+            </BlobCard>
+            <BlobCard icon={<TaskAltIcon fontSize="inherit" />}>
+              <div className="text-lg font-semibold pb-2 pr-[100px]">
+                2. Define what goals will get you there
+              </div>
+              Define the key goals you need to accomplish to achieve the life
+              described in your dream. Then define what the key tasks required
+              to achieve each of these goals.
+            </BlobCard>
+            <BlobCard icon={<LocalLibraryIcon fontSize="inherit" />}>
+              <div className="text-lg font-semibold pb-2 pr-[100px]">
+                3. Learn more about yourself
+              </div>
+              Assess yourself across many physical, mental, and social
+              dimensions to understand how you're doing. Balance then helps you
+              identify areas for improvement, and provides recommendations and
+              tips based on the knowledge of hundreds of self-improvement books.
+            </BlobCard>
           </div>
         </div>
         <div

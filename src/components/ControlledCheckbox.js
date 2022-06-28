@@ -19,6 +19,7 @@ export default function ControlledCheckbox(props) {
 
   return (
     <Checkbox
+      disabled={props.disabled}
       sx={props.sx}
       checkedIcon={<CheckCircleIcon />}
       icon={<RadioButtonUncheckedIcon />}

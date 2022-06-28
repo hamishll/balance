@@ -1,5 +1,5 @@
 export const appdata = {
-  Values: {
+  "Mental Health": {
     goals: [
       "Work out what you truly value in life",
       "Do your best to accept the past, and embrace the present",
@@ -11,7 +11,7 @@ export const appdata = {
     ],
     questions: [
       {
-        key: "Values.q0",
+        key: "Mental Health.q1",
         type: "singlechoice",
         question: "Are you finding time for the things you value currently?",
         choices: ["No", "Sometimes", "Yes"],
@@ -20,7 +20,7 @@ export const appdata = {
         weight: 30,
       },
       {
-        key: "Values.q1",
+        key: "Mental Health.q2",
         type: "multichoice",
         question: "What gives your life meaning?",
         choices: [
@@ -36,7 +36,7 @@ export const appdata = {
         threshold: 0,
       },
       {
-        key: "Values.q2",
+        key: "Mental Health.q3",
         type: "multichoice",
         question: "What personal values do you want to have?",
         choices: [
@@ -51,12 +51,12 @@ export const appdata = {
         threshold: 0,
       },
       {
-        key: "Values.q3",
+        key: "Mental Health.q4",
         type: "freetext",
         question: "Write down what you want to achieve from your life",
       },
       {
-        key: "Values.q4",
+        key: "Mental Health.q5",
         type: "singlechoice",
         question: "Do you have a good idea of what makes you happy?",
         choices: ["No", "Not much", "Partially", "Lots", "Totally"],
@@ -67,18 +67,30 @@ export const appdata = {
       },
 
       {
-        key: "Values.q5",
+        key: "Mental Health.q6",
         type: "freetext",
         question: "Write down some things that make you happy in life",
       },
       {
-        key: "Values.q6",
+        key: "Mental Health.q7",
         type: "singlechoice",
         question: "Are you able to accept misfortune when it occurs?",
         choices: ["No", "Partially", "Yes"],
         recommendation: "",
         threshold: 3,
-        weight: 20,
+        weight: 10,
+      },
+      {
+        key: "Mental Health.q8",
+        type: "singlechoice",
+        question:
+          "Are there people or a vocation that gives your life meaning?",
+        description:
+          "People could be a lover, your family or community. Vocation could be a hobby or job you are passionate about.",
+        choices: ["No", "Vocation", "People", "Vocation & People"],
+        recommendation: "",
+        threshold: 3,
+        weight: 10,
       },
     ],
   },
@@ -324,12 +336,12 @@ export const appdata = {
       },
     ],
   },
-  "Personal Growth": {
+  "Meaningful Work": {
     goals: ["Goal 1", "Goal 2", "Goal 3"],
     dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
     questions: [
       {
-        key: "Personal Growth.q1",
+        key: "Meaningful Work.q1",
         type: "singlechoice",
         question: "Do you have a creative outlet?",
         description:
@@ -337,10 +349,10 @@ export const appdata = {
         choices: ["No", "Not sure", "Yes"],
         recommendation: "",
         threshold: 3,
-        weight: 30,
+        weight: 20,
       },
       {
-        key: "Personal Growth.q2",
+        key: "Meaningful Work.q2",
         type: "singlechoice",
         question: "How much time do you find each week for creative work?",
         description:
@@ -348,10 +360,10 @@ export const appdata = {
         choices: ["<2 hours", "5 hours", "10 hours", "15 hours", "20+ hours"],
         recommendation: "",
         threshold: 3,
-        weight: 40,
+        weight: 20,
       },
       {
-        key: "Personal Growth.q3",
+        key: "Meaningful Work.q3",
         type: "singlechoice",
         question: "Do you seek out new experiences and challenges?",
         description:
@@ -359,7 +371,39 @@ export const appdata = {
         choices: ["No", "Occassionally", "Sometimes", "Often", "All the time"],
         recommendation: "",
         threshold: 3,
-        weight: 30,
+        weight: 20,
+      },
+      {
+        key: "Meaningful Work.q4",
+        type: "singlechoice",
+        question: "How do you feel about your work?",
+        description:
+          "Does your work feel meaningful? Do you get on well with your colleagues?",
+        choices: ["😞 I hate it", "😑 It's OK", "😀 I love it"],
+        recommendation: "",
+        threshold: 3,
+        weight: 20,
+      },
+      {
+        key: "Meaningful Work.q5",
+        type: "singlechoice",
+        question: "How many hours a week do you work?",
+        description:
+          "Any activity that doesn't cause you to be short of breath, or to sweat. This includes walking or taking a casual bike ride.",
+        choices: [">60 hours", "50 hours", "40 hours", "<30 hours"],
+        recommendation: "",
+        threshold: 3,
+        weight: 10,
+      },
+      {
+        key: "Meaningful Work.q6",
+        type: "singlechoice",
+        question: "Do you feel valued by your colleagues?",
+        description: "",
+        choices: ["😞 Never", "😑 Sometimes", "😀 Yes"],
+        recommendation: "",
+        threshold: 3,
+        weight: 10,
       },
     ],
   },
