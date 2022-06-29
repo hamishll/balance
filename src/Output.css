@@ -2537,6 +2537,16 @@ a {
   margin-right: 0.25rem;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -2579,6 +2589,10 @@ a {
 
 .ml-1 {
   margin-left: 0.25rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .block {
@@ -2667,6 +2681,18 @@ a {
 
 .w-\[300px\] {
   width: 300px;
+}
+
+.w-\[35\%\] {
+  width: 35%;
+}
+
+.w-\[38\%\] {
+  width: 38%;
+}
+
+.w-\[37\%\] {
+  width: 37%;
 }
 
 .max-w-screen-lg {
@@ -3015,6 +3041,14 @@ a {
 
 .pr-\[100px\] {
   padding-right: 100px;
+}
+
+.pr-4 {
+  padding-right: 1rem;
+}
+
+.pr-6 {
+  padding-right: 1.5rem;
 }
 
 .text-left {

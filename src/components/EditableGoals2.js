@@ -7,17 +7,17 @@ import { TransitionGroup } from "react-transition-group";
 import Collapse from "@mui/material/Collapse";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
+//007AFF 30B0C7 34C759 FFCD00 FF9500 FF3B30 AF52DE 5856D6
 const Colors = {
-  Sleep: "#007AFF",
-  "Mental Health": "#30B0C7",
+  Sleep: "#30B0C7",
   "Health & Fitness": "#34C759",
-  Friends: "#FFCD00",
-  Family: "#FF9500",
+  "Mental Health": "#FFCD00",
+  Friends: "#FF9500",
   Love: "#FF3B30",
-  "Meaningful Work": "#AF52DE",
-  "Financial Freedom": "#5856D6",
-  General: "#777777",
+  "Personal Development": "#AF52DE",
+  "Meaningful Work": "#5856D6",
+  "Financial Freedom": "#007AFF",
+  General: "#888888",
 };
 
 const goalStyles = {
@@ -99,7 +99,7 @@ const EditableGoal = ({
             })}
           </select>
         </div>
-        <div className="text-gray-500">
+        <div className="text-gray-300">
           <CloseIcon onClick={() => removeGoal(index)} />
         </div>
       </div>
@@ -138,7 +138,7 @@ const EditableGoal = ({
           );
         })}
       </TransitionGroup>
-      <span className="text-gray-500 opacity-60">
+      <span className="text-gray-300">
         <Button
           sx={{ color: "inherit", justifyContent: "left" }}
           onClick={() => addTask("Task name", index)}
@@ -182,7 +182,7 @@ const EditableTask = ({
         onChange={(event) => handleTaskChange(event, index, parentIndex)}
         multiline
       />
-      <span className="text-gray-500">
+      <span className="text-gray-300">
         <DeleteOutlineIcon onClick={() => removeTask(index, parentIndex)} />
       </span>
     </div>

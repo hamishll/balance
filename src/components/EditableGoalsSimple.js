@@ -60,7 +60,7 @@ const defaultGoals = [
     key: 101,
     isDone: false,
     text: "Raise a family",
-    category: "Family",
+    category: "Love",
     tasks: [{ text: "Have kids" }, { text: "Support kids through school" }],
   },
   {

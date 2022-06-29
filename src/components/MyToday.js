@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import FreeTextQuestion from "./FreeTextQuestion";
-import MyStatus from "./Status";
+import Status from "./Status";
 import ModalTooltip from "./ModalTooltip";
 import MultiChoiceQuestion from "./MultiChoiceQuestion";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
@@ -20,9 +20,7 @@ const helpTip = (
   </div>
 );
 
-export default function MyToday(props) {
-  //const [value, setValue] = React.useState(0);
-
+export default function MyToday({ value, appData }) {
   return (
     <div className="no-scrollbar px-4 pb-[100px] flex flex-col grow overflow-scroll">
       <div className="flex flex-row items-center">
@@ -33,7 +31,7 @@ export default function MyToday(props) {
           </span>
         </ModalTooltip>
       </div>
-      <MyStatus dimensions={props.appData} />
+      <Status dimensions={appData} />
       {/* <Firestore/> */}
       <h1>Current Focus Areas</h1>
       <MultiChoiceQuestion

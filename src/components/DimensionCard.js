@@ -32,10 +32,10 @@ export default function DimensionCard(props) {
         onClick={handleClick}
       >
         <div className="CategoryCardIcon">{props.icon}</div>
-        <div className="w-[30%] text-white text-[18px] font-semibold leading-tight">
+        <div className="w-[37%] pr-4 text-white text-[18px] font-semibold leading-tight">
           {props.name}
         </div>
-        <div className="w-[40%]">
+        <div className="w-[35%]">
           <span className="text-xs text-white">Tasks</span>
           <div>
             <Rating

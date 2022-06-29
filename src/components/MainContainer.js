@@ -9,7 +9,7 @@ export default function MainContainer(props) {
     case 0:
       return <MyGoals value={props.value} appData={props.appData} />;
     case 1:
-      return <MyToday value={props.value} />;
+      return <MyToday value={props.value} appData={props.appData} />;
     case 2:
       return <MyDimensions value={props.value} appData={props.appData} />;
     default:

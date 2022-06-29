@@ -46,6 +46,7 @@ const goalTip = (
 );
 
 export default function MyGoals(props) {
+  const currentYear = new Date().getFullYear();
   return (
     <div className="no-scrollbar px-4 pb-[100px] grow flex flex-col overflow-scroll">
       <div className="flex flex-row items-center">
@@ -69,7 +70,9 @@ export default function MyGoals(props) {
         initValue={localStorage.getItem("dream")}
       />
       <div className="flex flex-row items-center">
-        <h1 className="grow">My Life Goals</h1>
+        <div className="grow text-2xl font-semibold mt-6 mb-4">
+          My {currentYear} Goals
+        </div>
         <ModalTooltip content={goalTip}>
           <span className="cursor-pointer text-gray-500 opacity-25">
             <HelpOutlineIcon sx={{ fontSize: "1.75em" }} />

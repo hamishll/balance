@@ -2,7 +2,11 @@ import React, { useEffect } from "react";
 
 import TextField from "@mui/material/TextField";
 
-const sxBase = {};
+const sxBase = {
+  backgroundColor: "rgba(0,0,0,0.03)",
+  borderRadius: 3,
+  "& .MuiOutlinedInput-notchedOutline": { border: "none" },
+};
 
 export default function FreeTextQuestion({ k, sx, rows, initValue, ...props }) {
   //   const [value, setValue] = React.useState(0);
