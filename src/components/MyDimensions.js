@@ -114,22 +114,8 @@ export default function MyDimensions(props) {
         content={SleepContent}
         name="Sleep"
         icon={<DarkModeOutlinedIcon />}
-        color={Colors[1]}
-        score={62}
-        modules={[{ name: "Why We Sleep", content: SleepContent }]}
-      />
-
-      <DimensionCard
-        goals={props.appData["Mental Health"].goals}
-        questions={props.appData["Mental Health"].questions}
-        name="Mental Health"
-        icon={<DirectionsRunIcon />}
         color={Colors[2]}
-        score={50}
-        modules={[
-          { name: "Handling Worry", content: MindsetContent },
-          { name: "Having a Philosophy of Life", content: ValuesContent },
-        ]}
+        modules={[{ name: "Why We Sleep", content: SleepContent }]}
       />
 
       <DimensionCard
@@ -138,10 +124,20 @@ export default function MyDimensions(props) {
         name="Health & Fitness"
         icon={<DirectionsRunIcon />}
         color={Colors[3]}
-        score={50}
         modules={[
           { name: "Nutrition", content: "Module coming soon" },
           { name: "Self-Care", content: "Module coming soon" },
+        ]}
+      />
+      <DimensionCard
+        goals={props.appData["Mental Health"].goals}
+        questions={props.appData["Mental Health"].questions}
+        name="Mental Health"
+        icon={<DirectionsRunIcon />}
+        color={Colors[4]}
+        modules={[
+          { name: "Handling Worry", content: MindsetContent },
+          { name: "Having a Philosophy of Life", content: ValuesContent },
         ]}
       />
 
@@ -152,22 +148,21 @@ export default function MyDimensions(props) {
         questions={props.appData["Friends"].questions}
         name="Friends"
         icon={<EmojiPeopleOutlinedIcon />}
-        color={Colors[4]}
-        score={40}
+        color={Colors[5]}
         modules={[
           { name: "Interpersonal Relationships", content: FriendsContent },
         ]}
       />
-      <DimensionCard
+      {/* <DimensionCard
         userdata={props.userdata}
         goals={props.appData["Family"].goals}
         questions={props.appData["Family"].questions}
         name="Family"
         icon={<FamilyRestroomIcon />}
         color={Colors[5]}
-        score={40}
         modules={[{}]}
-      />
+      /> */}
+
       <DimensionCard
         userdata={props.userdata}
         goals={props.appData["Love"].goals}
@@ -175,28 +170,25 @@ export default function MyDimensions(props) {
         name="Love"
         icon={<FavoriteBorderOutlinedIcon />}
         color={Colors[6]}
-        score={90}
         modules={[{}]}
       />
-
-      {/* <DimensionCard
+      <DimensionCard
         userdata={props.userdata}
-        goals={props.appData["Personal Growth"].goals}
-        questions={props.appData["Personal Growth"].questions}
+        goals={props.appData["Love"].goals}
+        questions={props.appData["Love"].questions}
         name="Personal Growth"
         icon={<ColorLensOutlinedIcon />}
         color={Colors[7]}
-        score={50}
         modules={[{}]}
-      /> */}
+      />
+
       <DimensionCard
         userdata={props.userdata}
         goals={props.appData["Meaningful Work"].goals}
         questions={props.appData["Meaningful Work"].questions}
         name="Meaningful Work"
         icon={<LocalAtmOutlinedIcon />}
-        color={Colors[7]}
-        score={84}
+        color={Colors[8]}
         modules={[
           { name: "Finding Meaning in your Life", content: MeaningContent },
         ]}
@@ -208,8 +200,7 @@ export default function MyDimensions(props) {
         questions={props.appData["Financial Freedom"].questions}
         name="Financial Freedom"
         icon={<LocalAtmOutlinedIcon />}
-        color={Colors[8]}
-        score={84}
+        color={Colors[1]}
         modules={[
           { name: "Making your money work for you", content: FinancialContent },
         ]}
@@ -223,7 +214,6 @@ export default function MyDimensions(props) {
         name="Values"
         icon={<ExploreOutlinedIcon />}
         color={Colors[0]}
-        score={66}
         modules={[
           { name: "Having a Philosophy of Life", content: ValuesContent },
         ]}
@@ -237,7 +227,6 @@ export default function MyDimensions(props) {
         name="Handling worry"
         icon={<SelfImprovementOutlinedIcon />}
         color={Colors[0]}
-        score={82}
         modules={[{ name: "Handling Worry", content: MindsetContent }]}
       />
       <DimensionCard
@@ -249,7 +238,6 @@ export default function MyDimensions(props) {
         name="Finding Meaning"
         icon={<FollowTheSignsIcon />}
         color={Colors[0]}
-        score={62}
         modules={[
           { name: "Finding Meaning in your Life", content: MeaningContent },
         ]}

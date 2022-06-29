@@ -84,11 +84,13 @@ export default function DimensionPage({
         setAssessmentScore={setAssessmentScore}
       />
       <div
-        className="Heading overflow-hidden"
+        className="relative text-3xl z-[1] text-white font-semibold p-14 h-[200px] flex align-center justify-center"
         style={{ backgroundColor: color }}
       >
-        <span className="PageIcon">{icon}</span>
-        {name}
+        <span className="">{name}</span>
+        <span className="PageIcon opacity-20 text-white absolute top-16">
+          {icon}
+        </span>
       </div>
       <div className="px-4 pb-12 pt-4 bg-inherit">
         <div style={{ textAlign: "center" }}>

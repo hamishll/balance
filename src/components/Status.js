@@ -41,7 +41,7 @@ export default function Status(props) {
   ];
 
   return (
-    <div className="py-4 flex flex-row justify-center">
+    <div className="pb-4 pt-6 flex flex-row justify-center">
       {Dimensions.map((dimension, index) => {
         return (
           <div className="mx-1 w-[37px] h-[250px]" key={index}>

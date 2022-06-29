@@ -192,9 +192,8 @@ export default function Onboarding({
           <div className="mt-24 mb-8 text-4xl">About Balance</div>
           <p>
             Balance is an open-source app designed to help you find happiness
-            and meaning in your life.
+            and meaning in your life through three steps:
           </p>
-          It aims to help you find happiness and meaning through three steps:
           <div className="flex flex-row gap-4 shrink-0 w-full snap-x snap-mandatory overflow-x-scroll pr-16 pb-12">
             <BlobCard icon={<AutoAwesomeIcon fontSize="inherit" />}>
               <div className="text-lg font-semibold pb-2 pr-[100px]">
@@ -235,7 +234,7 @@ export default function Onboarding({
             key={"OnboardingLifeAchievements"}
             choices={[
               "👪 Raise a family",
-              "💛 Travel the world",
+              "✈️ Travel the world",
               "💻 Have a successful career",
               "💕 Fall in love",
               "🏡 Own your own home",
@@ -245,6 +244,8 @@ export default function Onboarding({
               "👨‍🔬 Contribute to science",
               "🌍 Help save the planet",
               "💸 Retire early",
+              "💬 Learn another language",
+              "🗺️ Live in a different country",
             ]}
           />
         </div>
@@ -278,6 +279,7 @@ export default function Onboarding({
               <span className="font-bold text-[#007AFF]">1. </span>
               Describe your dream life
             </div>
+            <p>You can always edit this later!</p>
             <ModalTooltip content={dreamTip}>
               <span className="text-gray-500 opacity-25">
                 <HelpOutlineIcon />

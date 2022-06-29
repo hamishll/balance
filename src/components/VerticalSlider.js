@@ -5,7 +5,7 @@ import Slider from "@mui/material/Slider";
 const marks = [
   {
     value: 0,
-    label: "😣",
+    label: "😖",
   },
   {
     value: 1,
@@ -13,15 +13,15 @@ const marks = [
   },
   {
     value: 2,
-    label: "😞",
+    label: "😔",
   },
   {
     value: 3,
-    label: "😞",
+    label: "😕",
   },
   {
     value: 4,
-    label: "😐",
+    label: "🙂",
   },
   {
     value: 5,
@@ -29,7 +29,7 @@ const marks = [
   },
   {
     value: 6,
-    label: "🙂",
+    label: "😊",
   },
   {
     value: 7,
@@ -37,7 +37,7 @@ const marks = [
   },
   {
     value: 8,
-    label: "😃",
+    label: "🤩",
   },
 ];
 
@@ -48,12 +48,12 @@ export default function VerticalSlider(props) {
     "& .MuiSlider-track": {
       border: "none",
       width: 30,
-      borderRadius: "8px",
+      borderRadius: "10px",
     },
     "& .MuiSlider-rail": {
       border: "none",
       width: 30,
-      borderRadius: "8px",
+      borderRadius: "10px",
       opacity: 0.1,
     },
     "& .MuiSlider-thumb": {

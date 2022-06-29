@@ -6,6 +6,7 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { TransitionGroup } from "react-transition-group";
 import Collapse from "@mui/material/Collapse";
 import CloseIcon from "@mui/icons-material/Close";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const Colors = {
   Sleep: "#007AFF",
@@ -16,7 +17,7 @@ const Colors = {
   Love: "#FF3B30",
   "Meaningful Work": "#AF52DE",
   "Financial Freedom": "#5856D6",
-  Uncategorised: "#333333",
+  General: "#777777",
 };
 
 const goalStyles = {
@@ -92,7 +93,7 @@ const EditableGoal = ({
             {Object.keys(Colors).map((option, index) => {
               return (
                 <option key={index} value={option}>
-                  {option}
+                  {option + " ≡"}
                 </option>
               );
             })}
@@ -209,7 +210,7 @@ export default function EditableGoals2(props) {
         key: Date.now(),
         text: "Give your goal a title...",
         isDone: false,
-        category: "Uncategorised",
+        category: "General",
         tasks: [],
       },
     ];

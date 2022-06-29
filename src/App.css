@@ -102,17 +102,7 @@ html {
   display: flex;
   justify-content: center;
 }
-.Heading {
-  font-size: 1.75em;
-  padding-bottom: 20px;
-  height: 150px;
-  background: rgb(129, 192, 255);
-  padding: 20px;
-  display: grid;
-  align-items: center;
-  place-items: center;
-  color: rgba(255, 255, 255, 0.8);
-}
+
 
 .Screen {
   overflow: hidden;
@@ -245,13 +235,6 @@ html {
   z-index: -1;
 }
 
-.PageIcon {
-  color: white;
-  mix-blend-mode: overlay;
-  opacity: 0.2;
-  position: relative;
-  top: 25px;
-}
 .PageIcon svg {
   transform: scale(7) rotate(0deg);
 }

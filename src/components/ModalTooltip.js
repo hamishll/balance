@@ -66,7 +66,7 @@ export default function ModalTooltip({
         arrow
         title={content}
         enterDelay={250}
-        enterTouchDelay={10}
+        enterTouchDelay={0}
         leaveTouchDelay={0}
       >
         {children}

@@ -64,8 +64,11 @@ export default function ModuleCard(props) {
             </div>
           )}
         </div>
-        <div className="text-center pb-4">
-          Mark Module as Complete{" "}
+        <div
+          className="text-center text-xl font-semibold bg-opacity-10 p-4 mb-4"
+          style={{ backgroundColor: props.color + "30" }}
+        >
+          Mark Module as Complete!{" "}
           <ControlledCheckbox
             id={"Module." + props.name}
             sx={{

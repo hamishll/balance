@@ -62,7 +62,7 @@ export default function Page({ open, setOpen, name, children }) {
             id={name}
           >
             <div
-              className="pageClose"
+              className="pageClose z-[1401]"
               id="pageClose"
               onClick={() => {
                 setOpen(!open);
