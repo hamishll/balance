@@ -25,7 +25,7 @@ import { Colors, Colors2 } from "../components/Theme";
 export const appdata = [
   {
     name: "Sleep",
-    icon: <DarkModeOutlinedIcon />,
+    icon: <DarkModeOutlinedIcon fontSize="inherit" />,
     color: Colors[2],
     modules: [{ name: "Why We Sleep", content: SleepContent }],
     goals: [
@@ -71,7 +71,7 @@ export const appdata = [
 
   {
     name: "Health & Fitness",
-    icon: <DirectionsRunIcon />,
+    icon: <DirectionsRunIcon fontSize="inherit" />,
     color: Colors[3],
     modules: [
       { name: "Nutrition", content: "Module coming soon" },
@@ -120,7 +120,7 @@ export const appdata = [
   },
   {
     name: "Mental Health",
-    icon: <SelfImprovementIcon />,
+    icon: <SelfImprovementIcon fontSize="inherit" />,
     color: Colors[4],
     modules: [
       { name: "Handling Worry", content: MindsetContent },
@@ -223,7 +223,7 @@ export const appdata = [
 
   {
     name: "Friends",
-    icon: <EmojiPeopleOutlinedIcon />,
+    icon: <EmojiPeopleOutlinedIcon fontSize="inherit" />,
     color: Colors[5],
     modules: [{ name: "Interpersonal Relationships", content: FriendsContent }],
     goals: ["Goal 1", "Goal 2", "Goal 3"],
@@ -264,7 +264,7 @@ export const appdata = [
 
   {
     name: "Love",
-    icon: <FavoriteBorderOutlinedIcon />,
+    icon: <FavoriteBorderOutlinedIcon fontSize="inherit" />,
     color: Colors[6],
     modules: [{}],
     goals: ["Goal 1", "Goal 2", "Goal 3"],
@@ -307,7 +307,7 @@ export const appdata = [
   },
   {
     name: "Personal Development",
-    icon: <ColorLensOutlinedIcon />,
+    icon: <ColorLensOutlinedIcon fontSize="inherit" />,
     color: Colors[7],
     modules: [{}],
     goals: ["Goal 1", "Goal 2", "Goal 3"],
@@ -339,7 +339,7 @@ export const appdata = [
   },
   {
     name: "Meaningful Work",
-    icon: <WorkOutlineIcon />,
+    icon: <WorkOutlineIcon fontSize="inherit" />,
     color: Colors[8],
     modules: [
       { name: "Finding Meaning in your Life", content: MeaningContent },
@@ -417,7 +417,7 @@ export const appdata = [
 
   {
     name: "Financial Freedom",
-    icon: <LocalAtmOutlinedIcon />,
+    icon: <LocalAtmOutlinedIcon fontSize="inherit" />,
     color: Colors[1],
     modules: [
       { name: "Making your money work for you", content: FinancialContent },

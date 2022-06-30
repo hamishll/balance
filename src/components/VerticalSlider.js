@@ -80,6 +80,7 @@ export default function VerticalSlider(props) {
   const handleChange = (event, newValue) => {
     setValue(newValue);
     localStorage.setItem(props.k, newValue);
+    props.setActive(props.index);
   };
 
   function valueLabelFormat(value) {

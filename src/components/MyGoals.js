@@ -77,6 +77,9 @@ export default function MyGoals(props) {
           <span className="cursor-pointer text-gray-500 opacity-25">
             <HelpOutlineIcon sx={{ fontSize: "1.75em" }} />
           </span>
+          {/* <span className="cursor-pointer text-[10px] text-gray-900 rounded-xl border border-gray-600 py-[3px] px-[8px] opacity-25 ml-2 mt-6 mb-4 mr-2">
+            Help
+          </span> */}
         </ModalTooltip>
       </div>
       <EditableGoals2 />
