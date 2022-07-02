@@ -13,14 +13,16 @@ const prompts = [
 ];
 
 export default function Status({ dimensions }) {
-  const [active, setActive] = React.useState(0);
+  const [active, setActive] = React.useState(8);
+  const [lastInteraction, setLastInteraction] = React.useState(0);
   const [dateSetArray, setDateSetArray] = React.useState(
     JSON.parse(localStorage.getItem("LastStatusUpdate")) ?? [
       0, 0, 0, 0, 0, 0, 0, 0,
     ]
   );
+  const dimensionsExtended = [...dimensions, { name: "", color: "#FFF" }];
+
   useEffect(() => {
-    console.log(dateSetArray);
     const now = Date.now();
     const newLastStatusUpdate = dateSetArray;
     newLastStatusUpdate[active] = now;
@@ -29,7 +31,7 @@ export default function Status({ dimensions }) {
       "LastStatusUpdate",
       JSON.stringify(newLastStatusUpdate)
     );
-  }, [active]);
+  }, [active, lastInteraction]);
 
   return (
     <div className="flex flex-col items-center">
@@ -43,6 +45,7 @@ export default function Status({ dimensions }) {
             >
               <div className="grow">
                 <VerticalSlider
+                  setLastInteraction={setLastInteraction}
                   setActive={setActive}
                   color={
                     dateSetArray[index] > now - 1000 * 60 * 60 * 18
@@ -75,9 +78,9 @@ export default function Status({ dimensions }) {
       <div className=" min-h-[100px]  max-w-md shrink-0 my-2">
         <div
           className="uppercase font-semibold"
-          style={{ color: dimensions[active].color }}
+          style={{ color: dimensionsExtended[active].color }}
         >
-          {dimensions[active].name}
+          {dimensionsExtended[active].name}
         </div>
         <div className="text-sm opacity-50">{prompts[active]}</div>
       </div>

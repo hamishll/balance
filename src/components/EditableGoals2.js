@@ -93,7 +93,7 @@ const EditableGoal = ({
             {Object.keys(Colors).map((option, index) => {
               return (
                 <option key={index} value={option}>
-                  {option + " ≡"}
+                  {option + ""}
                 </option>
               );
             })}

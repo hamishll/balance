@@ -66,7 +66,7 @@ export default function MyGoals(props) {
           },
         }}
         k={"dream"}
-        rows={6}
+        rows={5}
         initValue={localStorage.getItem("dream")}
       />
       <div className="flex flex-row items-center">

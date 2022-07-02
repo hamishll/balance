@@ -81,6 +81,7 @@ export default function VerticalSlider(props) {
     setValue(newValue);
     localStorage.setItem(props.k, newValue);
     props.setActive(props.index);
+    props.setLastInteraction(Date.now());
   };
 
   function valueLabelFormat(value) {
