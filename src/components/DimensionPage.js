@@ -171,6 +171,7 @@ export default function DimensionPage({
               <ModuleCard
                 key={index}
                 name={module.name}
+                author={module.author}
                 content={module.content}
                 color={color}
               />

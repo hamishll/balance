@@ -61,7 +61,7 @@ export default function MyGoals(props) {
         sx={{
           "& .MuiOutlinedInput-root": {
             fontSize: "0.9em",
-            padding: "10px",
+            padding: "20px",
             borderRadius: 2,
           },
         }}

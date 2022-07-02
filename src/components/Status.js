@@ -32,13 +32,13 @@ export default function Status({ dimensions }) {
   }, [active]);
 
   return (
-    <React.Fragment>
-      <div className="pt-6 flex flex-row items-center">
+    <div className="flex flex-col items-center">
+      <div className="pt-6 flex flex-row items-center w-full max-w-md">
         {dimensions.map((dimension, index) => {
           const now = Date.now();
           return (
             <div
-              className="flex grow flex-col items-center mx-1 w-[37px] h-[250px]"
+              className="flex grow flex-col items-center w-[37px] h-[250px]"
               key={index}
             >
               <div className="grow">
@@ -72,15 +72,15 @@ export default function Status({ dimensions }) {
           );
         })}
       </div>
-      <div className=" min-h-[100px] shrink-0 my-2">
+      <div className=" min-h-[100px]  max-w-md shrink-0 my-2">
         <div
           className="uppercase font-semibold"
           style={{ color: dimensions[active].color }}
         >
           {dimensions[active].name}
         </div>
-        <div className="text-sm  opacity-50">{prompts[active]}</div>
+        <div className="text-sm opacity-50">{prompts[active]}</div>
       </div>
-    </React.Fragment>
+    </div>
   );
 }

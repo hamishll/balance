@@ -6,6 +6,7 @@ import ModalTooltip from "./ModalTooltip";
 import MultiChoiceQuestion from "./MultiChoiceQuestion";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import Quote from "./Quote";
+import ProductPicker from "./ProductPicker";
 
 const helpTip = (
   <div>

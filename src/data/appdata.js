@@ -27,7 +27,9 @@ export const appdata = [
     name: "Sleep",
     icon: <DarkModeOutlinedIcon fontSize="inherit" />,
     color: Colors[2],
-    modules: [{ name: "Why We Sleep", content: SleepContent }],
+    modules: [
+      { name: "Why We Sleep", author: "Dr. Dan Walker", content: SleepContent },
+    ],
     goals: [
       "Set a consistent, longer sleep schedule",
       "Avoid caffeinated beverages after midday",

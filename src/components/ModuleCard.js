@@ -32,8 +32,11 @@ export default function ModuleCard(props) {
         <div className="uppercase text-white text-sm font-semibold opacity-50">
           MODULE
         </div>
-        <div className=" text-white text-[20px] font-semibold leading-tight">
+        <div className=" text-white text-2xl font-semibold leading-tight">
           {props.name}
+        </div>
+        <div className=" text-white italic text-md font-semibold opacity-50">
+          {props.author}
         </div>
         <div className="text-white absolute bottom-[5px] right-[5px]">
           <ControlledCheckbox
