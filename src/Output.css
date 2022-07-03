@@ -2762,6 +2762,10 @@ a {
   width: 25%;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .max-w-screen-lg {
   max-width: 1024px;
 }
@@ -3405,12 +3409,27 @@ a {
   color: rgb(21 128 61 / var(--tw-text-opacity));
 }
 
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.text-slate-900 {
+  --tw-text-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-text-opacity));
+}
+
 .text-opacity-50 {
   --tw-text-opacity: 0.5;
 }
 
 .text-opacity-5 {
   --tw-text-opacity: 0.05;
+}
+
+.no-underline {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
 }
 
 .opacity-20 {

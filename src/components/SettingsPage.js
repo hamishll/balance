@@ -7,6 +7,7 @@ import BlobCard from "./BlobCard";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import LocalLibraryIcon from "@mui/icons-material/LocalLibrary";
+import { Button } from "@mui/material";
 
 export default function SettingsPage({ theme, colorMode, ...props }) {
   return (
@@ -48,6 +49,15 @@ export default function SettingsPage({ theme, colorMode, ...props }) {
           knowledge of hundreds of self-improvement books.
         </BlobCard>
       </div>
+      <h1>Support Balance</h1>
+      <a
+        className="no-underline"
+        href="https://buy.stripe.com/9AQ01CbvAan57ni6oo"
+      >
+        <div className="rounded-2xl text-lg bg-slate-100 p-4 text-center text-slate-900 border">
+          🤗 Support Balance
+        </div>
+      </a>
     </div>
   );
 }

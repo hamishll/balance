@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 
 import FreeTextQuestion from "./FreeTextQuestion";
 import Status from "./Status";
@@ -6,7 +6,9 @@ import ModalTooltip from "./ModalTooltip";
 import MultiChoiceQuestion from "./MultiChoiceQuestion";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import Quote from "./Quote";
-import ProductPicker from "./ProductPicker";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import ControlledCheckbox from "./ControlledCheckbox";
 
 const helpTip = (
   <div>
@@ -21,7 +23,24 @@ const helpTip = (
   </div>
 );
 
-export default function MyToday({ value, appData }) {
+export default function MyToday({ appData }) {
+  const [checkInScores, setCheckInScores] = React.useState(
+    JSON.parse(localStorage.getItem("checkInScores")) ?? [
+      0, 0, 0, 0, 0, 0, 0, 0,
+    ]
+  );
+  const [lowestDimension, setLowestDimension] = React.useState(0);
+
+  useEffect(() => {
+    // Get all tips in an array of arrays
+    let allTips = [];
+    appData.map((dimension) => {
+      allTips = [...allTips, dimension.goals];
+    });
+    // Identify the index of the lowest score in checkInScores
+    setLowestDimension(checkInScores.indexOf(Math.min(...checkInScores)));
+  }, [checkInScores]);
+
   return (
     <div className="no-scrollbar px-4 pb-[100px] flex flex-col grow overflow-scroll">
       <div className="flex flex-row items-center">
@@ -32,9 +51,13 @@ export default function MyToday({ value, appData }) {
           </span>
         </ModalTooltip>
       </div>
-      <Status dimensions={appData} />
+      <Status
+        dimensions={appData}
+        checkInScores={checkInScores}
+        setCheckInScores={setCheckInScores}
+      />
       {/* <Firestore/> */}
-      <h1>Current Focus Areas</h1>
+      {/* <h1>Current Focus Areas</h1>
       <MultiChoiceQuestion
         k={"focuses"}
         key={"focuses"}
@@ -49,13 +72,44 @@ export default function MyToday({ value, appData }) {
           "💻 Work",
           "💸 Finances",
         ]}
-      />
-      {/* <FreeTextQuestion
-        k={"currentfocus"}
-        rows={2}
-        initValue={localStorage.getItem("currentfocus")}
       /> */}
-      <h1>Recommended for you</h1>
+
+      <h1>Recommended Tasks for you</h1>
+      <FormGroup>
+        {appData[lowestDimension].goals.map((q, index) => {
+          return (
+            <FormControlLabel
+              sx={{
+                lineHeight: "normal",
+              }}
+              key={index}
+              value="end"
+              control={
+                <ControlledCheckbox
+                  size="medium"
+                  id={appData[lowestDimension].name + ".g" + (index + 1)}
+                  sx={{
+                    color: appData[lowestDimension].color,
+                    "&.Mui-checked": {
+                      color: appData[lowestDimension].color,
+                    },
+                  }}
+                  checked={
+                    localStorage.getItem(
+                      appData[lowestDimension].name + ".g" + (index + 1)
+                    ) === "1"
+                      ? true
+                      : false
+                  }
+                />
+              }
+              label={q}
+              labelPlacement="end"
+            />
+          );
+        })}
+      </FormGroup>
+      <h1>Recommended Quotes for you</h1>
       <Quote category="Work" />
     </div>
   );

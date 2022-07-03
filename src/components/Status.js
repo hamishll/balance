@@ -10,9 +10,14 @@ const prompts = [
   "How do you feel about your personal development currently? Are you finding time for your hobbies, learning new skills or building new relationships?",
   "How do you feel about your work / school currently? Do you feel like you're learning? Are you with people you enjoy being with? Is your work / school affecting other aspects of your life negatively?",
   "How do you feel about your financial situation currently? Do you feel in control, or is this a source of stress? Are you able to save as much money each month as you'd like?",
+  "",
 ];
 
-export default function Status({ dimensions }) {
+export default function Status({
+  dimensions,
+  checkInScores,
+  setCheckInScores,
+}) {
   const [active, setActive] = React.useState(8);
   const [lastInteraction, setLastInteraction] = React.useState(0);
   const [dateSetArray, setDateSetArray] = React.useState(
@@ -20,6 +25,7 @@ export default function Status({ dimensions }) {
       0, 0, 0, 0, 0, 0, 0, 0,
     ]
   );
+
   const dimensionsExtended = [...dimensions, { name: "", color: "#FFF" }];
 
   useEffect(() => {
@@ -31,7 +37,8 @@ export default function Status({ dimensions }) {
       "LastStatusUpdate",
       JSON.stringify(newLastStatusUpdate)
     );
-  }, [active, lastInteraction]);
+    localStorage.setItem("checkInScores", JSON.stringify(checkInScores));
+  }, [active, lastInteraction, checkInScores]);
 
   return (
     <div className="flex flex-col items-center">
@@ -54,9 +61,9 @@ export default function Status({ dimensions }) {
                   }
                   k={dimension.name + ".q0"}
                   index={index}
-                  initValue={parseInt(
-                    localStorage.getItem(dimension.name + ".q0") ?? 0
-                  )}
+                  initValue={checkInScores}
+                  checkInScores={checkInScores}
+                  setCheckInScores={setCheckInScores}
                 />
               </div>
               <div

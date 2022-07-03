@@ -75,13 +75,16 @@ export default function VerticalSlider(props) {
     },
   };
 
-  const [value, setValue] = React.useState(props.initValue);
+  const [value, setValue] = React.useState(props.initValue[props.index]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
     localStorage.setItem(props.k, newValue);
     props.setActive(props.index);
     props.setLastInteraction(Date.now());
+    const newCheckInScores = [...props.initValue];
+    newCheckInScores[props.index] = newValue;
+    props.setCheckInScores(newCheckInScores);
   };
 
   function valueLabelFormat(value) {
