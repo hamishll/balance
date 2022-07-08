@@ -228,7 +228,11 @@ export const appdata = [
     icon: <EmojiPeopleOutlinedIcon fontSize="inherit" />,
     color: Colors[5],
     modules: [{ name: "Interpersonal Relationships", content: FriendsContent }],
-    goals: ["Goal 1", "Goal 2", "Goal 3"],
+    goals: [
+      "Send a message to a friend",
+      "Organise an event with your friends",
+      "Pick up a new social hobby",
+    ],
     dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
     questions: [
       {
@@ -269,7 +273,11 @@ export const appdata = [
     icon: <FavoriteBorderOutlinedIcon fontSize="inherit" />,
     color: Colors[6],
     modules: [{}],
-    goals: ["Goal 1", "Goal 2", "Goal 3"],
+    goals: [
+      "Tell someone you love them today",
+      "Plan something special for your partner",
+      "Spend an evening alone pampering yourself",
+    ],
     dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
     questions: [
       {
@@ -312,41 +320,11 @@ export const appdata = [
     icon: <ColorLensOutlinedIcon fontSize="inherit" />,
     color: Colors[7],
     modules: [{}],
-    goals: ["Goal 1", "Goal 2", "Goal 3"],
-    dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
-    questions: [
-      {
-        key: "Family.q1",
-        type: "singlechoice",
-        question: "Do you make time for shared activities with your family?",
-        description:
-          "This could be sharing meals together, watching films, playing games etc.",
-        choices: ["Rarely", "Weekly", "Daily"],
-        recommendation: "",
-        threshold: 3,
-        weight: 50,
-      },
-      {
-        key: "Family.q2",
-        type: "singlechoice",
-        question:
-          "Can you have open and honest conversations with your family about issues in your life?",
-        description: "",
-        choices: ["No", "Partially", "Yes"],
-        recommendation: "",
-        threshold: 3,
-        weight: 50,
-      },
+    goals: [
+      "Schedule in a 2 hour session each week to focus on one of your hobbies",
+      "Book a holiday or new experience",
+      "Write down what skills you want to build over the next year",
     ],
-  },
-  {
-    name: "Meaningful Work",
-    icon: <WorkOutlineIcon fontSize="inherit" />,
-    color: Colors[8],
-    modules: [
-      { name: "Finding Meaning in your Life", content: MeaningContent },
-    ],
-    goals: ["Goal 1", "Goal 2", "Goal 3"],
     dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
     questions: [
       {
@@ -358,7 +336,7 @@ export const appdata = [
         choices: ["No", "Not sure", "Yes"],
         recommendation: "",
         threshold: 3,
-        weight: 20,
+        weight: 40,
       },
       {
         key: "Meaningful Work.q2",
@@ -369,7 +347,7 @@ export const appdata = [
         choices: ["<2 hours", "5 hours", "10 hours", "15 hours", "20+ hours"],
         recommendation: "",
         threshold: 3,
-        weight: 20,
+        weight: 30,
       },
       {
         key: "Meaningful Work.q3",
@@ -380,8 +358,24 @@ export const appdata = [
         choices: ["No", "Occassionally", "Sometimes", "Often", "All the time"],
         recommendation: "",
         threshold: 3,
-        weight: 20,
+        weight: 30,
       },
+    ],
+  },
+  {
+    name: "Meaningful Work",
+    icon: <WorkOutlineIcon fontSize="inherit" />,
+    color: Colors[8],
+    modules: [
+      { name: "Finding Meaning in your Life", content: MeaningContent },
+    ],
+    goals: [
+      "Identify what work gets you into a state of flow",
+      "Speak with your manager about focusing more on the parts of your role that you enjoy",
+      "Look for opportunities to get to know your colleagues outside of work",
+    ],
+    dailies: ["Daily task 1", "Daily task 2", "Daily task 3"],
+    questions: [
       {
         key: "Meaningful Work.q4",
         type: "singlechoice",
